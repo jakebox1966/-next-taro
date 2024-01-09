@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -13,45 +14,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="en">
-            <body className={inter.className}>
-                <div className="w-full flex flex-col justify-start items-center py-6 min-h-screen text-[#FF5A3F]">
-                    <div className="flex flex-col justify-start items-center w-[393px] lg:w-full gap-7">
-                        <div className="bg-[url('/main_frame.svg')] h-[789px] lg:h-[1990px] w-full lg:max-w-[1422px] bg-contain bg-no-repeat bg-center relative">
-                            <div className=" absolute top-0 left-1/2 -translate-x-1/2 translate-y-16 lg:translate-y-36 w-full flex flex-col justify-center items-center gap-10 lg:gap-20">
-                                <div className="w-[224px] lg:w-[569px]">
-                                    <Image
-                                        className="!relative"
-                                        src={'/main_title.svg'}
-                                        alt="SAZA&GAZA"
-                                        fill
-                                        objectFit="contain"
-                                    />
-                                </div>
-                                {children}
-                            </div>
-                        </div>
-
-                        <div className="w-full flex flex-col justify-start items-center gap-5 text-center max-w-[234px] lg:max-w-[815px] font-black lg:gap-16">
-                            <div className="text-lg lg:text-4xl font-black w-full">
-                                사자와 가자 만나러 가기
-                            </div>
-                            <div className="flex flex-col lg:flex-row w-full gap-6">
-                                <div className="flex flex-row justify-center items-center gap-2 py-2 lg:py-6 px-6 lg:px-2 border-2 border-[#FF5A3F] bg-[#F4ECE0] rounded-full text-[0.65rem] lg:text-2xl w-full">
-                                    <Image src={'/insta.svg'} alt="insta" width={40} height={40} />
-                                    사자와 가자 팔로잉하기
-                                </div>
-                                <div className="flex flex-row justify-center items-center gap-2 py-2 lg:py-6 px-6 lg:px-2 border-2 border-[#FF5A3F] bg-[#F4ECE0] rounded-full text-[0.65rem] lg:text-2xl w-full">
-                                    <Image src={'/saza.svg'} alt="insta" width={40} height={40} />
-                                    사자와 가자 SHOP 바로가기
-                                </div>
-                            </div>
-                        </div>
-                        <div className="w-full text-xs lg:text-3xl text-center text-black font-black lg:mt-16">
-                            ⓒ 2024 Quadhash Corporation. All Rights Reserved.
-                        </div>
-                    </div>
-                </div>
-            </body>
+            <body className={inter.className}>{children}</body>
         </html>
     )
 }
