@@ -7,22 +7,31 @@
         transition: all 2s ease-out;
     }
 
-    .active_card1 {
+    .selected {
+        box-shadow: inset 10px 10px 10px 10px gold;
+    }
+
+    .active_card {
+        transform: scale(1.1);
+       
+    }
+
+    .select_card1 {
         transform: scale(2.1);
         transform-origin: 1% 0%;
     }
 
-    .active_card2 {
+    .select_card2 {
         transform: scale(2.1);
         transform-origin: 99% 0%;
     }
 
-    .active_card3 {
+    .select_card3 {
         transform: scale(2.1);
         transform-origin: 0% 99%;
     }
 
-    .active_card4 {
+    .select_card4 {
         transform: scale(2.1);
         transform-origin: 99% 99%;
     }

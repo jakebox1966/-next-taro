@@ -51,10 +51,12 @@ export default function Home() {
                         </div>
 
                         <div className="w-[234px] h-[56px] lg:w-[388px] lg:h-[340px] flex flex-col justify-start items-center gap-6 lg:gap-10 mt-10 lg:mt-20">
-                            <div className="w-full border-2 text-xs lg:text-2xl border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[72px] flex flex-row justify-center gap-4 items-center">
-                                <img src="/saza.svg" alt="" />
-                                타로점 시작하기
-                            </div>
+                            <Link className="w-full" href={'/username'}>
+                                <div className="border-2 text-xs lg:text-2xl border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[72px] flex flex-row justify-center gap-4 items-center">
+                                    <img src="/saza.svg" alt="" />
+                                    타로점 시작하기
+                                </div>
+                            </Link>
 
                             <div className="w-full border-2 text-xs lg:text-2xl border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[72px] flex flex-row justify-center gap-4 items-center">
                                 <img src="/saza.svg" alt="" />
@@ -75,15 +77,19 @@ export default function Home() {
                     </div>
 
                     <div className="flex flex-col lg:flex-row justify-center lg:justify-center items-center lg:items-center gap-6">
-                        <div className="w-[234px] lg:w-[388px] h-[56px] lg:h-[85px] border-2 text-xs lg:text-2xl border-[#269E45] rounded-full text-center leading-[56px] flex flex-row justify-center gap-2 items-center">
-                            <img src="/insta.svg" alt="" />
-                            사자와 가자 팔로잉하기
-                        </div>
+                        <Link href={'https://www.instagram.com/saza.gaza/'}>
+                            <div className="w-[234px] lg:w-[388px] h-[56px] lg:h-[85px] border-2 text-xs lg:text-2xl border-[#269E45] rounded-full text-center leading-[56px] flex flex-row justify-center gap-2 items-center">
+                                <img src="/insta.svg" alt="" />
+                                사자와 가자 팔로잉하기
+                            </div>
+                        </Link>
 
-                        <div className="w-[234px] lg:w-[388px] h-[56px] lg:h-[85px] border-2 text-xs lg:text-2xl border-[#269E45] rounded-full text-center leading-[56px] flex flex-row justify-center gap-2 items-center">
-                            <img src="/saza.svg" alt="" />
-                            사자와 가자 SHOP 바로가기
-                        </div>
+                        <Link href={'https://quadhash.kr/'}>
+                            <div className="w-[234px] lg:w-[388px] h-[56px] lg:h-[85px] border-2 text-xs lg:text-2xl border-[#269E45] rounded-full text-center leading-[56px] flex flex-row justify-center gap-2 items-center">
+                                <img src="/saza.svg" alt="" />
+                                사자와 가자 SHOP 바로가기
+                            </div>
+                        </Link>
                     </div>
                 </div>
                 <div className="text-xs lg:text-2xl mt-7 lg:mt-20">

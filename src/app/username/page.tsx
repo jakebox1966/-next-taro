@@ -1,15 +1,19 @@
 'use client'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 
 export interface IUsernamePageProps {}
 
 export default function UsernamePage(props: IUsernamePageProps) {
+    const router = useRouter()
     const initData = window.innerWidth
-    console.log(initData)
 
     const [isMobile, setIsMobile] = useState(initData < 1024 ? true : false)
+    const [input, setInput] = useState({
+        username: '',
+    })
 
     const handleResize = () => {
         if (window.innerWidth >= 1024) {
@@ -19,9 +23,22 @@ export default function UsernamePage(props: IUsernamePageProps) {
         }
     }
 
-    useEffect(() => {
-        console.log(isMobile)
-    }, [isMobile])
+    const inputHandler = (e: { target: { name: any; value: any } }) => {
+        const { name, value } = e.target
+
+        setInput((prev) => ({
+            ...prev,
+            [name]: value,
+        }))
+    }
+
+    const goToCard = () => {
+        if (input.username === '') {
+            alert('이름을 입력해주세요.')
+            return
+        }
+        router.push('/cardchoice')
+    }
 
     useEffect(() => {
         window.addEventListener('resize', handleResize)
@@ -59,12 +76,16 @@ export default function UsernamePage(props: IUsernamePageProps) {
                             <div className="w-full text-xs text-center leading-[56px] flex flex-row justify-center gap-2 items-center">
                                 <input
                                     type="text"
+                                    name="username"
+                                    onChange={inputHandler}
                                     className="w-full rounded-full border-2 border-[#269E45] leading-[50px] lg:leading-[75px] px-5 lg:text-2xl"
                                     placeholder="이름을 입력해주세요."
                                 />
                             </div>
 
-                            <div className="w-[176px] h-[50px] lg:w-[200px] lg:h-[76px] border-2 text-xs lg:text-xl border-[#269E45] rounded-full text-center leading-[56px] flex flex-row justify-center gap-2 items-center mt-8">
+                            <div
+                                className="w-[176px] h-[50px] lg:w-[200px] lg:h-[76px] border-2 text-xs lg:text-xl border-[#269E45] rounded-full text-center leading-[56px] flex flex-row justify-center gap-2 items-center mt-8 cursor-pointer"
+                                onClick={goToCard}>
                                 <img src="/check.svg" alt="" />
                                 확인
                             </div>
@@ -72,23 +93,29 @@ export default function UsernamePage(props: IUsernamePageProps) {
                     </div>
                 </div>
 
-                <div className="flex flex-col justify-start items-center w-[298px] lg:w-[815px] y-[650px] lg:y-[185px] gap-6 mt-8 lg:mt-16">
-                    <div className="w-[234px] h-[56px] lg:w-full text-center leading-[56px] text-black lg:text-4xl">
-                        사자와 가자 만나러 가기
-                    </div>
-
-                    <div className="flex flex-col lg:flex-row justify-center lg:justify-center items-center lg:items-center gap-6">
-                        <div className="w-[234px] lg:w-[388px] h-[56px] lg:h-[85px] border-2 text-xs lg:text-2xl border-[#269E45] rounded-full text-center leading-[56px] flex flex-row justify-center gap-2 items-center">
-                            <img src="/insta.svg" alt="" />
-                            사자와 가자 팔로잉하기
+                {!isMobile && (
+                    <div className="flex flex-col justify-start items-center w-[298px] lg:w-[815px] y-[650px] lg:y-[185px] gap-6 mt-8 lg:mt-16">
+                        <div className="w-[234px] h-[56px] lg:w-full text-center leading-[56px] text-black lg:text-4xl">
+                            사자와 가자 만나러 가기
                         </div>
 
-                        <div className="w-[234px] lg:w-[388px] h-[56px] lg:h-[85px] border-2 text-xs lg:text-2xl border-[#269E45] rounded-full text-center leading-[56px] flex flex-row justify-center gap-2 items-center">
-                            <img src="/saza.svg" alt="" />
-                            사자와 가자 SHOP 바로가기
+                        <div className="flex flex-col lg:flex-row justify-center lg:justify-center items-center lg:items-center gap-6">
+                            <Link href={'https://www.instagram.com/saza.gaza/'}>
+                                <div className="w-[234px] lg:w-[388px] h-[56px] lg:h-[85px] border-2 text-xs lg:text-2xl border-[#269E45] rounded-full text-center leading-[56px] flex flex-row justify-center gap-2 items-center">
+                                    <img src="/insta.svg" alt="" />
+                                    사자와 가자 팔로잉하기
+                                </div>
+                            </Link>
+
+                            <Link href={'https://quadhash.kr/'}>
+                                <div className="w-[234px] lg:w-[388px] h-[56px] lg:h-[85px] border-2 text-xs lg:text-2xl border-[#269E45] rounded-full text-center leading-[56px] flex flex-row justify-center gap-2 items-center">
+                                    <img src="/saza.svg" alt="" />
+                                    사자와 가자 SHOP 바로가기
+                                </div>
+                            </Link>
                         </div>
                     </div>
-                </div>
+                )}
                 <div className="text-xs lg:text-2xl mt-7 lg:mt-20">
                     ⓒ 2024 Quadhash Corporation. All Rights Reserved.
                 </div>
