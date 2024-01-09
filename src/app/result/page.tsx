@@ -6,12 +6,10 @@ import * as React from 'react'
 export interface IResultPageProps {}
 
 export default function ResultPage(props: IResultPageProps) {
-    const initData = window.innerWidth
-
-    const [isMobile, setIsMobile] = React.useState(initData < 1024 ? true : false)
+    const [isMobile, setIsMobile] = React.useState(false)
 
     const handleResize = () => {
-        if (window.innerWidth >= 1024) {
+        if (window && window.innerWidth >= 1024) {
             setIsMobile(false)
         } else {
             setIsMobile(true)
@@ -19,6 +17,8 @@ export default function ResultPage(props: IResultPageProps) {
     }
 
     React.useEffect(() => {
+        const initData = window.innerWidth
+        setIsMobile(initData < 1024 ? true : false)
         window.addEventListener('resize', handleResize)
 
         return () => {

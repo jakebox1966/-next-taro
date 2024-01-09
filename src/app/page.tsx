@@ -4,10 +4,7 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 export default function Home() {
-    const initData = window.innerWidth
-    console.log(initData)
-
-    const [isMobile, setIsMobile] = useState(initData < 1024 ? true : false)
+    const [isMobile, setIsMobile] = useState(false)
 
     const handleResize = () => {
         if (window.innerWidth >= 1024) {
@@ -22,6 +19,8 @@ export default function Home() {
     }, [isMobile])
 
     useEffect(() => {
+        const initData = window.innerWidth
+        setIsMobile(initData < 1024 ? true : false)
         window.addEventListener('resize', handleResize)
 
         return () => {

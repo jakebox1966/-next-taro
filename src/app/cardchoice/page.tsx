@@ -1,4 +1,5 @@
 'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
@@ -12,9 +13,7 @@ export default function CardChoicePage(props: ICardChoicePageProps) {
 
     const clickMenuRef = useRef<any>(null)
 
-    const initData = window.innerWidth
-
-    const [isMobile, setIsMobile] = useState(initData < 1024 ? true : false)
+    const [isMobile, setIsMobile] = useState(false)
 
     const handleResize = () => {
         if (window.innerWidth >= 1024) {
@@ -27,6 +26,8 @@ export default function CardChoicePage(props: ICardChoicePageProps) {
     const checkResult = () => {}
 
     useEffect(() => {
+        const initData = window.innerWidth
+        setIsMobile(initData < 1024 ? true : false)
         window.addEventListener('resize', handleResize)
 
         return () => {

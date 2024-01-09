@@ -8,9 +8,8 @@ export interface IUsernamePageProps {}
 
 export default function UsernamePage(props: IUsernamePageProps) {
     const router = useRouter()
-    const initData = window.innerWidth
 
-    const [isMobile, setIsMobile] = useState(initData < 1024 ? true : false)
+    const [isMobile, setIsMobile] = useState(false)
     const [input, setInput] = useState({
         username: '',
     })
@@ -41,6 +40,8 @@ export default function UsernamePage(props: IUsernamePageProps) {
     }
 
     useEffect(() => {
+        const initData = window.innerWidth
+        setIsMobile(initData < 1024 ? true : false)
         window.addEventListener('resize', handleResize)
 
         return () => {
