@@ -73,76 +73,81 @@ export default function CardChoicePage(props: ICardChoicePageProps) {
                             src={`${isMobile ? '/main_title.svg' : '/main_title_desktop.svg'}`}
                             alt=""
                         />
-                        <div
-                            className="w-[212px] lg:w-[614px] h-[323px] lg:h-[929px] flex flex-row flex-wrap gap-2"
-                            ref={clickMenuRef}>
-                            <div
-                                className={`card ${
-                                    selectedCard !== 1 ? 'hover:select_card1' : 'select_card1'
-                                }`}
-                                onClick={() => {
-                                    setSelectedCard(1)
-                                }}>
-                                <img
-                                    src={`${isMobile ? '/card.svg' : '/card_desktop.svg'}`}
-                                    alt=""
-                                />
-                            </div>
-                            <div
-                                className={`card ${
-                                    selectedCard !== 2 ? 'hover:select_card2' : 'select_card2'
-                                }`}
-                                onClick={() => {
-                                    setSelectedCard(2)
-                                }}>
-                                <img
-                                    src={`${isMobile ? '/card.svg' : '/card_desktop.svg'}`}
-                                    alt=""
-                                />
-                            </div>
-                            <div
-                                className={`card ${
-                                    selectedCard !== 3 ? 'hover:select_card3' : 'select_card3'
-                                }`}
-                                onClick={() => {
-                                    setSelectedCard(3)
-                                }}>
-                                <img
-                                    src={`${isMobile ? '/card.svg' : '/card_desktop.svg'}`}
-                                    alt=""
-                                />
-                            </div>
-                            <div
-                                className={`card ${
-                                    selectedCard !== 4 ? 'hover:select_card4' : 'select_card4'
-                                }`}
-                                onClick={() => {
-                                    setSelectedCard(4)
-                                }}>
-                                <img
-                                    src={`${isMobile ? '/card.svg' : '/card_desktop.svg'}`}
-                                    alt=""
-                                />
-                            </div>
-                        </div>
-                        <div className="w-[212px] lg:w-[614px] h-[323px] lg:h-[929px] flex flex-row">
-                            <Image src={'/main_image.svg'} alt="" fill />
-                            <div>
-                                <MoonLoader color="#057A24" />
-                            </div>
+
+                        <div className={`${isProcessing ? 'visible' : 'visible'} fade`}>
+                            <img
+                                src={`${isMobile ? '/main_image.svg' : '/main_image_desktop.svg'}`}
+                                alt=""
+                            />
                         </div>
 
-                        <div className="w-[250px] lg:w-[638px] h-[52px] lg:h-[227px] flex flex-col justify-start items-center gap-6 lg:gap-10 mt-4">
-                            <div className="text-center text-black lg:text-4xl w-full">
-                                <div>당신에게 찾아올 행운을</div>
-                                <div className="w-full">떠올리며 카드를 한장 골라주세요.</div>
-                            </div>
-
+                        <div className="absolute top-">
                             <div
-                                className="w-[176px] h-[50px] lg:w-[200px] lg:h-[76px] border-2 text-xs lg:text-xl border-[#269E45] rounded-full text-center leading-[56px] flex flex-row justify-center gap-2 items-center mt-8 cursor-pointer"
-                                onClick={shuffleCard}>
-                                <img src="/check.svg" alt="" />
-                                확인
+                                className={`${
+                                    isProcessing ? 'invisible' : 'visible'
+                                } w-[212px] lg:w-[614px] h-[323px] lg:h-[929px] flex flex-row flex-wrap gap-2 fade`}
+                                ref={clickMenuRef}>
+                                <div
+                                    className={`card ${
+                                        selectedCard !== 1 ? 'hover:select_card1' : 'select_card1'
+                                    }`}
+                                    onClick={() => {
+                                        setSelectedCard(1)
+                                    }}>
+                                    <img
+                                        src={`${isMobile ? '/card.svg' : '/card_desktop.svg'}`}
+                                        alt=""
+                                    />
+                                </div>
+                                <div
+                                    className={`card ${
+                                        selectedCard !== 2 ? 'hover:select_card2' : 'select_card2'
+                                    }`}
+                                    onClick={() => {
+                                        setSelectedCard(2)
+                                    }}>
+                                    <img
+                                        src={`${isMobile ? '/card.svg' : '/card_desktop.svg'}`}
+                                        alt=""
+                                    />
+                                </div>
+                                <div
+                                    className={`card ${
+                                        selectedCard !== 3 ? 'hover:select_card3' : 'select_card3'
+                                    }`}
+                                    onClick={() => {
+                                        setSelectedCard(3)
+                                    }}>
+                                    <img
+                                        src={`${isMobile ? '/card.svg' : '/card_desktop.svg'}`}
+                                        alt=""
+                                    />
+                                </div>
+                                <div
+                                    className={`card ${
+                                        selectedCard !== 4 ? 'hover:select_card4' : 'select_card4'
+                                    }`}
+                                    onClick={() => {
+                                        setSelectedCard(4)
+                                    }}>
+                                    <img
+                                        src={`${isMobile ? '/card.svg' : '/card_desktop.svg'}`}
+                                        alt=""
+                                    />
+                                </div>
+                            </div>
+                            <div className="w-[250px] lg:w-[638px] h-[52px] lg:h-[227px] flex flex-col justify-start items-center gap-6 lg:gap-10 mt-4">
+                                <div className="text-center text-black lg:text-4xl w-full">
+                                    <div>당신에게 찾아올 행운을</div>
+                                    <div className="w-full">떠올리며 카드를 한장 골라주세요.</div>
+                                </div>
+
+                                <div
+                                    className="w-[176px] h-[50px] lg:w-[200px] lg:h-[76px] border-2 text-xs lg:text-xl border-[#269E45] rounded-full text-center leading-[56px] flex flex-row justify-center gap-2 items-center mt-8 cursor-pointer"
+                                    onClick={shuffleCard}>
+                                    <img src="/check.svg" alt="" />
+                                    확인
+                                </div>
                             </div>
                         </div>
                     </div>

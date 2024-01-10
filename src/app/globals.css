@@ -7,6 +7,10 @@
         transition: all 2s ease-out;
     }
 
+    .fade {
+        transition: all 2s ease-out;
+    }
+
     .selected {
         box-shadow: inset 10px 10px 10px 10px gold;
     }
