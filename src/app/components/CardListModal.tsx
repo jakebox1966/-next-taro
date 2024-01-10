@@ -43,13 +43,34 @@ export function CardListModal({ open, handleOpen }: ICardListModalProps) {
                                                 X
                                             </span>
                                         </div>
-                                        <div className="w-full flex flex-row justify-center items-center text-lg">
+                                        <div className="w-full flex flex-row justify-center items-center text-lg lg:text-3xl">
                                             <div className="bg-[#FFC947] px-10 py-2 rounded-lg border-2 border-black shadow">
                                                 타로 카드 유형 전체 보기
                                             </div>
                                         </div>
                                     </Dialog.Title>
                                     <div className="flex flex-row justify-center items-center flex-wrap w-full gap-5 mt-6">
+                                        <Image
+                                            className="w-[calc(30%-5px)]"
+                                            src="thelover.svg"
+                                            width={99}
+                                            height={152}
+                                            alt={''}
+                                        />
+                                        <Image
+                                            className="w-[calc(30%-5px)]"
+                                            src="thelover.svg"
+                                            width={99}
+                                            height={152}
+                                            alt={''}
+                                        />
+                                        <Image
+                                            className="w-[calc(30%-5px)]"
+                                            src="thelover.svg"
+                                            width={99}
+                                            height={152}
+                                            alt={''}
+                                        />
                                         <Image
                                             className="w-[calc(30%-5px)]"
                                             src="thelover.svg"

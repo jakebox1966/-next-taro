@@ -39,8 +39,8 @@ export default function ResultPage(props: IResultPageProps) {
             <div
                 className={`${
                     isMobile
-                        ? 'bg-[url("/main_background_galaxy.svg")]'
-                        : 'bg-[url("/main_background_galaxy_desktop.svg")]'
+                        ? 'bg-[url("/main_background_galaxy.jpg")]'
+                        : 'bg-[url("/main_background_galaxy_desktop.jpg")]'
                 } flex flex-col justify-start items-center py-8 w-full min-h-screen bg-no-repeat bg-cover text-white font-black`}>
                 <div className="w-[358px] lg:w-[1422px] h-[1127px] lg:h-[2324px] relative">
                     <img
