@@ -4,12 +4,17 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
+import MoonLoader from 'react-spinners/MoonLoader'
 
 export interface ICardChoicePageProps {}
+
+const cardPool = ['thestar', 'thelover', 'thesun', 'themoney', 'theworld', 'thehermit']
 
 export default function CardChoicePage(props: ICardChoicePageProps) {
     const router = useRouter()
     const [selectedCard, setSelectedCard] = useState(0)
+
+    const [isProcessing, setIsProcessing] = useState(false)
 
     const clickMenuRef = useRef<any>(null)
 
@@ -23,7 +28,15 @@ export default function CardChoicePage(props: ICardChoicePageProps) {
         }
     }
 
-    const checkResult = () => {}
+    const shuffleCard = () => {
+        const randomNumber = Math.floor(Math.random() * 6)
+        console.log(randomNumber)
+        console.log(cardPool[randomNumber])
+        setIsProcessing(true)
+        setTimeout(() => {
+            router.push(`/result?${cardPool[randomNumber]}`)
+        }, 4000)
+    }
 
     useEffect(() => {
         const initData = window.innerWidth
@@ -112,6 +125,12 @@ export default function CardChoicePage(props: ICardChoicePageProps) {
                                 />
                             </div>
                         </div>
+                        <div className="w-[212px] lg:w-[614px] h-[323px] lg:h-[929px] flex flex-row">
+                            <Image src={'/main_image.svg'} alt="" fill />
+                            <div>
+                                <MoonLoader color="#057A24" />
+                            </div>
+                        </div>
 
                         <div className="w-[250px] lg:w-[638px] h-[52px] lg:h-[227px] flex flex-col justify-start items-center gap-6 lg:gap-10 mt-4">
                             <div className="text-center text-black lg:text-4xl w-full">
@@ -121,7 +140,7 @@ export default function CardChoicePage(props: ICardChoicePageProps) {
 
                             <div
                                 className="w-[176px] h-[50px] lg:w-[200px] lg:h-[76px] border-2 text-xs lg:text-xl border-[#269E45] rounded-full text-center leading-[56px] flex flex-row justify-center gap-2 items-center mt-8 cursor-pointer"
-                                onClick={checkResult}>
+                                onClick={shuffleCard}>
                                 <img src="/check.svg" alt="" />
                                 확인
                             </div>
