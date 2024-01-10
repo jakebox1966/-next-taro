@@ -1,9 +1,11 @@
 'use client'
 import Image from 'next/image'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 
 export default function Home() {
+    const pathname = usePathname()
     const [isMobile, setIsMobile] = useState(false)
 
     const handleResize = () => {
@@ -11,6 +13,15 @@ export default function Home() {
             setIsMobile(false)
         } else {
             setIsMobile(true)
+        }
+    }
+
+    const copyClipboard = async () => {
+        try {
+            await navigator.clipboard.writeText(`${process.env.NEXT_PUBLIC_HOST_URL}${pathname}`)
+            alert('클립보드에 링크가 복사되었어요.')
+        } catch (err) {
+            console.log(err)
         }
     }
 
@@ -57,7 +68,9 @@ export default function Home() {
                                 </div>
                             </Link>
 
-                            <div className="w-full border-2 text-xs lg:text-2xl border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[72px] flex flex-row justify-center gap-4 items-center">
+                            <div
+                                className="w-full border-2 text-xs lg:text-2xl border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[72px] flex flex-row justify-center gap-4 items-center cursor-pointer"
+                                onClick={copyClipboard}>
                                 <img src="/saza.svg" alt="" />
                                 타로점 공유하기
                             </div>
@@ -69,6 +82,12 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
+                {/* <a href="https://hits.seeyoufarm.com">
+                    <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Ftarot.quadhash.kr&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" />
+                </a> */}
+                <a href="https://hits.seeyoufarm.com">
+                    <img src="https://hits.seeyoufarm.com/api/count/keep/badge.svg?url=https%3A%2F%2Ftarot.quadhash.kr&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" />
+                </a>
 
                 <div className="flex flex-col justify-start items-center w-[298px] lg:w-[815px] y-[650px] lg:y-[185px] gap-6 mt-8 lg:mt-16">
                     <div className="w-[234px] h-[56px] lg:w-full text-center leading-[56px] text-black lg:text-4xl">

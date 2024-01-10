@@ -35,4 +35,8 @@
         transform: scale(2.1);
         transform-origin: 99% 99%;
     }
+
+    .shadow {
+        box-shadow: 5px 5px !important;
+    }
 }
