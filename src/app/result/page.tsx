@@ -3,10 +3,29 @@
 import Link from 'next/link'
 import * as React from 'react'
 import { CardListModal } from '../components/CardListModal'
+import { usePathname, useSearchParams } from 'next/navigation'
 
 export interface IResultPageProps {}
 
+const cardDatas = [
+    {
+        imageUrl: '/thelover.svg',
+        title: 'THE LOVERS',
+        top_desc:
+            '2024년에는 진정한 사랑과 동반자와의 깊은 연결이 강조돼. 새로운 사랑의 시작이나 기존의 관계에서 뜻밖의 결실이 기다리고 있을 거야.',
+        bottom_desc:
+            '간혹 의견 충돌로 인한 다툼이 생긴다면 서로에 대한 이해와 대화를 통해 문제를 해결하는 게 중요해.',
+    },
+    {},
+    {},
+]
+
 export default function ResultPage(props: IResultPageProps) {
+    const pathname = usePathname()
+    const params = useSearchParams()
+
+    const cardname = params.get('cardType')
+
     const [open, setOpen] = React.useState(false)
     const [isMobile, setIsMobile] = React.useState(false)
 
@@ -15,6 +34,15 @@ export default function ResultPage(props: IResultPageProps) {
             setIsMobile(false)
         } else {
             setIsMobile(true)
+        }
+    }
+
+    const copyClipboard = async () => {
+        try {
+            await navigator.clipboard.writeText(`${process.env.NEXT_PUBLIC_HOST_URL}${pathname}`)
+            alert('클립보드에 링크가 복사되었어요.')
+        } catch (err) {
+            console.log(err)
         }
     }
 
@@ -87,12 +115,14 @@ export default function ResultPage(props: IResultPageProps) {
 
                         <div className="text-[#269E45] w-[234px] h-[56px] lg:w-[388px] lg:h-[340px] flex flex-col justify-start items-center gap-6 lg:gap-10 mt-10 lg:mt-20">
                             <div
-                                className="w-full border-2 text-xs lg:text-2xl bg-white border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[72px] flex flex-row justify-center gap-4 items-center"
+                                className="w-full border-2 text-xs lg:text-2xl bg-white border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[72px] flex flex-row justify-center gap-4 items-center cursor-pointer"
                                 onClick={handleOpen}>
                                 <img src="/saza.svg" alt="" />
                                 타로 카드 전체유형보기
                             </div>
-                            <div className="w-full border-2 text-xs lg:text-2xl bg-white border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[72px] flex flex-row justify-center gap-4 items-center">
+                            <div
+                                className="w-full border-2 text-xs lg:text-2xl bg-white border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[72px] flex flex-row justify-center gap-4 items-center cursor-pointer"
+                                onClick={copyClipboard}>
                                 <img src="/saza.svg" alt="" />
                                 타로점 공유하기
                             </div>

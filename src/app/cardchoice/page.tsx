@@ -29,13 +29,16 @@ export default function CardChoicePage(props: ICardChoicePageProps) {
     }
 
     const shuffleCard = () => {
+        if (selectedCard === 0) {
+            alert('카드를 선택해주세요.')
+            return
+        }
         const randomNumber = Math.floor(Math.random() * 6)
-        console.log(randomNumber)
-        console.log(cardPool[randomNumber])
+
         setIsProcessing(true)
         setTimeout(() => {
-            router.push(`/result?${cardPool[randomNumber]}`)
-        }, 4000)
+            router.push(`/result?cardType=${cardPool[randomNumber]}`)
+        }, 5000)
     }
 
     useEffect(() => {
@@ -81,21 +84,27 @@ export default function CardChoicePage(props: ICardChoicePageProps) {
                             />
                         </div>
 
-                        <div className="w-[234px] h-[56px] lg:w-[450px] lg:h-[302px] flex flex-col justify-start items-center mt-16">
-                            <div className="w-full text-center text-black lg:text-4xl invisible">
-                                당신의 이름을 알려주세요.
-                            </div>
+                        <div className={`${isProcessing ? 'opacity-1' : 'opacity-0'} fade`}>
+                            <MoonLoader color={'#057A24'} />
+                        </div>
 
-                            <div className="w-[250px] lg:w-[638px] h-[52px] lg:h-[154px] flex flex-col justify-start items-center gap-6 lg:gap-2 mt-12 lg:mt-10">
+                        <div className="w-[234px] h-[56px] lg:w-[450px] lg:h-[302px] flex flex-col justify-start items-center">
+                            <div className="w-[250px] lg:w-[638px] h-[52px] lg:h-[154px] flex flex-col justify-start items-center gap-6 lg:gap-2 mt-12 lg:mt-24">
                                 <div className="text-center text-black lg:text-4xl w-full">
-                                    <div>당신에게 찾아올 행운을</div>
-                                    <div className="w-full">떠올리며 카드를 한장 골라주세요.</div>
+                                    <div>
+                                        {!isProcessing ? '당신에게 찾아올 행운을' : '2024년 나에게'}
+                                    </div>
+                                    <div className="w-full">
+                                        {!isProcessing
+                                            ? '떠올리며 카드를 한장 골라주세요.'
+                                            : '다가올 행운 해석 중...'}
+                                    </div>
                                 </div>
                             </div>
 
                             {!isProcessing ? (
                                 <div
-                                    className="w-[176px] h-[50px] lg:w-[200px] lg:h-[76px] border-2 text-xs lg:text-xl border-[#269E45] rounded-full text-center leading-[56px] flex flex-row justify-center mt-10 gap-2 items-center cursor-pointer"
+                                    className="w-[176px] h-[50px] lg:w-[200px] lg:h-[76px] border-2 text-xs lg:text-xl border-[#269E45] rounded-full text-center leading-[56px] flex flex-row justify-center mt-6 gap-2 items-center cursor-pointer"
                                     onClick={shuffleCard}>
                                     <img src="/check.svg" alt="" />
                                     확인
@@ -109,11 +118,13 @@ export default function CardChoicePage(props: ICardChoicePageProps) {
                             <div
                                 className={`${
                                     isProcessing ? 'opacity-0' : 'opacity-1'
-                                } w-[212px] lg:w-[614px] h-[323px] lg:h-[929px] flex flex-row flex-wrap gap-2 fade`}
+                                } w-[220px] lg:w-[614px] h-auto lg:h-[929px] flex flex-row justify-center items-center flex-wrap gap-3 fade`}
                                 ref={clickMenuRef}>
                                 <div
-                                    className={`card ${
-                                        selectedCard !== 1 ? 'hover:select_card1' : 'select_card1'
+                                    className={`card cursor-pointer ${
+                                        selectedCard !== 1
+                                            ? 'hover:select_card1'
+                                            : 'select_card1 border-2 border-[#269E45] shadow-2xl'
                                     }`}
                                     onClick={() => {
                                         setSelectedCard(1)
@@ -124,8 +135,10 @@ export default function CardChoicePage(props: ICardChoicePageProps) {
                                     />
                                 </div>
                                 <div
-                                    className={`card ${
-                                        selectedCard !== 2 ? 'hover:select_card2' : 'select_card2'
+                                    className={`card cursor-pointer ${
+                                        selectedCard !== 2
+                                            ? 'hover:select_card2'
+                                            : 'select_card2 border-2 border-[#269E45] shadow-2x'
                                     }`}
                                     onClick={() => {
                                         setSelectedCard(2)
@@ -136,8 +149,10 @@ export default function CardChoicePage(props: ICardChoicePageProps) {
                                     />
                                 </div>
                                 <div
-                                    className={`card ${
-                                        selectedCard !== 3 ? 'hover:select_card3' : 'select_card3'
+                                    className={`card cursor-pointer ${
+                                        selectedCard !== 3
+                                            ? 'hover:select_card3'
+                                            : 'select_card3 border-2 border-[#269E45] shadow-2x'
                                     }`}
                                     onClick={() => {
                                         setSelectedCard(3)
@@ -148,8 +163,10 @@ export default function CardChoicePage(props: ICardChoicePageProps) {
                                     />
                                 </div>
                                 <div
-                                    className={`card ${
-                                        selectedCard !== 4 ? 'hover:select_card4' : 'select_card4'
+                                    className={`card cursor-pointer ${
+                                        selectedCard !== 4
+                                            ? 'hover:select_card4'
+                                            : 'select_card4 border-2 border-[#269E45] shadow-2x'
                                     }`}
                                     onClick={() => {
                                         setSelectedCard(4)
