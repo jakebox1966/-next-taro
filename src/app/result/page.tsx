@@ -128,20 +128,28 @@ export default function ResultPage(props: IResultPageProps) {
                         <div className="text-xs text-center">행운의 컬러: Pink</div>
                     </div> */}
 
-                        <div className="text-[#269E45] w-[234px] h-[56px] lg:w-[388px] lg:h-[340px] flex flex-col justify-start items-center gap-6 lg:gap-10 mt-10 lg:mt-20">
-                            <div
-                                className="w-full border-2 text-xs lg:text-2xl bg-white border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[72px] flex flex-row justify-center gap-4 items-center cursor-pointer"
-                                onClick={handleOpen}>
-                                <img src="/saza.svg" alt="" />
-                                타로 카드 전체유형보기
+                        <div className="text-[#269E45] w-[234px] h-[56px] lg:w-[888px] lg:h-[340px] flex flex-col justify-start items-center gap-6 lg:gap-10 mt-10 lg:mt-20">
+                            <div className="w-full flex flex-col lg:flex-row gap-4">
+                                <div
+                                    className="w-full border-2 text-xs lg:text-xl bg-white border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[72px] flex flex-row justify-center gap-4 items-center cursor-pointer"
+                                    onClick={handleOpen}>
+                                    <img src="/saza.svg" alt="" />
+                                    타로 카드 전체유형보기
+                                </div>
+                                <div
+                                    className="w-full border-2 text-xs lg:text-xl bg-white border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[72px] flex flex-row justify-center gap-4 items-center cursor-pointer"
+                                    onClick={copyClipboard}>
+                                    <img src="/saza.svg" alt="" />
+                                    타로점 공유하기
+                                </div>
+                                <div
+                                    className="w-full border-2 text-xs lg:text-xl bg-white border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[72px] flex flex-row justify-center gap-4 items-center cursor-pointer"
+                                    onClick={copyClipboard}>
+                                    <img src="/saza.svg" alt="" />
+                                    타로 결과 저장하기
+                                </div>
                             </div>
-                            <div
-                                className="w-full border-2 text-xs lg:text-2xl bg-white border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[72px] flex flex-row justify-center gap-4 items-center cursor-pointer"
-                                onClick={copyClipboard}>
-                                <img src="/saza.svg" alt="" />
-                                타로점 공유하기
-                            </div>
-                            <div className="w-full flex flex-col lg:text-4xl justify-start items-center text-white mt-10">
+                            <div className="w-full flex flex-col lg:text-4xl justify-start items-center text-white mt-10 lg:mt-5">
                                 <div>지금까지</div>
                                 <div>{visitorCount}명이 참여했어요.</div>
                             </div>
