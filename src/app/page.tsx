@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react'
 export default function Home() {
     const pathname = usePathname()
     const [isMobile, setIsMobile] = useState(false)
+    const [visitorCount, setVisitorCount] = useState(0)
 
     const handleResize = () => {
         if (window.innerWidth >= 1024) {
@@ -14,6 +15,19 @@ export default function Home() {
         } else {
             setIsMobile(true)
         }
+    }
+
+    const getVisitorCount = async () => {
+        const result = await fetch('http://localhost:3000/api/test')
+
+        const domParser = new DOMParser()
+
+        const html = await result.text()
+        const svg = domParser.parseFromString(html, 'text/xml')
+
+        const visitorCount = svg.childNodes[0].childNodes[7].childNodes[7].textContent
+
+        setVisitorCount(visitorCount?.split('/')[1] as unknown as number)
     }
 
     const copyClipboard = async () => {
@@ -30,6 +44,7 @@ export default function Home() {
     }, [isMobile])
 
     useEffect(() => {
+        getVisitorCount()
         const initData = window.innerWidth
         setIsMobile(initData < 1024 ? true : false)
         window.addEventListener('resize', handleResize)
@@ -42,13 +57,13 @@ export default function Home() {
     return (
         <>
             <div className="flex flex-col justify-start items-center py-8 w-full text-[#01671C] font-black">
-                <div className="w-[358px] lg:w-[1422px] y-[789px] lg:y-[1990px] relative">
+                <div className="w-[358px] lg:w-[1000px] y-[789px] lg:y-[1990px] relative">
                     <img
                         className="w-full"
                         src={`${isMobile ? '/main_frame.svg' : '/main_frame_desktop.svg'}`}
                         alt=""
                     />
-                    <div className="flex flex-col justify-start items-center w-[298px] lg:w-[1091px] y-[650px] lg:y-[1757px] absolute top-0 lg:top-8 left-1/2 -translate-x-1/2 translate-y-16 gap-6">
+                    <div className="flex flex-col justify-start items-center w-[298px] lg:w-[591px] y-[650px] lg:y-[1757px] absolute top-0 lg:top-8 left-1/2 -translate-x-1/2 translate-y-16 gap-6">
                         <img
                             src={`${isMobile ? '/main_title.svg' : '/main_title_desktop.svg'}`}
                             alt=""
@@ -77,19 +92,13 @@ export default function Home() {
 
                             <div className="w-full flex flex-col lg:text-4xl justify-start items-center text-black mt-10">
                                 <div>지금까지</div>
-                                <div>0,000명이 참여했어요.</div>
+                                <div>{visitorCount}명이 참여했어요.</div>
                             </div>
                         </div>
                     </div>
                 </div>
-                {/* <a href="https://hits.seeyoufarm.com">
-                    <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Ftarot.quadhash.kr&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" />
-                </a> */}
-                <a href="https://hits.seeyoufarm.com">
-                    <img src="https://hits.seeyoufarm.com/api/count/keep/badge.svg?url=https%3A%2F%2Ftarot.quadhash.kr&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" />
-                </a>
 
-                <div className="flex flex-col justify-start items-center w-[298px] lg:w-[815px] y-[650px] lg:y-[185px] gap-6 mt-8 lg:mt-16">
+                <div className="flex flex-col justify-start items-center w-[298px] lg:w-[515px] y-[650px] lg:y-[185px] gap-6 mt-8 lg:mt-16">
                     <div className="w-[234px] h-[56px] lg:w-full text-center leading-[56px] text-black lg:text-4xl">
                         사자와 가자 만나러 가기
                     </div>

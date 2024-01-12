@@ -51,13 +51,13 @@ export default function UsernamePage(props: IUsernamePageProps) {
     return (
         <>
             <div className="flex flex-col justify-start items-center py-8 w-full text-[#01671C] font-black">
-                <div className="w-[358px] lg:w-[1422px] y-[789px] lg:y-[1990px] relative">
+                <div className="w-[358px] lg:w-[1000px] y-[789px] lg:y-[1990px] relative">
                     <img
                         className="w-full"
                         src={`${isMobile ? '/main_frame.svg' : '/main_frame_desktop.svg'}`}
                         alt=""
                     />
-                    <div className="flex flex-col justify-start items-center w-[298px] lg:w-[1091px] y-[650px] lg:y-[1757px] absolute top-0 lg:top-8 left-1/2 -translate-x-1/2 translate-y-16 gap-6">
+                    <div className="flex flex-col justify-start items-center w-[298px] lg:w-[591px] y-[650px] lg:y-[1757px] absolute top-0 lg:top-8 left-1/2 -translate-x-1/2 translate-y-16 gap-6">
                         <img
                             src={`${isMobile ? '/main_title.svg' : '/main_title_desktop.svg'}`}
                             alt=""

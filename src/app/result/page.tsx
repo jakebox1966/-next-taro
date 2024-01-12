@@ -21,6 +21,7 @@ const cardDatas = [
 ]
 
 export default function ResultPage(props: IResultPageProps) {
+    const [visitorCount, setVisitorCount] = React.useState(0)
     const pathname = usePathname()
     const params = useSearchParams()
 
@@ -35,6 +36,19 @@ export default function ResultPage(props: IResultPageProps) {
         } else {
             setIsMobile(true)
         }
+    }
+
+    const getVisitorCount = async () => {
+        const result = await fetch('http://localhost:3000/api/test')
+
+        const domParser = new DOMParser()
+
+        const html = await result.text()
+        const svg = domParser.parseFromString(html, 'text/xml')
+
+        const visitorCount = svg.childNodes[0].childNodes[7].childNodes[7].textContent
+
+        setVisitorCount(visitorCount?.split('/')[1] as unknown as number)
     }
 
     const copyClipboard = async () => {
@@ -53,6 +67,7 @@ export default function ResultPage(props: IResultPageProps) {
     const handleOpen = () => setOpen(!open)
 
     React.useEffect(() => {
+        getVisitorCount()
         const initData = window.innerWidth
         setIsMobile(initData < 1024 ? true : false)
         window.addEventListener('resize', handleResize)
@@ -70,7 +85,7 @@ export default function ResultPage(props: IResultPageProps) {
                         ? 'bg-[url("/main_background_galaxy.jpg")]'
                         : 'bg-[url("/main_background_galaxy_desktop.jpg")]'
                 } flex flex-col justify-start items-center py-8 w-full min-h-screen bg-no-repeat bg-cover text-white font-black`}>
-                <div className="w-[358px] lg:w-[1422px] h-[1127px] lg:h-[2324px] relative">
+                <div className="w-[358px] lg:w-[1000px] h-[1127px] lg:h-[2324px] relative">
                     <img
                         src={`${
                             isMobile
@@ -80,7 +95,7 @@ export default function ResultPage(props: IResultPageProps) {
                         alt=""
                     />
 
-                    <div className="flex flex-col justify-start items-center w-[291px] lg:w-[878px] h-[900px] lg:h-[2110px] absolute top-0 left-1/2 -translate-x-1/2 translate-y-16 gap-3">
+                    <div className="flex flex-col justify-start items-center w-[291px] lg:w-[591px] h-[900px] lg:h-[2110px] absolute top-0 left-1/2 -translate-x-1/2 translate-y-16 gap-3">
                         <img
                             src={`${
                                 isMobile
@@ -91,7 +106,7 @@ export default function ResultPage(props: IResultPageProps) {
                         />
 
                         <img
-                            className="mt-5 lg:w-[560px] lg:h-[869px]"
+                            className="mt-5 lg:w-[560px] lg:h-[569px]"
                             src="/thelover.svg"
                             alt=""
                         />
@@ -128,7 +143,7 @@ export default function ResultPage(props: IResultPageProps) {
                             </div>
                             <div className="w-full flex flex-col lg:text-4xl justify-start items-center text-white mt-10">
                                 <div>지금까지</div>
-                                <div>0,000명이 참여했어요.</div>
+                                <div>{visitorCount}명이 참여했어요.</div>
                             </div>
                         </div>
                     </div>

@@ -20,24 +20,43 @@
        
     }
 
-    .select_card1 {
-        transform: scale(2.2);
-        transform-origin: 0% 0%;
+    .hover_card1{
+        transform: translate(50%, 50%)
     }
 
+    .hover_card2 {
+        transform: translate(-50%, 50%)
+    }
+
+
+    .hover_card3 {
+        transform: translate(50%, -50%)
+    }
+
+
+    .hover_card4 {
+        transform: translate(-50%, -50%)
+    }
+
+
+    .select_card1 {
+        transform: translate(50%, 50%) scale(2.2);
+    
+    }
+    
     .select_card2 {
-        transform: scale(2.2);
-        transform-origin: 100% 0%;
+        transform: translate(-50%, 50%) scale(2.2);
+    
     }
 
     .select_card3 {
-        transform: scale(2.2);
-        transform-origin: 0% 100%;
+        transform: translate(50%, -50%) scale(2.2);
+    
     }
 
     .select_card4 {
-        transform: scale(2.2);
-        transform-origin: 100% 100%;
+        transform: translate(-50%, -50%) scale(2.2);
+    
     }
 
     .shadow {
