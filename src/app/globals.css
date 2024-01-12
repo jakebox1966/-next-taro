@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    @font-face {
+        font-family: "BlackStd";
+        font-weight: 200;
+        src: url("/fonts/CooperBlackStd.otf") format("truetype");
+    }
+    body {
+        font-family: -apple-system, BlackStd, sans-serif;
+    }
+}
+
+
 @layer components {
     .card {
         transition: all 2s ease-out;
@@ -17,10 +29,10 @@
 
     .active_card {
         transform: scale(1.1);
-       
+
     }
 
-    .hover_card1{
+    .hover_card1 {
         transform: translate(50%, 50%)
     }
 
@@ -41,22 +53,22 @@
 
     .select_card1 {
         transform: translate(50%, 50%) scale(2.2);
-    
+
     }
-    
+
     .select_card2 {
         transform: translate(-50%, 50%) scale(2.2);
-    
+
     }
 
     .select_card3 {
         transform: translate(50%, -50%) scale(2.2);
-    
+
     }
 
     .select_card4 {
         transform: translate(-50%, -50%) scale(2.2);
-    
+
     }
 
     .shadow {

@@ -84,8 +84,8 @@ export default function ResultPage(props: IResultPageProps) {
                     isMobile
                         ? 'bg-[url("/main_background_galaxy.jpg")]'
                         : 'bg-[url("/main_background_galaxy_desktop.jpg")]'
-                } flex flex-col justify-start items-center py-8 w-full min-h-screen bg-no-repeat bg-cover text-white font-black`}>
-                <div className="w-[358px] lg:w-[1000px] h-[1127px] lg:h-[2324px] relative">
+                } flex flex-col justify-stretch items-center py-8 w-full min-h-screen h-full bg-no-repeat bg-cover text-white font-black`}>
+                <div className="w-[358px] lg:w-[1000px] relative">
                     <img
                         src={`${
                             isMobile
@@ -95,7 +95,7 @@ export default function ResultPage(props: IResultPageProps) {
                         alt=""
                     />
 
-                    <div className="flex flex-col justify-start items-center w-[291px] lg:w-[591px] h-[900px] lg:h-[2110px] absolute top-0 left-1/2 -translate-x-1/2 translate-y-16 gap-3">
+                    <div className="flex flex-col justify-start items-center w-[291px] lg:w-[591px] h-[900px] absolute top-0 left-1/2 -translate-x-1/2 translate-y-16 gap-3">
                         <img
                             src={`${
                                 isMobile
@@ -122,11 +122,6 @@ export default function ResultPage(props: IResultPageProps) {
                             간혹 의견 충돌로 인한 다툼이 생긴다면 서로에 대한 이해와 대화를 통해
                             문제를 해결하는 게 중요해.
                         </div>
-
-                        {/* <div className="mt-2">
-                        <div className="text-xs text-center">행운의 숫자: 6</div>
-                        <div className="text-xs text-center">행운의 컬러: Pink</div>
-                    </div> */}
 
                         <div className="text-[#269E45] w-[234px] h-[56px] lg:w-[888px] lg:h-[340px] flex flex-col justify-start items-center gap-6 lg:gap-10 mt-10 lg:mt-20">
                             <div className="w-full flex flex-col lg:flex-row gap-4">
