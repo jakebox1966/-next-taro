@@ -4,31 +4,145 @@ import Link from 'next/link'
 import * as React from 'react'
 import { CardListModal } from '../components/CardListModal'
 import { usePathname, useSearchParams } from 'next/navigation'
+import the_star from '../../../public/the_star.gif'
+import the_lovers from '../../../public/the_lovers.gif'
+import the_money from '../../../public/the_money.gif'
+import the_magician from '../../../public/the_magician.gif'
+import the_world from '../../../public/the_world.gif'
+import the_sun from '../../../public/the_sun.gif'
+import the_strength from '../../../public/the_strength.gif'
+import the_chariot from '../../../public/the_chariot.gif'
+import the_emperor from '../../../public/the_emperor.gif'
+import the_hermit from '../../../public/the_hermit.gif'
+import ace_of_wands from '../../../public/ace_of_wands.gif'
+import Image, { StaticImageData } from 'next/image'
+import { StaticImport } from 'next/dist/shared/lib/get-img-props'
 
-export interface IResultPageProps {}
+export interface ICard {
+    key: string
+    image: StaticImageData | undefined | string
+    title: string
+    top_desc: string
+    bottom_desc: string
+}
 
-const cardDatas = [
+const cardList = [
     {
-        imageUrl: '/thelover.svg',
+        key: 'the_star',
+        image: the_star,
+        title: 'THE STAR',
+        top_desc:
+            '2024년에는 진정한 사랑과 동반자와의 깊은 연결이 강조돼. 새로운 사랑의 시작이나 기존의 관계에서 뜻밖의 결실이 기다리고 있을 거야.',
+        bottom_desc:
+            '간혹 의견 충돌로 인한 다툼이 생긴다면 서로에 대한 이해와 대화를 통해 문제를 해결하는 게 중요해.',
+    },
+    {
+        key: 'the_lovers',
+        image: the_lovers,
         title: 'THE LOVERS',
         top_desc:
             '2024년에는 진정한 사랑과 동반자와의 깊은 연결이 강조돼. 새로운 사랑의 시작이나 기존의 관계에서 뜻밖의 결실이 기다리고 있을 거야.',
         bottom_desc:
             '간혹 의견 충돌로 인한 다툼이 생긴다면 서로에 대한 이해와 대화를 통해 문제를 해결하는 게 중요해.',
     },
-    {},
-    {},
+    {
+        key: 'the_money',
+        image: the_money,
+        title: 'THE MONEY',
+        top_desc:
+            '2024년에는 진정한 사랑과 동반자와의 깊은 연결이 강조돼. 새로운 사랑의 시작이나 기존의 관계에서 뜻밖의 결실이 기다리고 있을 거야.',
+        bottom_desc:
+            '간혹 의견 충돌로 인한 다툼이 생긴다면 서로에 대한 이해와 대화를 통해 문제를 해결하는 게 중요해.',
+    },
+    {
+        key: 'the_magician',
+        image: the_magician,
+        title: 'THE MAGICIAN',
+        top_desc:
+            '2024년에는 진정한 사랑과 동반자와의 깊은 연결이 강조돼. 새로운 사랑의 시작이나 기존의 관계에서 뜻밖의 결실이 기다리고 있을 거야.',
+        bottom_desc:
+            '간혹 의견 충돌로 인한 다툼이 생긴다면 서로에 대한 이해와 대화를 통해 문제를 해결하는 게 중요해.',
+    },
+    {
+        key: 'the_world',
+        image: the_world,
+        title: 'THE WORLD',
+        top_desc:
+            '2024년에는 진정한 사랑과 동반자와의 깊은 연결이 강조돼. 새로운 사랑의 시작이나 기존의 관계에서 뜻밖의 결실이 기다리고 있을 거야.',
+        bottom_desc:
+            '간혹 의견 충돌로 인한 다툼이 생긴다면 서로에 대한 이해와 대화를 통해 문제를 해결하는 게 중요해.',
+    },
+    {
+        key: 'the_sun',
+        image: the_sun,
+        title: 'THE SUN',
+        top_desc:
+            '2024년에는 진정한 사랑과 동반자와의 깊은 연결이 강조돼. 새로운 사랑의 시작이나 기존의 관계에서 뜻밖의 결실이 기다리고 있을 거야.',
+        bottom_desc:
+            '간혹 의견 충돌로 인한 다툼이 생긴다면 서로에 대한 이해와 대화를 통해 문제를 해결하는 게 중요해.',
+    },
+    {
+        key: 'the_strength',
+        image: the_strength,
+        title: 'THE STRENGTH',
+        top_desc:
+            '2024년에는 진정한 사랑과 동반자와의 깊은 연결이 강조돼. 새로운 사랑의 시작이나 기존의 관계에서 뜻밖의 결실이 기다리고 있을 거야.',
+        bottom_desc:
+            '간혹 의견 충돌로 인한 다툼이 생긴다면 서로에 대한 이해와 대화를 통해 문제를 해결하는 게 중요해.',
+    },
+    {
+        key: 'the_chariot',
+        image: the_chariot,
+        title: 'THE CHARIOT',
+        top_desc:
+            '2024년에는 진정한 사랑과 동반자와의 깊은 연결이 강조돼. 새로운 사랑의 시작이나 기존의 관계에서 뜻밖의 결실이 기다리고 있을 거야.',
+        bottom_desc:
+            '간혹 의견 충돌로 인한 다툼이 생긴다면 서로에 대한 이해와 대화를 통해 문제를 해결하는 게 중요해.',
+    },
+    {
+        key: 'the_emperor',
+        image: the_emperor,
+        title: 'THE EMPEROR ',
+        top_desc:
+            '2024년에는 진정한 사랑과 동반자와의 깊은 연결이 강조돼. 새로운 사랑의 시작이나 기존의 관계에서 뜻밖의 결실이 기다리고 있을 거야.',
+        bottom_desc:
+            '간혹 의견 충돌로 인한 다툼이 생긴다면 서로에 대한 이해와 대화를 통해 문제를 해결하는 게 중요해.',
+    },
+    {
+        key: 'the_hermit',
+        image: the_hermit,
+        title: 'THE HERMIT',
+        top_desc:
+            '2024년에는 진정한 사랑과 동반자와의 깊은 연결이 강조돼. 새로운 사랑의 시작이나 기존의 관계에서 뜻밖의 결실이 기다리고 있을 거야.',
+        bottom_desc:
+            '간혹 의견 충돌로 인한 다툼이 생긴다면 서로에 대한 이해와 대화를 통해 문제를 해결하는 게 중요해.',
+    },
+    {
+        key: 'ace_of_wands',
+        image: ace_of_wands,
+        title: 'ACE OF WANDS',
+        top_desc:
+            '2024년에는 진정한 사랑과 동반자와의 깊은 연결이 강조돼. 새로운 사랑의 시작이나 기존의 관계에서 뜻밖의 결실이 기다리고 있을 거야.',
+        bottom_desc:
+            '간혹 의견 충돌로 인한 다툼이 생긴다면 서로에 대한 이해와 대화를 통해 문제를 해결하는 게 중요해.',
+    },
 ]
 
-export default function ResultPage(props: IResultPageProps) {
+export default function ResultPage() {
     const [visitorCount, setVisitorCount] = React.useState(0)
     const pathname = usePathname()
     const params = useSearchParams()
 
-    const cardname = params.get('cardType')
+    const cardname = params.get('card_type')
 
     const [open, setOpen] = React.useState(false)
     const [isMobile, setIsMobile] = React.useState(false)
+    const [selectedCard, setSelectedCard] = React.useState<ICard | null>(null)
+
+    React.useEffect(() => {
+        const card = cardList.find((item) => item.key === cardname)
+        setSelectedCard(card as ICard)
+    }, [cardname])
 
     const handleResize = () => {
         if (window && window.innerWidth >= 1024) {
@@ -105,11 +219,21 @@ export default function ResultPage(props: IResultPageProps) {
                             alt=""
                         />
 
-                        <img
-                            className="mt-5 lg:w-[560px] lg:h-[569px]"
-                            src="/thelover.svg"
+                        <div className="mt-5 w-[201px] h-auto lg:w-[360px] lg:h-auto">
+                            <Image
+                                src={selectedCard?.image as StaticImageData}
+                                width={0}
+                                height={0}
+                                sizes="100vw"
+                                alt=""
+                                // loader={selectedCard?.image}
+                            />
+                        </div>
+                        {/* <img
+                            className="mt-5 w-[201px] h-[311px] lg:w-[360px] lg:h-auto"
+                            src="/the_lovers.gif"
                             alt=""
-                        />
+                        /> */}
 
                         <div className="text-4xl lg:text-6xl mt-5 lg:mt-10">THE LOVERS</div>
 
@@ -123,28 +247,28 @@ export default function ResultPage(props: IResultPageProps) {
                             문제를 해결하는 게 중요해.
                         </div>
 
-                        <div className="text-[#269E45] w-[234px] h-[56px] lg:w-[888px] lg:h-[340px] flex flex-col justify-start items-center gap-6 lg:gap-10 mt-10 lg:mt-20">
+                        <div className="text-[#269E45] w-[234px] h-[56px] lg:w-[888px] lg:h-[340px] flex flex-col justify-start items-center gap-6 lg:gap-10 mt-10 lg:mt-10">
                             <div className="w-full flex flex-col lg:flex-row gap-4">
                                 <div
-                                    className="w-full border-2 text-xs lg:text-xl bg-white border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[72px] flex flex-row justify-center gap-4 items-center cursor-pointer"
+                                    className="w-full border-2 text-xs lg:text-xl bg-white border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[62px] flex flex-row justify-center gap-4 items-center cursor-pointer"
                                     onClick={handleOpen}>
                                     <img src="/saza.svg" alt="" />
                                     타로 카드 전체유형보기
                                 </div>
                                 <div
-                                    className="w-full border-2 text-xs lg:text-xl bg-white border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[72px] flex flex-row justify-center gap-4 items-center cursor-pointer"
+                                    className="w-full border-2 text-xs lg:text-xl bg-white border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[62px] flex flex-row justify-center gap-4 items-center cursor-pointer"
                                     onClick={copyClipboard}>
                                     <img src="/saza.svg" alt="" />
                                     타로점 공유하기
                                 </div>
                                 <div
-                                    className="w-full border-2 text-xs lg:text-xl bg-white border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[72px] flex flex-row justify-center gap-4 items-center cursor-pointer"
+                                    className="w-full border-2 text-xs lg:text-xl bg-white border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[62px] flex flex-row justify-center gap-4 items-center cursor-pointer"
                                     onClick={copyClipboard}>
                                     <img src="/saza.svg" alt="" />
                                     타로 결과 저장하기
                                 </div>
                             </div>
-                            <div className="w-full flex flex-col lg:text-4xl justify-start items-center text-white mt-10 lg:mt-5">
+                            <div className="w-full flex flex-col lg:text-4xl justify-start items-center text-white">
                                 <div>지금까지</div>
                                 <div>{visitorCount}명이 참여했어요.</div>
                             </div>

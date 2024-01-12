@@ -3,10 +3,36 @@ import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
 import Image from 'next/image'
 
+import the_star from '../../../public/the_star.gif'
+import the_lovers from '../../../public/the_lovers.gif'
+import the_money from '../../../public/the_money.gif'
+import the_magician from '../../../public/the_magician.gif'
+import the_world from '../../../public/the_world.gif'
+import the_sun from '../../../public/the_sun.gif'
+import the_strength from '../../../public/the_strength.gif'
+import the_chariot from '../../../public/the_chariot.gif'
+import the_emperor from '../../../public/the_emperor.gif'
+import the_hermit from '../../../public/the_hermit.gif'
+import ace_of_wands from '../../../public/ace_of_wands.gif'
+
 export interface ICardListModalProps {
     open: boolean
     handleOpen: () => void
 }
+
+const imageList = [
+    the_star,
+    the_lovers,
+    the_money,
+    the_magician,
+    the_world,
+    the_sun,
+    the_strength,
+    the_chariot,
+    the_emperor,
+    the_hermit,
+    ace_of_wands,
+]
 
 export function CardListModal({ open, handleOpen }: ICardListModalProps) {
     return (
@@ -49,91 +75,21 @@ export function CardListModal({ open, handleOpen }: ICardListModalProps) {
                                             </div>
                                         </div>
                                     </Dialog.Title>
-                                    <div className="flex flex-row justify-center items-center flex-wrap w-full gap-5 mt-6">
-                                        <Image
-                                            className="w-[calc(30%-5px)]"
-                                            src="thelover.svg"
-                                            width={99}
-                                            height={152}
-                                            alt={''}
-                                        />
-                                        <Image
-                                            className="w-[calc(30%-5px)]"
-                                            src="thelover.svg"
-                                            width={99}
-                                            height={152}
-                                            alt={''}
-                                        />
-                                        <Image
-                                            className="w-[calc(30%-5px)]"
-                                            src="thelover.svg"
-                                            width={99}
-                                            height={152}
-                                            alt={''}
-                                        />
-                                        <Image
-                                            className="w-[calc(30%-5px)]"
-                                            src="thelover.svg"
-                                            width={99}
-                                            height={152}
-                                            alt={''}
-                                        />
-                                        <Image
-                                            className="w-[calc(30%-5px)]"
-                                            src="thelover.svg"
-                                            width={99}
-                                            height={152}
-                                            alt={''}
-                                        />
-                                        <Image
-                                            className="w-[calc(30%-5px)]"
-                                            src="thelover.svg"
-                                            width={99}
-                                            height={152}
-                                            alt={''}
-                                        />
-                                        <Image
-                                            className="w-[calc(30%-5px)]"
-                                            src="thelover.svg"
-                                            width={99}
-                                            height={152}
-                                            alt={''}
-                                        />
-                                        <Image
-                                            className="w-[calc(30%-5px)]"
-                                            src="thelover.svg"
-                                            width={99}
-                                            height={152}
-                                            alt={''}
-                                        />
-                                        <Image
-                                            className="w-[calc(30%-5px)]"
-                                            src="thelover.svg"
-                                            width={99}
-                                            height={152}
-                                            alt={''}
-                                        />
-                                        <Image
-                                            className="w-[calc(30%-5px)]"
-                                            src="thelover.svg"
-                                            width={99}
-                                            height={152}
-                                            alt={''}
-                                        />
-                                        <Image
-                                            className="w-[calc(30%-5px)]"
-                                            src="thelover.svg"
-                                            width={99}
-                                            height={152}
-                                            alt={''}
-                                        />
-                                        <Image
-                                            className="w-[calc(30%-5px)]"
-                                            src="thelover.svg"
-                                            width={99}
-                                            height={152}
-                                            alt={''}
-                                        />
+                                    <div className="flex flex-row justify-center items-center flex-wrap gap-5 mt-6">
+                                        {imageList.map((item, index) => (
+                                            <>
+                                                <div key={index} className="w-[calc(30%-5px)]">
+                                                    <Image
+                                                        // src={`/${item}.gif`}
+                                                        src={item}
+                                                        width={0}
+                                                        height={0}
+                                                        sizes="100vw"
+                                                        alt={''}
+                                                    />
+                                                </div>
+                                            </>
+                                        ))}
                                     </div>
                                 </Dialog.Panel>
                             </Transition.Child>

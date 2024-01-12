@@ -8,10 +8,21 @@ import MoonLoader from 'react-spinners/MoonLoader'
 
 export interface ICardChoicePageProps {}
 
-const cardPool = ['thestar', 'thelover', 'thesun', 'themoney', 'theworld', 'thehermit']
+const cardPool = [
+    'the_star',
+    'the_lovers',
+    'the_money',
+    'the_magician',
+    'the_world',
+    'the_sun',
+    'the_strength',
+    'the_chariot',
+    'the_emperor',
+    'the_hermit',
+    'ace_of_wands',
+]
 
 export default function CardChoicePage(props: ICardChoicePageProps) {
-    const [visitorCount, setVisitorCount] = useState(0)
     const router = useRouter()
     const [selectedCard, setSelectedCard] = useState(0)
 
@@ -38,7 +49,7 @@ export default function CardChoicePage(props: ICardChoicePageProps) {
 
         setIsProcessing(true)
         setTimeout(() => {
-            router.push(`/result?card_typ=${cardPool[randomNumber]}`)
+            router.push(`/result?card_type=${cardPool[randomNumber]}`)
         }, 5000)
     }
 
