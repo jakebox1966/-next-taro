@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
 import MoonLoader from 'react-spinners/MoonLoader'
+import mainImage from '../../../public/main_image.gif'
 
 export interface ICardChoicePageProps {}
 
@@ -89,19 +90,28 @@ export default function CardChoicePage(props: ICardChoicePageProps) {
                             alt=""
                         />
 
-                        <div className={`${isProcessing ? 'opacity-1' : 'opacity-0'} fade`}>
+                        {/* <div className={`${isProcessing ? 'opacity-1' : 'opacity-0'} fade`}>
                             <img
                                 src={`${isMobile ? '/main_image.svg' : '/main_image_desktop.svg'}`}
                                 alt=""
                             />
+                        </div> */}
+                        <div
+                            className={`${
+                                isProcessing ? 'opacity-1' : 'opacity-0'
+                            } fade w-[300px] h-auto lg:w-[750px] lg:h-auto absolute z-[-9999] top-[-50px] lg:top-[-130px]`}>
+                            <Image src={mainImage} width={0} height={0} sizes="100vw" alt="" />
                         </div>
 
-                        <div className={`${isProcessing ? 'opacity-1' : 'opacity-0'} fade`}>
+                        <div
+                            className={`${
+                                isProcessing ? 'opacity-1' : 'opacity-0'
+                            } fade mt-72 lg:mt-[36rem]`}>
                             <MoonLoader color={'#057A24'} />
                         </div>
 
                         <div className="w-[234px] h-[56px] lg:w-[450px] lg:h-[302px] flex flex-col justify-start items-center">
-                            <div className="w-[250px] lg:w-[638px] h-[52px] lg:h-[154px] flex flex-col justify-start items-center gap-6 lg:gap-2 mt-12 lg:mt-28">
+                            <div className="w-[250px] lg:w-[638px] h-[52px] lg:h-[154px] flex flex-col justify-start items-center gap-6 lg:gap-2 ">
                                 <div className="text-center text-black lg:text-4xl w-full">
                                     <div>
                                         {!isProcessing ? '당신에게 찾아올 행운을' : '2024년 나에게'}
@@ -126,7 +136,7 @@ export default function CardChoicePage(props: ICardChoicePageProps) {
                             )}
                         </div>
 
-                        <div className="absolute top-[28%]">
+                        <div className="absolute top-[25%]">
                             <div
                                 className={`${
                                     isProcessing ? 'opacity-0' : 'opacity-1'

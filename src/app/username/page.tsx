@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
+import mainImage from '../../../public/main_image.gif'
 
 export interface IUsernamePageProps {}
 
@@ -62,14 +63,11 @@ export default function UsernamePage(props: IUsernamePageProps) {
                             src={`${isMobile ? '/main_title.svg' : '/main_title_desktop.svg'}`}
                             alt=""
                         />
-                        <div>
-                            <img
-                                src={`${isMobile ? '/main_image.svg' : '/main_image_desktop.svg'}`}
-                                alt=""
-                            />
+                        <div className="w-[300px] h-auto lg:w-[750px] lg:h-auto absolute z-[-9999] top-[-50px] lg:top-[-130px]">
+                            <Image src={mainImage} width={0} height={0} sizes="100vw" alt="" />
                         </div>
 
-                        <div className="w-[234px] h-[56px] lg:w-[450px] lg:h-[302px] flex flex-col justify-start items-center gap-6 lg:gap-10 mt-16">
+                        <div className="w-[234px] h-[56px] lg:w-[450px] lg:h-[302px] flex flex-col justify-start items-center gap-6 lg:gap-10 mt-72 lg:mt-[36rem]">
                             <div className="w-full text-center text-black lg:text-4xl">
                                 당신의 이름을 알려주세요.
                             </div>

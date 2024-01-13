@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
+import mainImage from '../../public/main_image.gif'
 
 export default function Home() {
     const pathname = usePathname()
@@ -68,14 +69,11 @@ export default function Home() {
                             src={`${isMobile ? '/main_title.svg' : '/main_title_desktop.svg'}`}
                             alt=""
                         />
-                        <div>
-                            <img
-                                src={`${isMobile ? '/main_image.svg' : '/main_image_desktop.svg'}`}
-                                alt=""
-                            />
+                        <div className="w-[300px] h-auto lg:w-[750px] lg:h-auto absolute z-[-9999] top-[-50px] lg:top-[-130px]">
+                            <Image src={mainImage} width={0} height={0} sizes="100vw" alt="" />
                         </div>
 
-                        <div className="w-[234px] h-[56px] lg:w-[388px] lg:h-[340px] flex flex-col justify-start items-center gap-6 lg:gap-10 mt-10 lg:mt-20">
+                        <div className="w-[234px] h-[56px] lg:w-[388px] lg:h-[340px] flex flex-col justify-start items-center gap-6 lg:gap-10 mt-72 lg:mt-[36rem]">
                             <Link className="w-full" href={'/username'}>
                                 <div className="border-2 text-xs lg:text-2xl border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[72px] flex flex-row justify-center gap-4 items-center">
                                     <img src="/saza.svg" alt="" />

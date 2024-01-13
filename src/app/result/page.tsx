@@ -226,7 +226,6 @@ export default function ResultPage() {
                                 height={0}
                                 sizes="100vw"
                                 alt=""
-                                // loader={selectedCard?.image}
                             />
                         </div>
                         {/* <img
