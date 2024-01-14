@@ -234,16 +234,16 @@ export default function ResultPage() {
                             alt=""
                         /> */}
 
-                        <div className="text-4xl lg:text-6xl mt-5 lg:mt-10">THE LOVERS</div>
+                        <div className="text-4xl lg:text-6xl mt-5 lg:mt-10">
+                            {selectedCard?.title}
+                        </div>
 
                         <div className="text-xs lg:text-2xl mt-4 lg:mt-10 text-center">
-                            2024년에는 진정한 사랑과 동반자와의 깊은 연결이 강조돼. 새로운 사랑의
-                            시작이나 기존의 관계에서 뜻밖의 결실이 기다리고 있을 거야.
+                            {selectedCard?.top_desc}
                         </div>
 
                         <div className="text-xs lg:text-2xl mt-2 text-center">
-                            간혹 의견 충돌로 인한 다툼이 생긴다면 서로에 대한 이해와 대화를 통해
-                            문제를 해결하는 게 중요해.
+                            {selectedCard?.top_desc}
                         </div>
 
                         <div className="text-[#269E45] w-[234px] h-[56px] lg:w-[888px] lg:h-[340px] flex flex-col justify-start items-center gap-6 lg:gap-10 mt-10 lg:mt-10">
