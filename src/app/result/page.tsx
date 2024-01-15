@@ -174,10 +174,6 @@ export default function ResultPage() {
         }
     }
 
-    React.useEffect(() => {
-        console.log(isMobile)
-    }, [isMobile])
-
     const handleOpen = () => setOpen(!open)
 
     React.useEffect(() => {
@@ -220,13 +216,16 @@ export default function ResultPage() {
                         />
 
                         <div className="mt-5 w-[201px] h-auto lg:w-[360px] lg:h-auto">
-                            <Image
-                                src={selectedCard?.image as StaticImageData}
-                                width={0}
-                                height={0}
-                                sizes="100vw"
-                                alt=""
-                            />
+                            {selectedCard && (
+                                <Image
+                                    src={selectedCard?.image as StaticImageData}
+                                    width={0}
+                                    height={0}
+                                    priority={true}
+                                    sizes="100vw"
+                                    alt=""
+                                />
+                            )}
                         </div>
                         {/* <img
                             className="mt-5 w-[201px] h-[311px] lg:w-[360px] lg:h-auto"

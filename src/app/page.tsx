@@ -41,10 +41,6 @@ export default function Home() {
     }
 
     useEffect(() => {
-        console.log(isMobile)
-    }, [isMobile])
-
-    useEffect(() => {
         getVisitorCount()
         const initData = window.innerWidth
         setIsMobile(initData < 1024 ? true : false)

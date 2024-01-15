@@ -77,18 +77,18 @@ export function CardListModal({ open, handleOpen }: ICardListModalProps) {
                                     </Dialog.Title>
                                     <div className="flex flex-row justify-center items-center flex-wrap gap-5 mt-6">
                                         {imageList.map((item, index) => (
-                                            <>
-                                                <div key={index} className="w-[calc(30%-5px)]">
-                                                    <Image
-                                                        // src={`/${item}.gif`}
-                                                        src={item}
-                                                        width={0}
-                                                        height={0}
-                                                        sizes="100vw"
-                                                        alt={''}
-                                                    />
-                                                </div>
-                                            </>
+                                            <div
+                                                key={`${index}_${item.src}`}
+                                                className="w-[calc(30%-5px)]">
+                                                <Image
+                                                    // src={`/${item}.gif`}
+                                                    src={item}
+                                                    width={0}
+                                                    height={0}
+                                                    sizes="100vw"
+                                                    alt={''}
+                                                />
+                                            </div>
                                         ))}
                                     </div>
                                 </Dialog.Panel>
