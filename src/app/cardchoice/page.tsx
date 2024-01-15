@@ -46,12 +46,12 @@ export default function CardChoicePage(props: ICardChoicePageProps) {
             alert('카드를 선택해주세요.')
             return
         }
-        const randomNumber = Math.floor(Math.random() * 6)
+        const randomNumber = Math.floor(Math.random() * 11)
 
         setIsProcessing(true)
         setTimeout(() => {
             router.push(`/result?card_type=${cardPool[randomNumber]}`)
-        }, 5000)
+        }, 3000)
     }
 
     useEffect(() => {

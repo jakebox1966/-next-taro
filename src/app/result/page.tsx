@@ -234,7 +234,7 @@ export default function ResultPage() {
                             alt=""
                         /> */}
 
-                        <div className="text-4xl lg:text-6xl mt-5 lg:mt-10">
+                        <div className="text-2xl lg:text-4xl mt-5 lg:mt-10">
                             {selectedCard?.title}
                         </div>
 
