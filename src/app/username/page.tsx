@@ -69,7 +69,8 @@ export default function UsernamePage(props: IUsernamePageProps) {
 
                         <div className="w-[234px] h-[56px] lg:w-[450px] lg:h-[302px] flex flex-col justify-start items-center gap-6 lg:gap-10 mt-72 lg:mt-[36rem]">
                             <div className="w-full text-center text-black lg:text-4xl">
-                                당신의 이름을 알려주세요.
+                                당신의 <span className="font-[NotoSansKR500]">이름</span>을
+                                알려주세요.
                             </div>
 
                             <div className="w-full text-xs text-center leading-[56px] flex flex-row justify-center gap-2 items-center">
@@ -77,7 +78,7 @@ export default function UsernamePage(props: IUsernamePageProps) {
                                     type="text"
                                     name="username"
                                     onChange={inputHandler}
-                                    className="w-full rounded-full border-2 border-[#269E45] leading-[50px] lg:leading-[75px] px-5 lg:text-2xl"
+                                    className="w-full text-center rounded-full border-2 border-[#269E45] leading-[50px] lg:leading-[75px] px-5 lg:text-2xl"
                                     placeholder="이름을 입력해주세요."
                                 />
                             </div>
@@ -107,7 +108,7 @@ export default function UsernamePage(props: IUsernamePageProps) {
                             </Link>
 
                             <Link href={'https://quadhash.kr/'}>
-                                <div className="w-[234px] lg:w-[388px] h-[56px] lg:h-[85px] border-2 text-xs lg:text-2xl border-[#269E45] rounded-full text-center leading-[56px] flex flex-row justify-center gap-2 items-center">
+                                <div className="w-[234px] lg:w-[388px] h-[56px] lg:h-[85px] border-2 text-xs lg:text-2xl border-[#269E45] rounded-full text-center leading-[56px] flex flex-row justify-center gap-2 items-center font-[NotoSansKR]">
                                     <img src="/saza.svg" alt="" />
                                     사자와 가자 SHOP 바로가기
                                 </div>

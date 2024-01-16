@@ -215,7 +215,7 @@ export default function ResultPage() {
                             alt=""
                         />
 
-                        <div className="mt-5 w-[201px] h-auto lg:w-[360px] lg:h-auto">
+                        <div className="mt-5 w-[201px] h-auto lg:w-[280px] lg:h-auto">
                             {selectedCard && (
                                 <Image
                                     src={selectedCard?.image as StaticImageData}
@@ -248,27 +248,31 @@ export default function ResultPage() {
                         <div className="text-[#269E45] w-[234px] h-[56px] lg:w-[888px] lg:h-[340px] flex flex-col justify-start items-center gap-6 lg:gap-10 mt-10 lg:mt-10">
                             <div className="w-full flex flex-col lg:flex-row gap-4">
                                 <div
-                                    className="w-full border-2 text-xs lg:text-xl bg-white border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[62px] flex flex-row justify-center gap-4 items-center cursor-pointer"
+                                    className="w-full border-2 text-xs lg:text-lg bg-white border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[62px] flex flex-row justify-center gap-4 items-center cursor-pointer"
                                     onClick={handleOpen}>
                                     <img src="/saza.svg" alt="" />
                                     타로 카드 전체유형보기
                                 </div>
                                 <div
-                                    className="w-full border-2 text-xs lg:text-xl bg-white border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[62px] flex flex-row justify-center gap-4 items-center cursor-pointer"
+                                    className="w-full border-2 text-xs lg:text-lg bg-white border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[62px] flex flex-row justify-center gap-4 items-center cursor-pointer"
                                     onClick={copyClipboard}>
                                     <img src="/saza.svg" alt="" />
                                     타로점 공유하기
                                 </div>
-                                <div
-                                    className="w-full border-2 text-xs lg:text-xl bg-white border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[62px] flex flex-row justify-center gap-4 items-center cursor-pointer"
-                                    onClick={copyClipboard}>
+
+                                <a
+                                    className="w-full border-2 text-xs lg:text-lg bg-white border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[62px] flex flex-row justify-center gap-4 items-center cursor-pointer"
+                                    href={`/save_image_${selectedCard?.key}.png`}
+                                    download={true}>
                                     <img src="/saza.svg" alt="" />
                                     타로 결과 저장하기
-                                </div>
+                                </a>
                             </div>
-                            <div className="w-full flex flex-col lg:text-4xl justify-start items-center text-white">
-                                <div>지금까지</div>
-                                <div>{visitorCount}명이 참여했어요.</div>
+                            <div className="w-full flex flex-col lg:flex-row lg:text-4xl justify-start lg:justify-center items-center text-white lg:mt-10">
+                                <div>지금까지&ensp;</div>
+                                <div className="font-[NotoSansKR500]">
+                                    {visitorCount} 명이 참여했어요.
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -287,7 +291,7 @@ export default function ResultPage() {
                         </Link>
 
                         <Link href={'https://quadhash.kr/'}>
-                            <div className="w-[234px] lg:w-[388px] h-[60px] lg:h-[85px] border-2 text-xs lg:text-2xl bg-white border-[#269E45] rounded-full text-center leading-[56px] flex flex-row justify-center gap-2 items-center">
+                            <div className="w-[234px] lg:w-[388px] h-[60px] lg:h-[85px] border-2 text-xs lg:text-2xl bg-white border-[#269E45] rounded-full text-center leading-[56px] flex flex-row justify-center gap-2 items-center font-[NotoSansKR]">
                                 <img src="/saza.svg" alt="" />
                                 사자와 가자 SHOP 바로가기
                             </div>
