@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
 import MoonLoader from 'react-spinners/MoonLoader'
 import mainImage from '../../../public/main_image.gif'
+import Loading from '../components/Loading'
 
 export interface ICardChoicePageProps {}
 
@@ -107,7 +108,8 @@ export default function CardChoicePage(props: ICardChoicePageProps) {
                             className={`${
                                 isProcessing ? 'opacity-1' : 'opacity-0'
                             } fade mt-72 lg:mt-[36rem]`}>
-                            <MoonLoader color={'#057A24'} />
+                            {/* <MoonLoader color={'#057A24'} /> */}
+                            <Loading />
                         </div>
 
                         <div className="w-[234px] h-[56px] lg:w-[450px] lg:h-[302px] flex flex-col justify-start items-center">
