@@ -85,151 +85,133 @@ export default function CardChoicePage(props: ICardChoicePageProps) {
                         src={`${isMobile ? '/main_frame.svg' : '/main_frame_desktop.svg'}`}
                         alt=""
                     />
-                    <div className="flex flex-col justify-start items-center w-[298px] lg:w-[591px] y-[650px] lg:y-[1757px] absolute top-0 lg:top-8 left-1/2 -translate-x-1/2 translate-y-16 gap-6">
+                    <div className="flex flex-col justify-start items-center w-[298px] lg:w-[591px] y-[650px] lg:y-[1757px] absolute top-0 lg:top-8 left-1/2 -translate-x-1/2 translate-y-16">
                         <img
                             src={`${isMobile ? '/main_title.svg' : '/main_title_desktop.svg'}`}
                             alt=""
                         />
 
-                        {/* <div className={`${isProcessing ? 'opacity-1' : 'opacity-0'} fade`}>
-                            <img
-                                src={`${isMobile ? '/main_image.svg' : '/main_image_desktop.svg'}`}
-                                alt=""
-                            />
-                        </div> */}
                         <div
                             className={`${
                                 isProcessing ? 'opacity-1' : 'opacity-0'
-                            } fade w-[300px] h-auto lg:w-[750px] lg:h-auto absolute z-[-9999] top-[-50px] lg:top-[-130px]`}>
+                            } fade w-[300px] h-auto lg:w-[750px] lg:h-auto absolute z-[-9999] top-[-30px] lg:top-[-130px]`}>
                             <Image src={mainImage} width={0} height={0} sizes="100vw" alt="" />
-                        </div>
-
-                        <div
-                            className={`${
-                                isProcessing ? 'opacity-1' : 'opacity-0'
-                            } fade mt-72 lg:mt-[36rem]`}>
-                            {/* <MoonLoader color={'#057A24'} /> */}
-                            <Loading />
-                        </div>
-
-                        <div className="w-[234px] h-[56px] lg:w-[450px] lg:h-[302px] flex flex-col justify-start items-center">
-                            <div className="w-[250px] lg:w-[638px] h-[52px] lg:h-[154px] flex flex-col justify-start items-center gap-6 lg:gap-2 ">
-                                <div className="text-center text-black lg:text-4xl w-full">
-                                    <div>
-                                        {!isProcessing ? '당신에게 찾아올 행운을' : '2024년 나에게'}
-                                    </div>
-                                    <div className="w-full">
-                                        {!isProcessing
-                                            ? '떠올리며 카드를 한장 골라주세요.'
-                                            : '다가올 행운 해석 중...'}
-                                    </div>
+                            <div className="flex flex-col justify-center items-center absolute left-1/2 -translate-x-1/2 -translate-y-[100px] lg:-translate-y-[250px]">
+                                <div
+                                    className={`w-[64px] ${
+                                        isProcessing ? 'opacity-1' : 'opacity-0'
+                                    } fade`}>
+                                    <Loading />
+                                </div>
+                                <div className="flex flex-col w-full text-center text-black lg:text-[30px] font-[NotoSansKR400] mt-[39px] lg:mt-[60px]">
+                                    <div>2024년 나에게</div>
+                                    <div>다가올 행운 해석 중...</div>
                                 </div>
                             </div>
-
-                            {!isProcessing ? (
-                                <div
-                                    className="w-[176px] h-[50px] lg:w-[200px] lg:h-[76px] border-2 text-xs lg:text-xl border-[#269E45] rounded-full text-center leading-[56px] flex flex-row justify-center mt-6 gap-2 items-center cursor-pointer"
-                                    onClick={shuffleCard}>
-                                    <img src="/check.svg" alt="" />
-                                    확인
-                                </div>
-                            ) : (
-                                ''
-                            )}
                         </div>
-
-                        <div className="absolute top-[25%]">
+                        <div
+                            className={`${
+                                isProcessing ? 'opacity-0' : 'opacity-1'
+                            } w-[220px] lg:w-[414px] h-auto flex flex-row justify-around items-center flex-wrap gap-3 fade mt-[50px] lg:mt-[16px]`}
+                            ref={clickMenuRef}>
                             <div
                                 className={`${
-                                    isProcessing ? 'opacity-0' : 'opacity-1'
-                                } w-[220px] lg:w-[414px] h-auto  flex flex-row justify-start items-center flex-wrap gap-3 fade`}
-                                ref={clickMenuRef}>
-                                <div
-                                    className={`card cursor-pointer lg:w-[calc(50%-10px)] ${
-                                        selectedCard !== 1
-                                            ? 'hover:hover_card1'
-                                            : 'select_card1 border-2 border-[#269E45] shadow-2xl '
-                                    }`}
-                                    // className="hover:hover_card"
-                                    onClick={() => {
-                                        setSelectedCard(1)
-                                    }}>
-                                    <img
-                                        src={`${isMobile ? '/card.svg' : '/card_desktop.svg'}`}
-                                        alt=""
-                                    />
-                                </div>
-                                <div
-                                    className={`card cursor-pointer lg:w-[calc(50%-10px)] ${
-                                        selectedCard !== 2
-                                            ? 'hover:hover_card2'
-                                            : 'select_card2 border-2 border-[#269E45] shadow-2x'
-                                    }`}
-                                    onClick={() => {
-                                        setSelectedCard(2)
-                                    }}>
-                                    <img
-                                        src={`${isMobile ? '/card.svg' : '/card_desktop.svg'}`}
-                                        alt=""
-                                    />
-                                </div>
-                                <div
-                                    className={`card cursor-pointer lg:w-[calc(50%-10px)] ${
-                                        selectedCard !== 3
-                                            ? 'hover:hover_card3'
-                                            : 'select_card3 border-2 border-[#269E45] shadow-2x'
-                                    }`}
-                                    onClick={() => {
-                                        setSelectedCard(3)
-                                    }}>
-                                    <img
-                                        src={`${isMobile ? '/card.svg' : '/card_desktop.svg'}`}
-                                        alt=""
-                                    />
-                                </div>
-                                <div
-                                    className={`card cursor-pointer lg:w-[calc(50%-10px)] ${
-                                        selectedCard !== 4
-                                            ? 'hover:hover_card4'
-                                            : 'select_card4 border-2 border-[#269E45] shadow-2x'
-                                    }`}
-                                    onClick={() => {
-                                        setSelectedCard(4)
-                                    }}>
-                                    <img
-                                        src={`${isMobile ? '/card.svg' : '/card_desktop.svg'}`}
-                                        alt=""
-                                    />
-                                </div>
+                                    selectedCard === 1 && 'transition-all border-4'
+                                } card cursor-pointer w-[calc(50%-10px)] border-[#269E45] shadow-2xl`}
+                                onClick={() => {
+                                    setSelectedCard(1)
+                                }}>
+                                <img
+                                    src={`${isMobile ? '/card.svg' : '/card_desktop.svg'}`}
+                                    alt=""
+                                />
+                            </div>
+                            <div
+                                className={`${
+                                    selectedCard === 2 && 'transition-all border-4'
+                                } card cursor-pointer w-[calc(50%-10px)] border-[#269E45] shadow-2xl`}
+                                onClick={() => {
+                                    setSelectedCard(2)
+                                }}>
+                                <img
+                                    src={`${isMobile ? '/card.svg' : '/card_desktop.svg'}`}
+                                    alt=""
+                                />
+                            </div>
+                            <div
+                                className={`${
+                                    selectedCard === 3 && 'transition-all border-4'
+                                } card cursor-pointer w-[calc(50%-10px)] border-[#269E45] shadow-2xl`}
+                                onClick={() => {
+                                    setSelectedCard(3)
+                                }}>
+                                <img
+                                    src={`${isMobile ? '/card.svg' : '/card_desktop.svg'}`}
+                                    alt=""
+                                />
+                            </div>
+                            <div
+                                className={`${
+                                    selectedCard === 4 && 'transition-all border-4'
+                                } card cursor-pointer w-[calc(50%-10px)] border-[#269E45] shadow-2xl`}
+                                onClick={() => {
+                                    setSelectedCard(4)
+                                }}>
+                                <img
+                                    src={`${isMobile ? '/card.svg' : '/card_desktop.svg'}`}
+                                    alt=""
+                                />
                             </div>
                         </div>
+                        <div
+                            className={`${
+                                isProcessing ? 'opacity-0' : 'opacity-1'
+                            } w-[234px] h-[56px] lg:w-full flex flex-col justify-start items-center mt-[39px]`}>
+                            <div className="flex flex-col justify-center items-center text-black lg:text-[35px] w-full font-[NotoSansKR400]">
+                                <div>당신에게 찾아올 행운을</div>
+                                <div>
+                                    떠올리며 카드를
+                                    <span className="font-[NotoSansKR400]"> 한장 </span>
+                                    골라주세요.
+                                </div>
+                            </div>
+
+                            <div
+                                className="font-[NotoSansKR400] py-3 w-[176px] lg:w-[200px] border-2 text-xs lg:text-xl border-[#269E45] rounded-full text-center flex flex-row justify-center mt-[32px] gap-2 items-center cursor-pointer"
+                                onClick={shuffleCard}>
+                                <img src="/check.svg" alt="" />
+                                확인
+                            </div>
+                        </div>
+
+                        <div className="absolute top-[22%] lg:top-[27%]"></div>
                     </div>
                 </div>
 
                 {!isMobile && (
-                    <div className="flex flex-col justify-start items-center w-[298px] lg:w-[815px] y-[650px] lg:y-[185px] gap-6 mt-8 lg:mt-16">
-                        <div className="w-[234px] h-[56px] lg:w-full text-center leading-[56px] text-black lg:text-4xl">
-                            사자와 가자 만나러 가기
+                    <div className="flex flex-col justify-start items-center w-[298px] lg:w-[515px] y-[650px] lg:y-[185px] gap-6 mt-8 lg:mt-16">
+                        <div className="font-[NotoSansKR400] w-[234px] h-[56px] lg:w-full text-center leading-[56px] text-black lg:text-4xl">
+                            사자랑가자 만나러 가기
                         </div>
 
                         <div className="flex flex-col lg:flex-row justify-center lg:justify-center items-center lg:items-center gap-6">
                             <Link href={'https://www.instagram.com/saza.gaza/'}>
-                                <div className="w-[234px] lg:w-[388px] h-[56px] lg:h-[85px] border-2 text-xs lg:text-2xl border-[#269E45] rounded-full text-center leading-[56px] flex flex-row justify-center gap-2 items-center">
+                                <div className="font-[NotoSansKR400] w-[234px] lg:w-[388px] h-[56px] lg:h-[85px] border-2 text-xs lg:text-[23px] border-[#269E45] rounded-full text-center leading-[56px] flex flex-row justify-center gap-2 items-center">
                                     <img src="/insta.svg" alt="" />
-                                    사자와 가자 팔로잉하기
+                                    사자랑가자 팔로잉하기
                                 </div>
                             </Link>
 
-                            <Link href={'https://quadhash.kr/'}>
-                                <div className="w-[234px] lg:w-[388px] h-[56px] lg:h-[85px] border-2 text-xs lg:text-2xl border-[#269E45] rounded-full text-center leading-[56px] flex flex-row justify-center gap-2 items-center font-[NotoSansKR]">
+                            <Link href={'https:/sazagaza.co.kr'}>
+                                <div className="font-[NotoSansKR400] w-[234px] lg:w-[388px] h-[56px] lg:h-[85px] border-2 text-xs lg:text-[23px] border-[#269E45] rounded-full text-center leading-[56px] flex flex-row justify-center gap-2 items-center">
                                     <img src="/saza.svg" alt="" />
-                                    사자와 가자 SHOP 바로가기
+                                    사자랑가자 SHOP 바로가기
                                 </div>
                             </Link>
                         </div>
                     </div>
                 )}
-                <div className="text-xs lg:text-2xl mt-7 lg:mt-20">
+                <div className="text-xs lg:text-2xl mt-12 lg:mt-20">
                     ⓒ 2024 Quadhash Corporation. All Rights Reserved.
                 </div>
             </div>

@@ -107,7 +107,7 @@ export default function UsernamePage(props: IUsernamePageProps) {
                                 </div>
                             </Link>
 
-                            <Link href={'https://quadhash.kr/'}>
+                            <Link href={'https:/sazagaza.co.kr'}>
                                 <div className="w-[234px] lg:w-[388px] h-[56px] lg:h-[85px] border-2 text-xs lg:text-2xl border-[#269E45] rounded-full text-center leading-[56px] flex flex-row justify-center gap-2 items-center font-[NotoSansKR]">
                                     <img src="/saza.svg" alt="" />
                                     사자와 가자 SHOP 바로가기

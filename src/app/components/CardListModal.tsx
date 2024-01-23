@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
@@ -14,6 +15,7 @@ import the_chariot from '../../../public/the_chariot.gif'
 import the_emperor from '../../../public/the_emperor.gif'
 import the_hermit from '../../../public/the_hermit.gif'
 import ace_of_wands from '../../../public/ace_of_wands.gif'
+import { useRouter } from 'next/navigation'
 
 export interface ICardListModalProps {
     open: boolean
@@ -21,20 +23,21 @@ export interface ICardListModalProps {
 }
 
 const imageList = [
-    the_star,
-    the_lovers,
-    the_money,
-    the_magician,
-    the_world,
-    the_sun,
-    the_strength,
-    the_chariot,
-    the_emperor,
-    the_hermit,
-    ace_of_wands,
+    { component: the_star, link: 'the_star' },
+    { component: the_lovers, link: 'the_lovers' },
+    { component: the_money, link: 'the_money' },
+    { component: the_magician, link: 'the_magician' },
+    { component: the_world, link: 'the_world' },
+    { component: the_sun, link: 'the_sun' },
+    { component: the_strength, link: 'the_strength' },
+    { component: the_chariot, link: 'the_chariot' },
+    { component: the_emperor, link: 'the_emperor' },
+    { component: the_hermit, link: 'the_hermit' },
+    { component: ace_of_wands, link: 'ace_of_wands' },
 ]
 
 export function CardListModal({ open, handleOpen }: ICardListModalProps) {
+    const router = useRouter()
     return (
         <>
             <Transition appear show={open} as={Fragment}>
@@ -64,9 +67,11 @@ export function CardListModal({ open, handleOpen }: ICardListModalProps) {
                                     <Dialog.Title
                                         as="h3"
                                         className="text-lg font-medium leading-6 text-gray-900">
-                                        <div className="text-right text-2xl">
-                                            <span className="cursor-pointer" onClick={handleOpen}>
-                                                X
+                                        <div className="flex flex-row justify-end text-2xl">
+                                            <span
+                                                className="cursor-pointer text-right w-fulls"
+                                                onClick={handleOpen}>
+                                                <img src="/x-close.svg" alt="" />
                                             </span>
                                         </div>
                                         <div className="w-full flex flex-row justify-center items-center text-lg lg:text-3xl">
@@ -78,11 +83,15 @@ export function CardListModal({ open, handleOpen }: ICardListModalProps) {
                                     <div className="flex flex-row justify-center items-center flex-wrap gap-5 mt-6">
                                         {imageList.map((item, index) => (
                                             <div
-                                                key={`${index}_${item.src}`}
-                                                className="w-[calc(30%-5px)]">
+                                                key={`${index}_${item.component}`}
+                                                className="w-[calc(30%-5px)] cursor-pointer"
+                                                onClick={() => {
+                                                    handleOpen()
+                                                    router.push(`/result?card_type=${item.link}`)
+                                                }}>
                                                 <Image
                                                     // src={`/${item}.gif`}
-                                                    src={item}
+                                                    src={item.component}
                                                     width={0}
                                                     height={0}
                                                     sizes="100vw"

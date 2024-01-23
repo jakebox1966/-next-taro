@@ -231,14 +231,18 @@ export default function ResultPage() {
         }
     }, [])
 
+    React.useEffect(() => {
+        console.log(isMobile)
+    }, [isMobile])
+
     return (
         <>
             <div
                 className={`${
                     isMobile
-                        ? 'bg-[url("/main_background_galaxy.jpg")]'
-                        : 'bg-[url("/main_background_galaxy_desktop.jpg")]'
-                } flex flex-col justify-stretch items-center py-8 w-full min-h-screen h-full bg-no-repeat bg-cover text-white font-black`}>
+                        ? 'bg-[url("/main_background_galaxy_desktop.svg")] bg-cover'
+                        : 'bg-[url("/main_background_galaxy_desktop.svg")] bg-fill '
+                } bg-center bg-cover flex flex-col justify-stretch items-center py-8 w-full min-h-screen h-full bg-no-repeat text-white font-black`}>
                 <div className="w-[358px] lg:w-[1000px] relative">
                     <img
                         src={`${
@@ -249,8 +253,9 @@ export default function ResultPage() {
                         alt=""
                     />
 
-                    <div className="flex flex-col justify-start items-center w-[231px] lg:w-[591px] h-[900px] absolute top-0 left-1/2 -translate-x-1/2 translate-y-16 gap-3">
+                    <div className="flex flex-col justify-start items-center w-[310px] lg:w-[591px] h-[900px] absolute top-0 lg:top-3 left-1/2 -translate-x-1/2 translate-y-16 gap-3">
                         <img
+                            className="w-[200px] lg:w-[600px]"
                             src={`${
                                 isMobile
                                     ? '/main_complete_title.png'
@@ -271,21 +276,14 @@ export default function ResultPage() {
                                 />
                             )}
                         </div>
-                        {/* <img
-                            className="mt-5 w-[201px] h-[311px] lg:w-[360px] lg:h-auto"
-                            src="/the_lovers.gif"
-                            alt=""
-                        /> */}
 
-                        <div className="text-2xl lg:text-4xl mt-5 lg:mt-10">
+                        <div className="text-[32px] lg:text-[62px] mt-5 lg:mt-10">
                             {selectedCard?.title}
                         </div>
 
-                        <div className="text-xs lg:text-2xl mt-4 lg:mt-10 text-center flex flex-col justify-center items-center">
+                        <div className="text-xs lg:text-xl mt-4 lg:mt-10 text-center flex flex-col justify-center items-center">
                             {selectedCard?.desc.map((desc, index) => (
-                                <div
-                                    className={`${index === 0 ? 'font-[NotoSansKR500]' : ''} mb-4`}
-                                    key={index}>
+                                <div className={`font-[NotoSansKR300] mb-4`} key={index}>
                                     {desc}
                                 </div>
                             ))}
@@ -296,60 +294,149 @@ export default function ResultPage() {
                             </div>
                         </div>
 
-                        <div className="text-[#269E45] w-[234px] h-[56px] lg:w-[888px] lg:h-[340px] flex flex-col justify-start items-center gap-6 lg:gap-10 mt-5 lg:mt-10">
-                            <div className="w-full flex flex-col lg:flex-row gap-4">
+                        <div className="text-[#269E45] w-[234px] h-[56px] lg:w-[888px] lg:h-[340px] flex flex-col justify-start items-center gap-6 lg:gap-10 mt-[55px] lg:mt-10 absolute -bottom-[90px] lg:-bottom-[1180px]">
+                            <div className="w-full flex flex-col lg:flex-row gap-5 mb-3">
                                 <div
-                                    className="w-full border-2 text-xs lg:text-lg bg-white border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[62px] flex flex-row justify-center gap-4 items-center cursor-pointer"
+                                    className="w-full border-2 text-xs lg:text-[20px] bg-white border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[62px] flex flex-row justify-center gap-2 items-center cursor-pointer"
                                     onClick={handleOpen}>
                                     <img src="/saza.svg" alt="" />
-                                    타로 카드 전체유형보기
+                                    <p className="font-[NotoSansKR400]">타로 카드 전체유형보기</p>
                                 </div>
                                 <div
-                                    className="w-full border-2 text-xs lg:text-lg bg-white border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[62px] flex flex-row justify-center gap-4 items-center cursor-pointer"
+                                    className="w-full border-2 text-xs lg:text-[20px] bg-white border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[62px] flex flex-row justify-center gap-2 items-center cursor-pointer"
                                     onClick={copyClipboard}>
                                     <img src="/saza.svg" alt="" />
-                                    타로점 공유하기
+
+                                    <p className="font-[NotoSansKR400]">타로점 공유하기</p>
                                 </div>
 
                                 <a
-                                    className="w-full border-2 text-xs lg:text-lg bg-white border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[62px] flex flex-row justify-center gap-4 items-center cursor-pointer"
+                                    className="w-full border-2 text-xs lg:text-[20px] bg-white border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[62px] flex flex-row justify-center gap-2 items-center cursor-pointer"
                                     href={`/save_image_${selectedCard?.key}.png`}
                                     download={true}>
                                     <img src="/saza.svg" alt="" />
-                                    타로 결과 저장하기
+                                    <p className="font-[NotoSansKR400]">타로 결과 저장하기</p>
                                 </a>
                             </div>
-                            <div className="w-full flex flex-col lg:flex-row lg:text-4xl justify-start lg:justify-center items-center text-white lg:mt-10">
-                                <div>지금까지&ensp;</div>
+                            <div className="w-full flex flex-col lg:flex-row lg:text-4xl justify-start lg:justify-center items-center text-white mt-[3px] lg:mt-[42px]">
+                                <div className="font-[NotoSansKR500]">지금까지</div>
                                 <div className="font-[NotoSansKR500]">
-                                    {visitorCount} 명이 참여했어요.
+                                    {typeof visitorCount === 'number'
+                                        ? visitorCount.toLocaleString()
+                                        : parseInt(visitorCount).toLocaleString()}
+                                    명이 참여했어요.
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-col justify-start items-center w-[298px] lg:w-[815px] y-[650px] lg:y-[185px] gap-6 mt-8 lg:mt-16">
-                    <div className="w-[234px] h-[60px] lg:w-full text-center leading-[56px] text-white lg:text-4xl">
-                        사자와 가자 만나러 가기
+                <div className="flex flex-col justify-start items-center w-[298px] lg:w-[815px] y-[650px] lg:y-[185px] gap-6 mt-8 lg:mt-[150px]">
+                    <div className="font-[NotoSansKR400] w-[234px] h-[60px] lg:w-full text-center leading-[56px] text-white lg:text-4xl">
+                        사자랑가자 만나러 가기
                     </div>
 
                     <div className="flex flex-col lg:flex-row justify-center lg:justify-center items-center lg:items-center gap-6 text-[#269E45]">
                         <Link href={'https://www.instagram.com/saza.gaza/'}>
-                            <div className="w-[234px] lg:w-[388px] h-[60px] lg:h-[85px] border-2 text-xs lg:text-2xl bg-white border-[#269E45] rounded-full text-center leading-[56px] flex flex-row justify-center gap-2 items-center">
+                            <div className="font-[NotoSansKR400] w-[234px] lg:w-[388px] h-[60px] lg:h-[85px] border-2 text-xs lg:text-2xl bg-white border-[#269E45] rounded-full text-center leading-[56px] flex flex-row justify-center gap-2 items-center">
                                 <img src="/insta.svg" alt="" />
-                                사자와 가자 팔로잉하기
+                                사자랑가자 팔로잉하기
                             </div>
                         </Link>
 
-                        <Link href={'https://quadhash.kr/'}>
-                            <div className="w-[234px] lg:w-[388px] h-[60px] lg:h-[85px] border-2 text-xs lg:text-2xl bg-white border-[#269E45] rounded-full text-center leading-[56px] flex flex-row justify-center gap-2 items-center font-[NotoSansKR]">
+                        <Link href={'https:/sazagaza.co.kr'}>
+                            <div className="font-[NotoSansKR400] w-[234px] lg:w-[388px] h-[60px] lg:h-[85px] border-2 text-xs lg:text-2xl bg-white border-[#269E45] rounded-full text-center leading-[56px] flex flex-row justify-center gap-2 items-center">
                                 <img src="/saza.svg" alt="" />
-                                사자와 가자 SHOP 바로가기
+                                사자랑가자 SHOP 바로가기
                             </div>
                         </Link>
                     </div>
                 </div>
-                <div className="text-xs lg:text-2xl mt-7 mt-20">
+
+                <div className="w-screen mt-[126px] font-[NotoSansKR500] flex flex-col items-center bg-[#FFFFFF] text-black">
+                    <img className="w-full" src="/event_image_1.svg" alt="" />
+
+                    <div className="flex flex-row justify-center max-w-[260px] py-[16px] px-[24px] rounded-full items-center bg-[#FF4D00] mt-[37px] text-[#FFFFFF]">
+                        @SAZA.GAZA EVENT
+                    </div>
+
+                    <div className="mt-[37px]">
+                        <img src="/event_ball.png" alt="" />
+                    </div>
+
+                    <div className="flex flex-col items-center mt-[24px] text-[20px]">
+                        <div>귀여운 타로카드와 실용적인</div>
+                        <div>틴케이스가 만난 완벽한 조화!</div>
+                    </div>
+
+                    <div className="flex flex-col items-center mt-[25px] text-[20px]">
+                        <div>타로 결과 공유 이벤트에 참여하면</div>
+                        <div>추첨을 통해 사자랑가자</div>
+                        <div>타로 카드 11종 + 틴케이스를 드립니다.</div>
+                        <div>(총 20명)</div>
+                    </div>
+
+                    <div className=" max-w-[109px] py-[16px] px-[20px] rounded-full items-center bg-[#FF4D00] mt-[37px] text-[#FFFFFF] text-[13px]">
+                        이벤트 기간
+                    </div>
+
+                    <div>이벤트 기간 2월 26일 ~ 2월 23일</div>
+
+                    <div className=" max-w-[109px] py-[16px] px-[20px] rounded-full items-center bg-[#FF4D00] mt-[37px] text-[#FFFFFF] text-[13px]">
+                        이벤트 대상
+                    </div>
+
+                    <div>@saza.gaza 팔로워 & 타로 공유 이벤트 참여자</div>
+
+                    <div className="max-w-[109px] py-[16px] px-[20px] rounded-full items-center bg-[#FF4D00] mt-[37px] text-[#FFFFFF] text-[13px]">
+                        이벤트 대상
+                    </div>
+
+                    <div>
+                        <div>@saza.gaza 인스타그램을 통해</div>
+                        <div>2월 29일 발표</div>
+                    </div>
+
+                    <div className="w-[393px] h-[378px] relative object-center overflow-hidden">
+                        <img className="absolute -top-1/2" src="/main_image.gif" alt="" />
+                    </div>
+
+                    <div className="w-screen">
+                        <img className="w-full object-cover" src="/event_image2.svg" alt="" />
+                    </div>
+                    <div className="w-screen">
+                        <img className="w-full" src="/event_image3.svg" alt="" />
+                    </div>
+                    <div className="w-screen">
+                        <img className="w-full" src="/event_image4.svg" alt="" />
+                    </div>
+
+                    <div className="max-w-[236px] border-[4px] border-[#378D42] py-[16px] px-[20px] rounded-full items-center bg-[#FF4D00] mt-[37px] text-[#FFFFFF] text-[13px]">
+                        이벤트 참여 방법
+                    </div>
+
+                    <div className="w-[325px] mt-[49px] mx-[34px] py-[54px] px-[64px] bg-[#269E45] rounded-[15px] flex flex-col items-center">
+                        <div className="w-[197px] flex flex-col items-center">
+                            <div className="w-[109px] rounded-full bg-[#FFFFFF] px-[20px] py-[16px] text-[13px]">
+                                MISSION 1
+                            </div>
+
+                            <div className="mt-[21px]">
+                                <img src="/event_image5.svg" alt="" />
+                            </div>
+
+                            <div>타로 결과 저장하기</div>
+                            <div>
+                                <div>
+                                    <p>타로 결과 저장하기</p>를
+                                </div>
+                                <div>눌러 저장해주세요</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div></div>
+                </div>
+                <div className="text-xs lg:text-2xl mt-10 lg:mt-40">
                     ⓒ 2024 Quadhash Corporation. All Rights Reserved.
                 </div>
             </div>
