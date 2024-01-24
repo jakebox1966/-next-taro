@@ -75,7 +75,7 @@ export function CardListModal({ open, handleOpen }: ICardListModalProps) {
                                             </span>
                                         </div>
                                         <div className="w-full flex flex-row justify-center items-center text-lg lg:text-3xl">
-                                            <div className="bg-[#FFC947] px-10 py-2 rounded-lg border-2 border-black shadow">
+                                            <div className="bg-[#FFC947] px-10 py-2 rounded-lg border-2 border-black shadow !font-bold font-[NotoSansKR700]">
                                                 타로 카드 유형 전체 보기
                                             </div>
                                         </div>

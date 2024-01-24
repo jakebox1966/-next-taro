@@ -102,13 +102,12 @@
         width: 6000px;
         display: flex;
         flex-direction: row;
-        gap: 7px;
         animation: scroll-animation 2s linear infinite;
     }
 
     .track p {
         text-align: center;
-        width: 155px;
+        width: 213px;
     }
 
     @keyframes scroll-animation {
@@ -117,7 +116,7 @@
         }
     
         100% {
-          left: -155px;
+          left: -213px;
           /* 텍스트 width와 동일 */
         }
       }

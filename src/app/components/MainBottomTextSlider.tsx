@@ -25,6 +25,14 @@ export default function MainBottomTextSlider(props: IMainBottomTextSliderProps) 
         '사자랑가자 타로 공유 이벤트',
         '사자랑가자 타로 공유 이벤트',
         '사자랑가자 타로 공유 이벤트',
+        '사자랑가자 타로 공유 이벤트',
+        '사자랑가자 타로 공유 이벤트',
+        '사자랑가자 타로 공유 이벤트',
+        '사자랑가자 타로 공유 이벤트',
+        '사자랑가자 타로 공유 이벤트',
+        '사자랑가자 타로 공유 이벤트',
+        '사자랑가자 타로 공유 이벤트',
+        '사자랑가자 타로 공유 이벤트',
     ]
     return (
         <>
@@ -32,10 +40,7 @@ export default function MainBottomTextSlider(props: IMainBottomTextSliderProps) 
                 <div className="track">
                     {slides.map((item, index) => (
                         <>
-                            <p key={index}>
-                                {item}
-                                &nbsp;<span>&nbsp;•</span>
-                            </p>
+                            <p key={index}>{item}</p>•
                         </>
                     ))}
                 </div>
