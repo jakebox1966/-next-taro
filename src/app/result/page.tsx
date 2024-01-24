@@ -343,7 +343,7 @@ export default function ResultPage() {
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-col justify-start items-center w-[298px] lg:w-[815px] y-[650px] lg:y-[185px] mt-[75px] lg:mt-[405px]">
+                <div className="flex flex-col justify-start items-center w-[298px] lg:w-[815px] y-[650px] lg:y-[185px] mt-[75px] lg:mt-[75px]">
                     <div className="font-[NotoSansKR400] w-[234px] h-[60px] lg:w-full text-center leading-[56px] text-white lg:text-4xl">
                         사자랑가자 만나러 가기
                     </div>

@@ -99,15 +99,16 @@
 
     .track {
         position: relative;
-        width: 1600px;
+        width: 1720px;
         display: flex;
         flex-direction: row;
-        animation: scroll-animation 20s linear infinite;
+        gap: 7px;
+        animation: scroll-animation 2s linear infinite;
     }
 
     .track p {
         text-align: center;
-        width: 160px;
+        width: 155px;
     }
 
     @keyframes scroll-animation {
@@ -116,7 +117,7 @@
         }
     
         100% {
-          left: -120px;
+          left: -155px;
           /* 텍스트 width와 동일 */
         }
       }
