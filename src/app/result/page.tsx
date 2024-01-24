@@ -251,9 +251,9 @@ export default function ResultPage() {
             <div
                 className={`${
                     isMobile
-                        ? 'bg-[url("/main_background_galaxy_desktop.svg")] bg-cover'
-                        : 'bg-[url("/main_background_galaxy_desktop.svg")] bg-cover'
-                } bg-center flex flex-col justify-stretch items-center py-8 min-h-screen h-full bg-no-repeat text-white font-black`}>
+                        ? 'bg-[url("/main_background_galaxy_desktop.svg")] '
+                        : 'bg-[url("/main_background_galaxy_desktop.svg")] '
+                } flex flex-col justify-stretch items-center min-h-screen text-white font-black py-20`}>
                 <div className="w-[358px] lg:w-[1000px] relative">
                     <img
                         src={`${
