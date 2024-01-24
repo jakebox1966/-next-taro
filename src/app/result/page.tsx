@@ -354,7 +354,7 @@ export default function ResultPage() {
                             </div>
                         </Link>
 
-                        <Link href={'https://wwww.sazagaza.co.kr'}>
+                        <Link href={'https://www.sazagaza.co.kr'}>
                             <div className="font-[NotoSansKR400] w-[234px] lg:w-[388px] h-[60px] lg:h-[85px] border-2 text-xs lg:text-2xl bg-white border-[#269E45] rounded-full text-center leading-[56px] flex flex-row justify-center gap-2 items-center">
                                 <img src="/saza.svg" alt="" />
                                 사자랑가자 SHOP 바로가기
