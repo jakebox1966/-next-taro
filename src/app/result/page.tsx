@@ -218,6 +218,17 @@ export default function ResultPage() {
         }
     }
 
+    const copyHashTag = async () => {
+        try {
+            await navigator.clipboard.writeText(
+                '#사자랑가자 #quadhash #타로테스트 #신년운세 #@saza.gaza',
+            )
+            alert('해시태그가 복사되었어요.')
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
     const handleOpen = () => setOpen(!open)
 
     React.useEffect(() => {
@@ -241,8 +252,8 @@ export default function ResultPage() {
                 className={`${
                     isMobile
                         ? 'bg-[url("/main_background_galaxy_desktop.svg")] bg-cover'
-                        : 'bg-[url("/main_background_galaxy_desktop.svg")] bg-fill '
-                } bg-center bg-cover flex flex-col justify-stretch items-center py-8 w-full min-h-screen h-full bg-no-repeat text-white font-black`}>
+                        : 'bg-[url("/main_background_galaxy_desktop.svg")] bg-cover'
+                } bg-center flex flex-col justify-stretch items-center py-8 min-h-screen h-full bg-no-repeat text-white font-black`}>
                 <div className="w-[358px] lg:w-[1000px] relative">
                     <img
                         src={`${
@@ -343,7 +354,7 @@ export default function ResultPage() {
                             </div>
                         </Link>
 
-                        <Link href={'https:/sazagaza.co.kr'}>
+                        <Link href={'https://wwww.sazagaza.co.kr'}>
                             <div className="font-[NotoSansKR400] w-[234px] lg:w-[388px] h-[60px] lg:h-[85px] border-2 text-xs lg:text-2xl bg-white border-[#269E45] rounded-full text-center leading-[56px] flex flex-row justify-center gap-2 items-center">
                                 <img src="/saza.svg" alt="" />
                                 사자랑가자 SHOP 바로가기
@@ -352,89 +363,183 @@ export default function ResultPage() {
                     </div>
                 </div>
 
-                <div className="w-screen mt-[126px] font-[NotoSansKR500] flex flex-col items-center bg-[#FFFFFF] text-black">
+                <div className="w-full mt-[126px] font-[ScoreDream200] flex flex-col items-center bg-[#FFFFFF] text-black">
                     <img className="w-full" src="/event_image_1.svg" alt="" />
 
-                    <div className="flex flex-row justify-center max-w-[260px] py-[16px] px-[24px] rounded-full items-center bg-[#FF4D00] mt-[37px] text-[#FFFFFF]">
-                        @SAZA.GAZA EVENT
+                    <div className="flex flex-row justify-center w-[260px] py-[16px] px-[26px] rounded-full items-center bg-[#FF4D00] mt-[37px] lg:mt-[163px] text-[#FFFFFF] gap-[16px] text-[15px] leading-[15px]">
+                        <img src="/check_icon.svg" alt="" /> @SAZA.GAZA EVENT
                     </div>
 
                     <div className="mt-[37px]">
                         <img src="/event_ball.png" alt="" />
                     </div>
 
-                    <div className="flex flex-col items-center mt-[24px] text-[20px]">
+                    <div className="flex flex-col items-center mt-[24px] text-[20px] lg:text-[26px]">
                         <div>귀여운 타로카드와 실용적인</div>
                         <div>틴케이스가 만난 완벽한 조화!</div>
                     </div>
 
-                    <div className="flex flex-col items-center mt-[25px] text-[20px]">
+                    <div className="flex flex-col items-center mt-[25px] text-[20px] lg:text-[26px]">
                         <div>타로 결과 공유 이벤트에 참여하면</div>
-                        <div>추첨을 통해 사자랑가자</div>
-                        <div>타로 카드 11종 + 틴케이스를 드립니다.</div>
-                        <div>(총 20명)</div>
+                        <div className="font-[ScoreDream400]">추첨을 통해 사자랑가자</div>
+                        <div className="font-[ScoreDream400]">
+                            타로 카드 11종 + 틴케이스를 드립니다.
+                        </div>
+                        <div className="font-[ScoreDream400]"> (총 20명)</div>
                     </div>
 
-                    <div className=" max-w-[109px] py-[16px] px-[20px] rounded-full items-center bg-[#FF4D00] mt-[37px] text-[#FFFFFF] text-[13px]">
+                    <div className="w-[109px] lg:w-[208px] py-[16px] px-[20px] rounded-full text-center bg-[#FF4D00] mt-[52px] lg:mt-[140px] text-[#FFFFFF] text-[13px] lg:text-[16px] leading-[13px] lg:leading-[16px]">
                         이벤트 기간
                     </div>
 
-                    <div>이벤트 기간 2월 26일 ~ 2월 23일</div>
+                    <div className="mt-[22px] lg:mt-[20px] text-[13px] lg:text-[26px]">
+                        <span className="font-[ScoreDream400]">이벤트 기간 </span>2월 26일 ~ 2월
+                        23일
+                    </div>
 
-                    <div className=" max-w-[109px] py-[16px] px-[20px] rounded-full items-center bg-[#FF4D00] mt-[37px] text-[#FFFFFF] text-[13px]">
+                    <div className="w-[109px] lg:w-[208px] py-[16px] px-[20px] rounded-full text-center bg-[#FF4D00] mt-[22px] lg:mt-[25px] text-[#FFFFFF] text-[13px] lg:text-[16px] leading-[13px] lg:leading-[16px]">
                         이벤트 대상
                     </div>
 
-                    <div>@saza.gaza 팔로워 & 타로 공유 이벤트 참여자</div>
-
-                    <div className="max-w-[109px] py-[16px] px-[20px] rounded-full items-center bg-[#FF4D00] mt-[37px] text-[#FFFFFF] text-[13px]">
-                        이벤트 대상
+                    <div className="mt-[22px] lg:mt-[20px] font-[ScoreDream400] text-[13px] lg:text-[26px]">
+                        @saza.gaza 팔로워 & 타로 공유 이벤트 참여자
                     </div>
 
-                    <div>
-                        <div>@saza.gaza 인스타그램을 통해</div>
+                    <div className="w-[109px] lg:w-[208px] py-[16px] px-[20px] rounded-full text-center bg-[#FF4D00] mt-[22px] lg:mt-[20px] text-[#FFFFFF] text-[13px] lg:text-[16px] leading-[13px] lg:leading-[16px]">
+                        당첨자 발표
+                    </div>
+
+                    <div className="mt-[22px] lg:mt-[25px] text-center text-[13px] lg:text-[26px] flex flex-col lg:flex-row w-full justify-center lg:gap-2">
+                        <div className="font-[ScoreDream400]">@saza.gaza 인스타그램을 통해</div>
                         <div>2월 29일 발표</div>
                     </div>
 
-                    <div className="w-[393px] h-[378px] relative object-center overflow-hidden">
+                    <div className="w-[350px] h-[378px] lg:h-[936px] lg:w-[900px] relative object-center overflow-hidden mt-[76px]">
                         <img className="absolute -top-1/2" src="/main_image.gif" alt="" />
                     </div>
 
-                    <div className="w-screen">
+                    <div className="w-full">
                         <img className="w-full object-cover" src="/event_image2.svg" alt="" />
                     </div>
-                    <div className="w-screen">
+                    <div className="w-full">
                         <img className="w-full" src="/event_image3.svg" alt="" />
                     </div>
-                    <div className="w-screen">
+                    <div className="w-full">
                         <img className="w-full" src="/event_image4.svg" alt="" />
                     </div>
 
-                    <div className="max-w-[236px] border-[4px] border-[#378D42] py-[16px] px-[20px] rounded-full items-center bg-[#FF4D00] mt-[37px] text-[#FFFFFF] text-[13px]">
+                    <div className="w-[236px] lg:w-[300px] border-[4px] border-[#378D42] py-[16px] px-[24px] rounded-full items-center bg-[#FF4D00] text-[#FFFFFF] text-[15px] lg:text-[25px] mt-[85px] lg:mt-[156px] flex flex-row gap-[16px] leading-[15px] lg:leading-[25px]">
+                        <img src="/check_icon.svg" alt="" />
                         이벤트 참여 방법
                     </div>
 
-                    <div className="w-[325px] mt-[49px] mx-[34px] py-[54px] px-[64px] bg-[#269E45] rounded-[15px] flex flex-col items-center">
-                        <div className="w-[197px] flex flex-col items-center">
-                            <div className="w-[109px] rounded-full bg-[#FFFFFF] px-[20px] py-[16px] text-[13px]">
+                    <div className="w-[325px] lg:w-[878px] mt-[49px] lg:mt-[156px] mx-[34px] pt-[54px] pb-[100px] lg:pb-[200px] px-[64px] bg-[#2DA663] rounded-[15px] flex flex-col items-center">
+                        <div className="w-[197px] lg:w-[478px] flex flex-col items-center">
+                            <div className="w-[109px] lg:w-[265px] rounded-full bg-[#FFFFFF] lg:mt-[201px] px-[20px] py-[16px] text-[13px] lg:text-[25px] text-center text-[#01671C] leading-[5px] lg:leading-[25px] font-[ScoreDream200]">
                                 MISSION 1
                             </div>
 
-                            <div className="mt-[21px]">
-                                <img src="/event_image5.svg" alt="" />
+                            <div className="mt-[21px] lg:mt-[50px] w-[182px] lg:w-[478px]">
+                                {isMobile ? (
+                                    <img
+                                        className="lg:w-[442px] translate-x-1"
+                                        src="/event_image5.svg"
+                                        alt=""
+                                    />
+                                ) : (
+                                    <img
+                                        className="translate-x-1 lg:translate-x-4"
+                                        src="/event_image5_desktop.svg"
+                                        alt=""
+                                    />
+                                )}
                             </div>
 
-                            <div>타로 결과 저장하기</div>
-                            <div>
-                                <div>
-                                    <p>타로 결과 저장하기</p>를
+                            <div className="w-full border-2 py-1 lg:py-4 text-xs bg-white border-[#289F48] text-[11px] lg:text-[25px] rounded-full text-center flex flex-row justify-center gap-2 items-center cursor-pointer text-[#01671C] mt-[21px] lg:mt-[50px] leading-[11px] lg:leading-[25px]">
+                                <img src="/saza.svg" alt="" />
+                                <p className="font-[NotoSansKR400]">타로 결과 저장하기</p>
+                            </div>
+                            <div className="mt-[21px] text-[#FFFFFF] text-center lg:mt-[50px]">
+                                <div className="flex flex-row justify-center items-end">
+                                    <p className="text-[20px] lg:text-[25px] leading-[20px] lg:leading-[25px]">
+                                        타로 결과 저장하기
+                                    </p>
+                                    <p className="text-[13px] lg:text-[25px] leading-[13px] lg:leading-[25px]">
+                                        를
+                                    </p>
                                 </div>
-                                <div>눌러 저장해주세요</div>
+                                <div className="text-[13px] lg:text-[25px] lg:leading-[25px] mt-1 lg:mt-2">
+                                    눌러 저장해주세요
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div></div>
+                    <div className="w-[325px] lg:w-[878px] mt-[49px] mx-[34px] py-[54px] px-[10px] bg-[#2DA663] rounded-[15px] flex flex-col items-center">
+                        <div className="w-[244px] lg:w-[660px] flex flex-col items-center">
+                            <div className="w-[109px] lg:w-[265px] rounded-full bg-[#FFFFFF] lg:mt-[152px] px-[20px] py-[16px] text-[13px] lg:text-[25px] text-center text-[#01671C] leading-[5px] lg:leading-[25px] font-[ScoreDream200]">
+                                MISSION 2
+                            </div>
+
+                            <div className="mt-[31px] lg:mt-[50px] flex flex-col justify-center items-stretch w-full text-[11px] lg:text-[20px] text-[#01671C]">
+                                <div className="flex flex-row justify-center items-center gap-1">
+                                    <div className="w-[79px] lg:w-[213px] px-[5px] py-[8px] lg:py-[14px] rounded-full bg-[#FFFFFF] text-center leading-[11px] lg:leading-[20px]">
+                                        #사자랑가자
+                                    </div>
+                                    <div className="w-[79px] lg:w-[213px] px-[5px] py-[8px] lg:py-[14px] rounded-full bg-[#FFFFFF] text-center leading-[11px] lg:leading-[20px]">
+                                        #quadhash
+                                    </div>
+                                    <div className="w-[79px] lg:w-[213px] px-[5px] py-[8px] lg:py-[14px] rounded-full bg-[#FFFFFF] text-center leading-[11px] lg:leading-[20px]">
+                                        #타로테스트
+                                    </div>
+                                </div>
+                                <div className="flex flex-row justify-center items-center mt-[7px] gap-1">
+                                    <div className="w-[79px] lg:w-[213px] px-[5px] py-[8px] lg:py-[14px] rounded-full bg-[#FFFFFF] text-center leading-[11px] lg:leading-[20px]">
+                                        #신년운세
+                                    </div>
+                                    <div className="w-[79px] lg:w-[213px] px-[5px] py-[8px] lg:py-[14px] rounded-full bg-[#FFFFFF] text-center leading-[11px] lg:leading-[20px]">
+                                        @saza.gaza
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="mt-[21px] lg:mt-[50px] text-[#FFFFFF] text-center">
+                                <div className="flex flex-row justify-center items-end">
+                                    <p className="text-[20px] lg:text-[25px] leading-[20px] lg:leading-[35px]">
+                                        인스타그램
+                                    </p>
+                                    <p className="text-[13px] lg:text-[25px] leading-[13px] lg:leading-[35px]">
+                                        에
+                                    </p>
+                                </div>
+                                <div className="text-[13px] lg:text-[25px] leading-[20px] lg:leading-[35px] mt-1">
+                                    아래의 해시태그를 달고 저장한 이미지를
+                                </div>
+                                <div className="text-[13px] lg:text-[25px] leading-[20px] lg:leading-[35px]">
+                                    스토리 또는 릴스로 업로드해주세요.
+                                </div>
+                                <div className="text-[13px] lg:text-[25px] leading-[20px] lg:leading-[35px]">
+                                    하단 해시태그 복사하기 클릭!
+                                </div>
+                            </div>
+
+                            <div
+                                className="w-[176px] lg:w-[476px] rounded-full bg-[#FFFFFF] px-[20px] py-[16px] lg:py-5 lg:mb-[100px] text-[12px] lg:text-[25px] text-[#01671C] text-center mt-[59px] mb-[3px] leading-[12px] lg:leading-[25px] font-[NotoSansKR500] cursor-pointer"
+                                onClick={copyHashTag}>
+                                해시태그 복사하기
+                            </div>
+                        </div>
+                    </div>
+                    <div className="flex flex-col items-center mt-[87px] lg:mt-[135px] bg-[#FF4D00] py-[85px] lg:py-[110px] text-[#FFFFFF] text-[13px] lg:text-[25px] w-full">
+                        <div>
+                            <div>인스타그램 참여 시 @saza.gaza 팔로우 및 계정 태그 필수!</div>
+                            <div className="mt-[13px]">
+                                *비공개 계정은 확인이 어려워 당첨에서 제외됩니다.
+                            </div>
+                            <div>*당첨자 발표는 사자랑가자 인스타그램 스토리를 통해</div>
+                            <div>발표되며, DM을 통해 안내될 예정입니다.</div>
+                        </div>
+                    </div>
                 </div>
                 <div className="text-xs lg:text-2xl mt-10 lg:mt-40">
                     ⓒ 2024 Quadhash Corporation. All Rights Reserved.
