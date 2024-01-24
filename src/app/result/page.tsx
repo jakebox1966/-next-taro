@@ -220,9 +220,7 @@ export default function ResultPage() {
 
     const copyHashTag = async () => {
         try {
-            await navigator.clipboard.writeText(
-                '#사자랑가자 #quadhash #타로테스트 #신년운세 #@saza.gaza',
-            )
+            await navigator.clipboard.writeText('#사자랑가자 #quadhash #타로테스트 #신년운세')
             alert('해시태그가 복사되었어요.')
         } catch (err) {
             console.log(err)
@@ -251,8 +249,8 @@ export default function ResultPage() {
             <div
                 className={`${
                     isMobile
-                        ? 'bg-[url("/main_background_galaxy.svg")] '
-                        : 'bg-[url("/main_background_galaxy_desktop.svg")] '
+                        ? 'bg-[url("/main_background_galaxy_desktop3.svg")] bg-cover bg-no-repeat'
+                        : 'bg-[url("/main_background_galaxy_desktop3.svg")] bg-no-repeat'
                 } flex flex-col justify-stretch items-center min-h-screen text-white font-black py-20`}>
                 <div className="w-[358px] lg:w-[1000px] relative">
                     <img
@@ -305,7 +303,7 @@ export default function ResultPage() {
                             </div>
                         </div>
 
-                        <div className="text-[#269E45] w-[234px] h-[56px] lg:w-[888px] lg:h-[340px] flex flex-col justify-start items-center gap-6 lg:gap-10 mt-[55px] lg:mt-10 absolute -bottom-[90px] lg:-bottom-[1180px]">
+                        <div className="text-[#269E45] w-[234px] h-[56px] lg:w-[888px] lg:h-[340px] flex flex-col justify-start items-center gap-6 lg:gap-10 mt-[55px] lg:mt-10 absolute -bottom-[68px] lg:-bottom-[1180px]">
                             <div className="w-full flex flex-col lg:flex-row gap-5 mb-3">
                                 <div
                                     className="w-full border-2 text-xs lg:text-[20px] bg-white border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[62px] flex flex-row justify-center gap-2 items-center cursor-pointer"
@@ -341,12 +339,12 @@ export default function ResultPage() {
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-col justify-start items-center w-[298px] lg:w-[815px] y-[650px] lg:y-[185px] gap-6 mt-8 lg:mt-[150px]">
+                <div className="flex flex-col justify-start items-center w-[298px] lg:w-[815px] y-[650px] lg:y-[185px] mt-[75px] lg:mt-[405px]">
                     <div className="font-[NotoSansKR400] w-[234px] h-[60px] lg:w-full text-center leading-[56px] text-white lg:text-4xl">
                         사자랑가자 만나러 가기
                     </div>
 
-                    <div className="flex flex-col lg:flex-row justify-center lg:justify-center items-center lg:items-center gap-6 text-[#269E45]">
+                    <div className="flex flex-col lg:flex-row justify-center lg:justify-center items-center lg:items-center lg:mt-[50px] gap-6 text-[#269E45]">
                         <Link href={'https://www.instagram.com/saza.gaza/'}>
                             <div className="font-[NotoSansKR400] w-[234px] lg:w-[388px] h-[60px] lg:h-[85px] border-2 text-xs lg:text-2xl bg-white border-[#269E45] rounded-full text-center leading-[56px] flex flex-row justify-center gap-2 items-center">
                                 <img src="/insta.svg" alt="" />
@@ -363,7 +361,7 @@ export default function ResultPage() {
                     </div>
                 </div>
 
-                <div className="w-full mt-[126px] font-[ScoreDream200] flex flex-col items-center bg-[#FFFFFF] text-black">
+                <div className="w-full lg:w-[1000px] mt-[126px] font-[ScoreDream200] flex flex-col items-center bg-[#FFFFFF] text-black">
                     <img className="w-full" src="/event_image_1.svg" alt="" />
 
                     <div className="flex flex-row justify-center w-[260px] py-[16px] px-[26px] rounded-full items-center bg-[#FF4D00] mt-[37px] lg:mt-[163px] text-[#FFFFFF] gap-[16px] text-[15px] leading-[15px]">
