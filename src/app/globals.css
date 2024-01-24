@@ -99,7 +99,7 @@
 
     .track {
         position: relative;
-        width: 1720px;
+        width: 6000px;
         display: flex;
         flex-direction: row;
         gap: 7px;
