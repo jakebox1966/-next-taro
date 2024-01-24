@@ -17,6 +17,7 @@ import the_hermit from '../../../public/the_hermit.gif'
 import ace_of_wands from '../../../public/ace_of_wands.gif'
 import Image, { StaticImageData } from 'next/image'
 import { StaticImport } from 'next/dist/shared/lib/get-img-props'
+import MainBottomTextSlider from '../components/MainBottomTextSlider'
 
 export interface ICard {
     key: string
@@ -247,11 +248,14 @@ export default function ResultPage() {
     return (
         <>
             <div
-                className={`${
-                    isMobile
-                        ? 'bg-[url("/main_background_galaxy_desktop3.svg")] bg-cover bg-no-repeat'
-                        : 'bg-[url("/main_background_galaxy_desktop3.svg")] bg-no-repeat'
-                } flex flex-col justify-stretch items-center min-h-screen text-white font-black py-20`}>
+                className={`flex flex-col justify-stretch items-center min-h-screen text-white font-black`}>
+                <div className="absolute top-0 w-full min-h-screen -z-10">
+                    {isMobile ? (
+                        <img className="w-full" src="/main_background_galaxy.png" alt="" />
+                    ) : (
+                        <img className="w-full" src="/main_background_galaxy_desktop.jpg" alt="" />
+                    )}
+                </div>
                 <div className="w-[358px] lg:w-[1000px] relative">
                     <img
                         src={`${
@@ -360,8 +364,15 @@ export default function ResultPage() {
                         </Link>
                     </div>
                 </div>
+                <div className="text-xs lg:text-2xl mt-[81px] lg:mt-[70px] z-[10]">
+                    ⓒ 2024 Quadhash Corporation. All Rights Reserved.
+                </div>
 
-                <div className="w-full lg:w-[1000px] mt-[126px] font-[ScoreDream200] flex flex-col items-center bg-[#FFFFFF] text-black">
+                <MainBottomTextSlider />
+            </div>
+
+            <div className="w-full flex flex-row justify-center bg-[#FFFFFF]">
+                <div className="w-full lg:w-[1000px] font-[ScoreDream200] flex flex-col items-center bg-[#FFFFFF] text-black">
                     <img className="w-full" src="/event_image_1.svg" alt="" />
 
                     <div className="flex flex-row justify-center w-[260px] py-[16px] px-[26px] rounded-full items-center bg-[#FF4D00] mt-[37px] lg:mt-[163px] text-[#FFFFFF] gap-[16px] text-[15px] leading-[15px]">
@@ -431,7 +442,7 @@ export default function ResultPage() {
                         이벤트 참여 방법
                     </div>
 
-                    <div className="w-[325px] lg:w-[878px] mt-[49px] lg:mt-[156px] mx-[34px] pt-[54px] pb-[100px] lg:pb-[200px] px-[64px] bg-[#2DA663] rounded-[15px] flex flex-col items-center">
+                    <div className="w-[325px] lg:w-full mt-[49px] lg:mt-[156px] mx-[34px] pt-[54px] pb-[100px] lg:pb-[200px] px-[64px] lg:px-0 bg-[#2DA663] rounded-[15px] flex flex-col items-center">
                         <div className="w-[197px] lg:w-[478px] flex flex-col items-center">
                             <div className="w-[109px] lg:w-[265px] rounded-full bg-[#FFFFFF] lg:mt-[201px] px-[20px] py-[16px] text-[13px] lg:text-[25px] text-center text-[#01671C] leading-[5px] lg:leading-[25px] font-[ScoreDream200]">
                                 MISSION 1
@@ -473,14 +484,14 @@ export default function ResultPage() {
                         </div>
                     </div>
 
-                    <div className="w-[325px] lg:w-[878px] mt-[49px] mx-[34px] py-[54px] px-[10px] bg-[#2DA663] rounded-[15px] flex flex-col items-center">
+                    <div className="w-[325px] lg:w-full mt-[49px] mx-[34px] py-[54px] px-[10px] bg-[#2DA663] rounded-[15px] flex flex-col items-center">
                         <div className="w-[244px] lg:w-[660px] flex flex-col items-center">
                             <div className="w-[109px] lg:w-[265px] rounded-full bg-[#FFFFFF] lg:mt-[152px] px-[20px] py-[16px] text-[13px] lg:text-[25px] text-center text-[#01671C] leading-[5px] lg:leading-[25px] font-[ScoreDream200]">
                                 MISSION 2
                             </div>
 
                             <div className="mt-[31px] lg:mt-[50px] flex flex-col justify-center items-stretch w-full text-[11px] lg:text-[20px] text-[#01671C]">
-                                <div className="flex flex-row justify-center items-center gap-1">
+                                <div className="flex flex-row justify-center items-center gap-2">
                                     <div className="w-[79px] lg:w-[213px] px-[5px] py-[8px] lg:py-[14px] rounded-full bg-[#FFFFFF] text-center leading-[11px] lg:leading-[20px]">
                                         #사자랑가자
                                     </div>
@@ -491,7 +502,7 @@ export default function ResultPage() {
                                         #타로테스트
                                     </div>
                                 </div>
-                                <div className="flex flex-row justify-center items-center mt-[7px] gap-1">
+                                <div className="flex flex-row justify-center items-center mt-[10px] gap-2">
                                     <div className="w-[79px] lg:w-[213px] px-[5px] py-[8px] lg:py-[14px] rounded-full bg-[#FFFFFF] text-center leading-[11px] lg:leading-[20px]">
                                         #신년운세
                                     </div>
@@ -538,9 +549,6 @@ export default function ResultPage() {
                             <div>발표되며, DM을 통해 안내될 예정입니다.</div>
                         </div>
                     </div>
-                </div>
-                <div className="text-xs lg:text-2xl mt-10 lg:mt-40">
-                    ⓒ 2024 Quadhash Corporation. All Rights Reserved.
                 </div>
             </div>
             <CardListModal open={open} handleOpen={handleOpen} />

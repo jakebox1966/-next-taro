@@ -45,11 +45,13 @@
         font-weight: 100;
         src: url("/fonts/SCDream4.otf") format("truetype");
     }
+
     @font-face {
         font-family: "ScoreDream200";
         font-weight: 200;
         src: url("/fonts/SCDream4.otf") format("truetype");
     }
+
     @font-face {
         font-family: "ScoreDream300";
         font-weight: 300;
@@ -89,6 +91,35 @@
     .loading {
         animation: rotation 1s linear infinite reverse;
     }
+
+    .scroll-text {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .track {
+        position: relative;
+        width: 1600px;
+        display: flex;
+        flex-direction: row;
+        animation: scroll-animation 20s linear infinite;
+    }
+
+    .track p {
+        text-align: center;
+        width: 160px;
+    }
+
+    @keyframes scroll-animation {
+        0% {
+          left: 0;
+        }
+    
+        100% {
+          left: -120px;
+          /* 텍스트 width와 동일 */
+        }
+      }
 
     @keyframes rotation {
         0% {
