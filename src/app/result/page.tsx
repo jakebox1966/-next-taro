@@ -331,7 +331,7 @@ export default function ResultPage() {
                                     <p className="font-[ScoreDream300]">타로 결과 저장하기</p>
                                 </a>
                             </div>
-                            <div className="w-full flex flex-col lg:flex-row lg:text-4xl justify-start lg:justify-center items-center lg:gap-3 text-white mt-[3px] lg:mt-[42px]">
+                            <div className="w-full flex flex-col lg:flex-row lg:text-4xl justify-start lg:justify-center items-center lg:gap-3 text-white mt-[3px] lg:mt-[10px]">
                                 <div className="font-[ScoreDream300]">지금까지</div>
                                 <div className="font-[ScoreDream300]">
                                     {typeof visitorCount === 'number'
