@@ -103,7 +103,7 @@ export default function CardChoicePage(props: ICardChoicePageProps) {
                                     } fade`}>
                                     <Loading />
                                 </div>
-                                <div className="flex flex-col w-full text-center text-black lg:text-[30px] font-[NotoSansKR400] mt-[39px] lg:mt-[60px]">
+                                <div className="flex flex-col w-full text-center text-black lg:text-[30px] font-[ScoreDream400] mt-[39px] lg:mt-[60px]">
                                     <div>2024년 나에게</div>
                                     <div>다가올 행운 해석 중...</div>
                                 </div>
@@ -121,10 +121,7 @@ export default function CardChoicePage(props: ICardChoicePageProps) {
                                 onClick={() => {
                                     setSelectedCard(1)
                                 }}>
-                                <img
-                                    src={`${isMobile ? '/card.svg' : '/card_desktop.svg'}`}
-                                    alt=""
-                                />
+                                <img src={'/card.png'} alt="card" />
                             </div>
                             <div
                                 className={`${
@@ -133,10 +130,7 @@ export default function CardChoicePage(props: ICardChoicePageProps) {
                                 onClick={() => {
                                     setSelectedCard(2)
                                 }}>
-                                <img
-                                    src={`${isMobile ? '/card.svg' : '/card_desktop.svg'}`}
-                                    alt=""
-                                />
+                                <img src={'/card.png'} alt="card" />
                             </div>
                             <div
                                 className={`${
@@ -145,10 +139,7 @@ export default function CardChoicePage(props: ICardChoicePageProps) {
                                 onClick={() => {
                                     setSelectedCard(3)
                                 }}>
-                                <img
-                                    src={`${isMobile ? '/card.svg' : '/card_desktop.svg'}`}
-                                    alt=""
-                                />
+                                <img src={'/card.png'} alt="card" />
                             </div>
                             <div
                                 className={`${
@@ -157,27 +148,24 @@ export default function CardChoicePage(props: ICardChoicePageProps) {
                                 onClick={() => {
                                     setSelectedCard(4)
                                 }}>
-                                <img
-                                    src={`${isMobile ? '/card.svg' : '/card_desktop.svg'}`}
-                                    alt=""
-                                />
+                                <img src={'/card.png'} alt="card" />
                             </div>
                         </div>
                         <div
                             className={`${
                                 isProcessing ? 'opacity-0' : 'opacity-1'
-                            } w-[234px] h-[56px] lg:w-full flex flex-col justify-start items-center mt-[39px]`}>
-                            <div className="flex flex-col justify-center items-center text-black lg:text-[35px] w-full font-[NotoSansKR400]">
+                            } w-[240px] h-[56px] lg:w-full flex flex-col justify-start items-center mt-[39px]`}>
+                            <div className="flex flex-col justify-center items-center text-black lg:text-[35px] w-full font-[ScoreDream300]">
                                 <div>당신에게 찾아올 행운을</div>
                                 <div>
                                     떠올리며 카드를
-                                    <span className="font-[NotoSansKR400]"> 한장 </span>
+                                    <span className="font-[ScoreDream400]"> 한장 </span>
                                     골라주세요.
                                 </div>
                             </div>
 
                             <div
-                                className="font-[NotoSansKR400] py-3 w-[176px] lg:w-[200px] border-2 text-xs lg:text-xl border-[#269E45] rounded-full text-center flex flex-row justify-center mt-[32px] gap-2 items-center cursor-pointer"
+                                className="font-[ScoreDream400] py-3 w-[176px] lg:w-[200px] border-2 text-xs lg:text-xl border-[#269E45] rounded-full text-center flex flex-row justify-center mt-[32px] gap-2 items-center cursor-pointer"
                                 onClick={shuffleCard}>
                                 <img src="/check.svg" alt="" />
                                 확인
@@ -190,20 +178,20 @@ export default function CardChoicePage(props: ICardChoicePageProps) {
 
                 {!isMobile && (
                     <div className="flex flex-col justify-start items-center w-[298px] lg:w-[515px] y-[650px] lg:y-[185px] gap-6 mt-8 lg:mt-16">
-                        <div className="font-[NotoSansKR400] w-[234px] h-[56px] lg:w-full text-center leading-[56px] text-black lg:text-4xl">
+                        <div className="font-[ScoreDream400] w-[234px] h-[56px] lg:w-full text-center leading-[56px] text-black lg:text-4xl">
                             사자랑가자 만나러 가기
                         </div>
 
                         <div className="flex flex-col lg:flex-row justify-center lg:justify-center items-center lg:items-center gap-6">
                             <Link href={'https://www.instagram.com/saza.gaza/'}>
-                                <div className="font-[NotoSansKR400] w-[234px] lg:w-[388px] h-[56px] lg:h-[85px] border-2 text-xs lg:text-[23px] border-[#269E45] rounded-full text-center leading-[56px] flex flex-row justify-center gap-2 items-center">
+                                <div className="font-[ScoreDream400] w-[234px] lg:w-[388px] h-[56px] lg:h-[85px] border-2 text-xs lg:text-[23px] border-[#269E45] rounded-full text-center leading-[56px] flex flex-row justify-center gap-2 items-center">
                                     <img src="/insta.svg" alt="" />
                                     사자랑가자 팔로잉하기
                                 </div>
                             </Link>
 
                             <Link href={'https://www.sazagaza.co.kr'}>
-                                <div className="font-[NotoSansKR400] w-[234px] lg:w-[388px] h-[56px] lg:h-[85px] border-2 text-xs lg:text-[23px] border-[#269E45] rounded-full text-center leading-[56px] flex flex-row justify-center gap-2 items-center">
+                                <div className="font-[ScoreDream400] w-[234px] lg:w-[388px] h-[56px] lg:h-[85px] border-2 text-xs lg:text-[23px] border-[#269E45] rounded-full text-center leading-[56px] flex flex-row justify-center gap-2 items-center">
                                     <img src="/saza.svg" alt="" />
                                     사자랑가자 SHOP 바로가기
                                 </div>
@@ -211,7 +199,7 @@ export default function CardChoicePage(props: ICardChoicePageProps) {
                         </div>
                     </div>
                 )}
-                <div className="text-xs lg:text-2xl mt-12 lg:mt-20">
+                <div className="text-[0.55rem] lg:text-2xl mt-12 lg:mt-20">
                     ⓒ 2024 Quadhash Corporation. All Rights Reserved.
                 </div>
             </div>

@@ -36,7 +36,7 @@ export default function MainBottomTextSlider(props: IMainBottomTextSliderProps) 
     ]
     return (
         <>
-            <div className="scroll-text bg-[#FF5A3F] text-[12px] py-6 font-[NotoSansKR400] mt-[81px] lg:mt-[70px]">
+            <div className="scroll-text bg-[#FF5A3F] text-[12px] py-6 font-[ScoreDream400] mt-[81px] lg:mt-[70px]">
                 <div className="track">
                     {slides.map((item, index) => (
                         <>

@@ -212,7 +212,7 @@ export default function ResultPage() {
 
     const copyClipboard = async () => {
         try {
-            await navigator.clipboard.writeText(`${process.env.NEXT_PUBLIC_HOST_URL}${pathname}`)
+            await navigator.clipboard.writeText(`${process.env.NEXT_PUBLIC_HOST_URL}`)
             alert('클립보드에 링크가 복사되었어요.')
         } catch (err) {
             console.log(err)
@@ -248,7 +248,7 @@ export default function ResultPage() {
     return (
         <>
             <div
-                className={`flex flex-col justify-stretch items-center min-h-screen text-white font-black`}>
+                className={`flex flex-col justify-stretch items-center h-full text-white font-black pt-11`}>
                 <div className="absolute top-0 w-full min-h-screen -z-10">
                     {isMobile ? (
                         <img className="w-full" src="/main_background_galaxy.png" alt="" />
@@ -296,12 +296,12 @@ export default function ResultPage() {
 
                         <div className="text-xs lg:text-xl mt-4 lg:mt-10 text-center flex flex-col justify-center items-center">
                             {selectedCard?.desc.map((desc, index) => (
-                                <div className={`font-[NotoSansKR300] mb-4`} key={index}>
+                                <div className={`font-[ScoreDream300] mb-4`} key={index}>
                                     {desc}
                                 </div>
                             ))}
 
-                            <div className="flex flex-col justify-center items-center font-[NotoSansKR500]">
+                            <div className="flex flex-col justify-center items-center font-[ScoreDream500]">
                                 <div>행운의 숫자: {selectedCard?.luckyNumber}</div>
                                 <div>행운의 컬러: {selectedCard?.luckyColor}</div>
                             </div>
@@ -313,14 +313,14 @@ export default function ResultPage() {
                                     className="w-full border-2 text-xs lg:text-[20px] bg-white border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[62px] flex flex-row justify-center gap-2 items-center cursor-pointer"
                                     onClick={handleOpen}>
                                     <img src="/saza.svg" alt="" />
-                                    <p className="font-[NotoSansKR400]">타로 카드 전체유형보기</p>
+                                    <p className="font-[ScoreDream400]">타로 카드 전체유형보기</p>
                                 </div>
                                 <div
                                     className="w-full border-2 text-xs lg:text-[20px] bg-white border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[62px] flex flex-row justify-center gap-2 items-center cursor-pointer"
                                     onClick={copyClipboard}>
                                     <img src="/saza.svg" alt="" />
 
-                                    <p className="font-[NotoSansKR400]">타로점 공유하기</p>
+                                    <p className="font-[ScoreDream400]">타로점 공유하기</p>
                                 </div>
 
                                 <a
@@ -328,12 +328,12 @@ export default function ResultPage() {
                                     href={`/save_image_${selectedCard?.key}.png`}
                                     download={true}>
                                     <img src="/saza.svg" alt="" />
-                                    <p className="font-[NotoSansKR400]">타로 결과 저장하기</p>
+                                    <p className="font-[ScoreDream400]">타로 결과 저장하기</p>
                                 </a>
                             </div>
                             <div className="w-full flex flex-col lg:flex-row lg:text-4xl justify-start lg:justify-center items-center lg:gap-3 text-white mt-[3px] lg:mt-[42px]">
-                                <div className="font-[NotoSansKR500]">지금까지</div>
-                                <div className="font-[NotoSansKR500]">
+                                <div className="font-[ScoreDream500]">지금까지</div>
+                                <div className="font-[ScoreDream500]">
                                     {typeof visitorCount === 'number'
                                         ? visitorCount.toLocaleString()
                                         : parseInt(visitorCount).toLocaleString()}
@@ -344,27 +344,27 @@ export default function ResultPage() {
                     </div>
                 </div>
                 <div className="flex flex-col justify-start items-center w-[298px] lg:w-[815px] y-[650px] lg:y-[185px] mt-[75px] lg:mt-[75px]">
-                    <div className="font-[NotoSansKR400] w-[234px] h-[60px] lg:w-full text-center leading-[56px] text-white lg:text-4xl">
+                    <div className="font-[ScoreDream400] w-[234px] h-[60px] lg:w-full text-center leading-[56px] text-white lg:text-4xl">
                         사자랑가자 만나러 가기
                     </div>
 
                     <div className="flex flex-col lg:flex-row justify-center lg:justify-center items-center lg:items-center lg:mt-[50px] gap-6 text-[#269E45]">
                         <Link href={'https://www.instagram.com/saza.gaza/'}>
-                            <div className="font-[NotoSansKR400] w-[234px] lg:w-[388px] h-[60px] lg:h-[85px] border-2 text-xs lg:text-2xl bg-white border-[#269E45] rounded-full text-center leading-[56px] flex flex-row justify-center gap-2 items-center">
+                            <div className="font-[ScoreDream400] w-[234px] lg:w-[388px] h-[60px] lg:h-[85px] border-2 text-xs lg:text-2xl bg-white border-[#269E45] rounded-full text-center leading-[56px] flex flex-row justify-center gap-2 items-center">
                                 <img src="/insta.svg" alt="" />
                                 사자랑가자 팔로잉하기
                             </div>
                         </Link>
 
                         <Link href={'https://www.sazagaza.co.kr'}>
-                            <div className="font-[NotoSansKR400] w-[234px] lg:w-[388px] h-[60px] lg:h-[85px] border-2 text-xs lg:text-2xl bg-white border-[#269E45] rounded-full text-center leading-[56px] flex flex-row justify-center gap-2 items-center">
+                            <div className="font-[ScoreDream400] w-[234px] lg:w-[388px] h-[60px] lg:h-[85px] border-2 text-xs lg:text-2xl bg-white border-[#269E45] rounded-full text-center leading-[56px] flex flex-row justify-center gap-2 items-center">
                                 <img src="/saza.svg" alt="" />
                                 사자랑가자 SHOP 바로가기
                             </div>
                         </Link>
                     </div>
                 </div>
-                <div className="text-xs lg:text-2xl mt-[81px] lg:mt-[70px] z-[10]">
+                <div className="text-[0.55rem] lg:text-2xl mt-[81px] lg:mt-[70px] z-[10]">
                     ⓒ 2024 Quadhash Corporation. All Rights Reserved.
                 </div>
 
@@ -466,7 +466,7 @@ export default function ResultPage() {
 
                             <div className="w-full border-2 py-1 lg:py-4 text-xs bg-white border-[#289F48] text-[11px] lg:text-[25px] rounded-full text-center flex flex-row justify-center gap-2 items-center cursor-pointer text-[#01671C] mt-[21px] lg:mt-[50px] leading-[11px] lg:leading-[25px]">
                                 <img src="/saza.svg" alt="" />
-                                <p className="font-[NotoSansKR400]">타로 결과 저장하기</p>
+                                <p className="font-[ScoreDream400]">타로 결과 저장하기</p>
                             </div>
                             <div className="mt-[21px] text-[#FFFFFF] text-center lg:mt-[50px]">
                                 <div className="flex flex-row justify-center items-end">
@@ -484,7 +484,7 @@ export default function ResultPage() {
                         </div>
                     </div>
 
-                    <div className="w-[325px] lg:w-full mt-[49px] mx-[34px] py-[54px] px-[10px] bg-[#2DA663] rounded-[15px] flex flex-col items-center">
+                    <div className="w-[325px] lg:w-full mt-[49px] mx-[34px] py-[54px] px-[10px] bg-[#2DA663] rounded-[15px] lg:rounded-t-[15px] lg:rounded-b-none flex flex-col items-center">
                         <div className="w-[244px] lg:w-[660px] flex flex-col items-center">
                             <div className="w-[109px] lg:w-[265px] rounded-full bg-[#FFFFFF] lg:mt-[152px] px-[20px] py-[16px] text-[13px] lg:text-[25px] text-center text-[#01671C] leading-[5px] lg:leading-[25px] font-[ScoreDream200]">
                                 MISSION 2
@@ -533,13 +533,13 @@ export default function ResultPage() {
                             </div>
 
                             <div
-                                className="w-[176px] lg:w-[476px] rounded-full bg-[#FFFFFF] px-[20px] py-[16px] lg:py-5 lg:mb-[100px] text-[12px] lg:text-[25px] text-[#01671C] text-center mt-[59px] mb-[3px] leading-[12px] lg:leading-[25px] font-[NotoSansKR500] cursor-pointer"
+                                className="w-[176px] lg:w-[476px] rounded-full bg-[#FFFFFF] px-[20px] py-[16px] lg:py-5 lg:mb-[100px] text-[12px] lg:text-[25px] text-[#01671C] text-center mt-[59px] mb-[3px] leading-[12px] lg:leading-[25px] font-[ScoreDream500] cursor-pointer"
                                 onClick={copyHashTag}>
                                 해시태그 복사하기
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-col items-center mt-[87px] lg:mt-[135px] bg-[#FF4D00] py-[85px] lg:py-[110px] text-[#FFFFFF] text-[13px] lg:text-[25px] w-full">
+                    <div className="flex flex-col items-center mt-[87px] lg:mt-0 bg-[#FF4D00] py-[85px] lg:py-[110px] text-[#FFFFFF] text-[13px] lg:text-[25px] w-full">
                         <div>
                             <div>인스타그램 참여 시 @saza.gaza 팔로우 및 계정 태그 필수!</div>
                             <div className="mt-[13px]">

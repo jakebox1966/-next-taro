@@ -4,17 +4,17 @@ import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
 import Image from 'next/image'
 
-import the_star from '../../../public/the_star.gif'
-import the_lovers from '../../../public/the_lovers.gif'
-import the_money from '../../../public/the_money.gif'
-import the_magician from '../../../public/the_magician.gif'
-import the_world from '../../../public/the_world.gif'
-import the_sun from '../../../public/the_sun.gif'
-import the_strength from '../../../public/the_strength.gif'
-import the_chariot from '../../../public/the_chariot.gif'
-import the_emperor from '../../../public/the_emperor.gif'
-import the_hermit from '../../../public/the_hermit.gif'
-import ace_of_wands from '../../../public/ace_of_wands.gif'
+import the_star from '../../../public/the_star.png'
+import the_lovers from '../../../public/the_lovers.png'
+import the_money from '../../../public/the_money.png'
+import the_magician from '../../../public/the_magician.png'
+import the_world from '../../../public/the_world.png'
+import the_sun from '../../../public/the_sun.png'
+import the_strength from '../../../public/the_strength.png'
+import the_chariot from '../../../public/the_chariot.png'
+import the_emperor from '../../../public/the_emperor.png'
+import the_hermit from '../../../public/the_hermit.png'
+import ace_of_wands from '../../../public/ace_of_wands.png'
 import { useRouter } from 'next/navigation'
 
 export interface ICardListModalProps {
@@ -75,7 +75,7 @@ export function CardListModal({ open, handleOpen }: ICardListModalProps) {
                                             </span>
                                         </div>
                                         <div className="w-full flex flex-row justify-center items-center text-lg lg:text-3xl">
-                                            <div className="bg-[#FFC947] px-10 py-2 rounded-lg border-2 border-black shadow !font-bold font-[NotoSansKR700]">
+                                            <div className="bg-[#FFC947] px-10 py-2 rounded-lg border-2 border-black shadow !font-bold font-[ScoreDream700]">
                                                 타로 카드 유형 전체 보기
                                             </div>
                                         </div>
@@ -84,13 +84,14 @@ export function CardListModal({ open, handleOpen }: ICardListModalProps) {
                                         {imageList.map((item, index) => (
                                             <div
                                                 key={`${index}_${item.component}`}
-                                                className="w-[calc(30%-5px)] cursor-pointer"
+                                                className="w-[calc(30%-5px)] cursor-pointer flex flex-row justify-center items-center"
                                                 onClick={() => {
                                                     handleOpen()
                                                     router.push(`/result?card_type=${item.link}`)
                                                 }}>
                                                 <Image
                                                     // src={`/${item}.gif`}
+                                                    className="shadow-lg"
                                                     src={item.component}
                                                     width={0}
                                                     height={0}
