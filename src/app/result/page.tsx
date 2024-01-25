@@ -111,10 +111,10 @@ const cardList = [
         image: the_strength,
         title: 'THE STRENGTH',
         desc: [
-            'The The Strength 카드는 용기, 자신감, 열정을 상징해.',
-            '이런 풍부한 자질을 가지고 있다는 것을 나타내고, 2024년은 내면의 강인함과 용기가 돋보이는 해가 될 거야.',
-            '2024년은 이미 목표에 달성하기 위한 자질을 갖추고 있으며, 인생의 다음 단계로 나아갈 준비가 되어 있다는 것을 의미해.',
-            '많은 도전이 있을 수 있지만 주변의 도움을 통해 어려운 상황을 극복하며 용기와 포용력으로 주변을 이끌 거야.',
+            'The Strength 카드는 용기, 자신감, 열정을 상징해.',
+            '이런 풍부한 자질을 가지고 있다는 것을 나타내고, 내면의 강인함과 용기가 돋보이는 해가 될 거야.',
+            '이미 목표에 달성하기 위한 자질을 갖추고 있고 다음 단계로 나아갈 준비가 되어 있다는 것을 의미해.',
+            '많은 도전이 있을 수 있지만 주변의 통해 어려운 상황을 극복하며 용기와 포용력으로 주변을 이끌거야.',
             '새로운 누군가를 만나기에도 완벽한 시기이고, 앞으로도 지속적인 관계를 기대해 봐도 좋을거야.',
         ],
         luckyNumber: 8,
@@ -277,7 +277,7 @@ export default function ResultPage() {
                             alt=""
                         />
 
-                        <div className="mt-5 w-[201px] h-auto lg:w-[430px] lg:h-auto">
+                        <div className="mt-1 w-[201px] h-auto lg:w-[430px] lg:h-auto">
                             {selectedCard && (
                                 <Image
                                     src={selectedCard?.image as StaticImageData}
@@ -296,7 +296,7 @@ export default function ResultPage() {
 
                         <div className="text-xs lg:text-xl mt-4 lg:mt-10 text-center flex flex-col justify-center items-center">
                             {selectedCard?.desc.map((desc, index) => (
-                                <div className={`font-[ScoreDream200] mb-4`} key={index}>
+                                <div className={`font-[ScoreDream] mb-4`} key={index}>
                                     {desc}
                                 </div>
                             ))}
@@ -312,13 +312,13 @@ export default function ResultPage() {
                                 <div
                                     className="w-full border-2 text-xs lg:text-[20px] bg-white border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[62px] flex flex-row justify-center gap-2 items-center cursor-pointer"
                                     onClick={handleOpen}>
-                                    <img src="/saza.svg" alt="" />
+                                    <img src="/saza.png" alt="" />
                                     <p className="font-[ScoreDream300]">타로 카드 전체유형보기</p>
                                 </div>
                                 <div
                                     className="w-full border-2 text-xs lg:text-[20px] bg-white border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[62px] flex flex-row justify-center gap-2 items-center cursor-pointer"
                                     onClick={copyClipboard}>
-                                    <img src="/saza.svg" alt="" />
+                                    <img src="/saza.png" alt="" />
 
                                     <p className="font-[ScoreDream300]">타로점 공유하기</p>
                                 </div>
@@ -327,7 +327,7 @@ export default function ResultPage() {
                                     className="w-full border-2 text-xs lg:text-[20px] bg-white border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[62px] flex flex-row justify-center gap-2 items-center cursor-pointer"
                                     href={`/save_image_${selectedCard?.key}.png`}
                                     download={true}>
-                                    <img src="/saza.svg" alt="" />
+                                    <img src="/saza.png" alt="" />
                                     <p className="font-[ScoreDream300]">타로 결과 저장하기</p>
                                 </a>
                             </div>
@@ -351,14 +351,14 @@ export default function ResultPage() {
                     <div className="flex flex-col lg:flex-row justify-center lg:justify-center items-center lg:items-center lg:mt-[50px] gap-6 text-[#269E45]">
                         <Link href={'https://www.instagram.com/saza.gaza/'}>
                             <div className="font-[ScoreDream300] w-[234px] lg:w-[388px] h-[60px] lg:h-[85px] border-2 text-xs lg:text-2xl bg-white border-[#269E45] rounded-full text-center leading-[56px] flex flex-row justify-center gap-2 items-center">
-                                <img src="/insta.svg" alt="" />
+                                <img src="/insta.png" alt="" />
                                 사자랑가자 팔로잉하기
                             </div>
                         </Link>
 
                         <Link href={'https://www.sazagaza.co.kr'}>
                             <div className="font-[ScoreDream300] w-[234px] lg:w-[388px] h-[60px] lg:h-[85px] border-2 text-xs lg:text-2xl bg-white border-[#269E45] rounded-full text-center leading-[56px] flex flex-row justify-center gap-2 items-center">
-                                <img src="/saza.svg" alt="" />
+                                <img src="/saza.png" alt="" />
                                 사자랑가자 SHOP 바로가기
                             </div>
                         </Link>

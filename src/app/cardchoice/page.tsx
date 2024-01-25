@@ -94,7 +94,7 @@ export default function CardChoicePage(props: ICardChoicePageProps) {
                         <div
                             className={`${
                                 isProcessing ? 'opacity-1' : 'opacity-0'
-                            } fade w-[300px] h-auto lg:w-[750px] lg:h-auto absolute z-[-9999] top-[-30px] lg:top-[-130px]`}>
+                            } fade w-[350px] h-auto lg:w-[750px] lg:h-auto absolute z-[-9999] top-[-30px] lg:top-[-130px]`}>
                             <Image src={mainImage} width={0} height={0} sizes="100vw" alt="" />
                             <div className="flex flex-col justify-center items-center absolute left-1/2 -translate-x-1/2 -translate-y-[100px] lg:-translate-y-[250px]">
                                 <div
@@ -154,7 +154,7 @@ export default function CardChoicePage(props: ICardChoicePageProps) {
                         <div
                             className={`${
                                 isProcessing ? 'opacity-0' : 'opacity-1'
-                            } w-[240px] h-[56px] lg:w-full flex flex-col justify-start items-center mt-[39px]`}>
+                            } w-[260px] h-[56px] lg:w-full flex flex-col justify-start items-center mt-[39px]`}>
                             <div className="flex flex-col justify-center items-center text-black lg:text-[35px] w-full font-[ScoreDream300]">
                                 <div>당신에게 찾아올 행운을</div>
                                 <div>
@@ -165,7 +165,7 @@ export default function CardChoicePage(props: ICardChoicePageProps) {
                             </div>
 
                             <div
-                                className="font-[ScoreDream400] py-3 w-[176px] lg:w-[200px] border-2 text-xs lg:text-xl border-[#269E45] rounded-full text-center flex flex-row justify-center mt-[32px] gap-2 items-center cursor-pointer"
+                                className="font-[ScoreDream300] py-3 w-[176px] lg:w-[200px] border-2 text-xs lg:text-xl border-[#269E45] rounded-full text-center flex flex-row justify-center mt-[32px] gap-2 items-center cursor-pointer"
                                 onClick={shuffleCard}>
                                 <img src="/check.svg" alt="" />
                                 확인
@@ -185,14 +185,14 @@ export default function CardChoicePage(props: ICardChoicePageProps) {
                         <div className="flex flex-col lg:flex-row justify-center lg:justify-center items-center lg:items-center gap-6">
                             <Link href={'https://www.instagram.com/saza.gaza/'}>
                                 <div className="font-[ScoreDream300] w-[234px] lg:w-[388px] h-[56px] lg:h-[85px] border-2 text-xs lg:text-[23px] border-[#269E45] rounded-full text-center leading-[56px] flex flex-row justify-center gap-2 items-center">
-                                    <img src="/insta.svg" alt="" />
+                                    <img src="/insta.png" alt="" />
                                     사자랑가자 팔로잉하기
                                 </div>
                             </Link>
 
                             <Link href={'https://www.sazagaza.co.kr'}>
                                 <div className="font-[ScoreDream300] w-[234px] lg:w-[388px] h-[56px] lg:h-[85px] border-2 text-xs lg:text-[23px] border-[#269E45] rounded-full text-center leading-[56px] flex flex-row justify-center gap-2 items-center">
-                                    <img src="/saza.svg" alt="" />
+                                    <img src="/saza.png" alt="" />
                                     사자랑가자 SHOP 바로가기
                                 </div>
                             </Link>
