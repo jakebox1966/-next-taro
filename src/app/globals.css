@@ -65,6 +65,12 @@
     }
 
     @font-face {
+        font-family: "ScoreDream500";
+        font-weight: 500;
+        src: url("/fonts/SCDream6.otf") format("truetype");
+    }
+
+    @font-face {
         font-family: "ScoreDream600";
         font-weight: 600;
         src: url("/fonts/SCDream6.otf") format("truetype");

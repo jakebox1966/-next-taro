@@ -66,9 +66,6 @@ export default function Home() {
     return (
         <>
             <div className="flex flex-col justify-start items-center py-8 w-full text-[#01671C] font-black">
-                <a href="https://hits.seeyoufarm.com" className="invisible">
-                    <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Ftarot.quadhash.kr&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" />
-                </a>
                 <div className="w-[358px] lg:w-[1000px] y-[789px] lg:y-[1990px] relative">
                     <img
                         className="w-full"
@@ -86,22 +83,22 @@ export default function Home() {
 
                         <div className="w-[234px] h-[56px] lg:w-[388px] lg:h-[340px] flex flex-col justify-start items-center gap-6 lg:gap-10 mt-72 lg:mt-[36rem]">
                             <Link className="w-full" href={'/cardchoice'}>
-                                <div className="font-[ScoreDream400] border-2 text-xs lg:text-2xl border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[72px] flex flex-row justify-center gap-2 items-center">
+                                <div className="font-[ScoreDream300] border-2 text-xs lg:text-2xl border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[72px] flex flex-row justify-center gap-2 items-center">
                                     <img src="/saza.svg" alt="" />
                                     타로점 시작하기
                                 </div>
                             </Link>
 
                             <div
-                                className="font-[ScoreDream400] w-full border-2 text-xs lg:text-2xl border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[72px] flex flex-row justify-center gap-2 items-center cursor-pointer"
+                                className="font-[ScoreDream300] w-full border-2 text-xs lg:text-2xl border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[72px] flex flex-row justify-center gap-2 items-center cursor-pointer"
                                 onClick={copyClipboard}>
                                 <img src="/saza.svg" alt="" />
                                 타로점 공유하기
                             </div>
 
                             <div className="w-full flex flex-col lg:text-4xl justify-start items-center text-black mt-5 lg:mt-2 gap-1 lg:gap-4">
-                                <div className="font-[ScoreDream400]">지금까지</div>
-                                <div className="font-[ScoreDream600]">
+                                <div className="font-[ScoreDream300]">지금까지</div>
+                                <div className="font-[ScoreDream400]">
                                     {typeof visitorCount === 'number'
                                         ? visitorCount.toLocaleString()
                                         : parseInt(visitorCount).toLocaleString()}
@@ -113,27 +110,27 @@ export default function Home() {
                 </div>
 
                 <div className="flex flex-col justify-start items-center w-[298px] lg:w-[515px] y-[650px] lg:y-[185px] gap-6 mt-8 lg:mt-16">
-                    <div className="font-[ScoreDream400] w-[234px] h-[56px] lg:w-full text-center leading-[56px] text-black lg:text-4xl">
+                    <div className="font-[ScoreDream300] w-[234px] h-[56px] lg:w-full text-center leading-[56px] text-black lg:text-4xl">
                         사자랑가자 만나러 가기
                     </div>
 
                     <div className="flex flex-col lg:flex-row justify-center lg:justify-center items-center lg:items-center gap-6">
                         <Link href={'https://www.instagram.com/saza.gaza/'}>
-                            <div className="font-[ScoreDream400] w-[234px] lg:w-[388px] h-[56px] lg:h-[85px] border-2 text-xs lg:text-[23px] border-[#269E45] rounded-full text-center leading-[56px] flex flex-row justify-center gap-2 items-center">
+                            <div className="font-[ScoreDream300] w-[234px] lg:w-[388px] h-[56px] lg:h-[85px] border-2 text-xs lg:text-[23px] border-[#269E45] rounded-full text-center leading-[56px] flex flex-row justify-center gap-2 items-center">
                                 <img src="/insta.svg" alt="" />
                                 사자랑가자 팔로잉하기
                             </div>
                         </Link>
 
                         <Link href={'https://www.sazagaza.co.kr'}>
-                            <div className="font-[ScoreDream400] w-[234px] lg:w-[388px] h-[56px] lg:h-[85px] border-2 text-xs lg:text-[23px] border-[#269E45] rounded-full text-center leading-[56px] flex flex-row justify-center gap-2 items-center">
+                            <div className="font-[ScoreDream300] w-[234px] lg:w-[388px] h-[56px] lg:h-[85px] border-2 text-xs lg:text-[23px] border-[#269E45] rounded-full text-center leading-[56px] flex flex-row justify-center gap-2 items-center">
                                 <img src="/saza.svg" alt="" />
                                 사자랑가자 SHOP 바로가기
                             </div>
                         </Link>
                     </div>
                 </div>
-                <div className="text-[0.55rem] lg:text-2xl mt-12 lg:mt-20">
+                <div className="text-[0.7rem] lg:text-2xl mt-12 lg:mt-20">
                     ⓒ 2024 Quadhash Corporation. All Rights Reserved.
                 </div>
             </div>

@@ -296,12 +296,12 @@ export default function ResultPage() {
 
                         <div className="text-xs lg:text-xl mt-4 lg:mt-10 text-center flex flex-col justify-center items-center">
                             {selectedCard?.desc.map((desc, index) => (
-                                <div className={`font-[ScoreDream300] mb-4`} key={index}>
+                                <div className={`font-[ScoreDream200] mb-4`} key={index}>
                                     {desc}
                                 </div>
                             ))}
 
-                            <div className="flex flex-col justify-center items-center font-[ScoreDream500]">
+                            <div className="flex flex-col justify-center items-center font-[ScoreDream400]">
                                 <div>행운의 숫자: {selectedCard?.luckyNumber}</div>
                                 <div>행운의 컬러: {selectedCard?.luckyColor}</div>
                             </div>
@@ -313,14 +313,14 @@ export default function ResultPage() {
                                     className="w-full border-2 text-xs lg:text-[20px] bg-white border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[62px] flex flex-row justify-center gap-2 items-center cursor-pointer"
                                     onClick={handleOpen}>
                                     <img src="/saza.svg" alt="" />
-                                    <p className="font-[ScoreDream400]">타로 카드 전체유형보기</p>
+                                    <p className="font-[ScoreDream300]">타로 카드 전체유형보기</p>
                                 </div>
                                 <div
                                     className="w-full border-2 text-xs lg:text-[20px] bg-white border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[62px] flex flex-row justify-center gap-2 items-center cursor-pointer"
                                     onClick={copyClipboard}>
                                     <img src="/saza.svg" alt="" />
 
-                                    <p className="font-[ScoreDream400]">타로점 공유하기</p>
+                                    <p className="font-[ScoreDream300]">타로점 공유하기</p>
                                 </div>
 
                                 <a
@@ -328,12 +328,12 @@ export default function ResultPage() {
                                     href={`/save_image_${selectedCard?.key}.png`}
                                     download={true}>
                                     <img src="/saza.svg" alt="" />
-                                    <p className="font-[ScoreDream400]">타로 결과 저장하기</p>
+                                    <p className="font-[ScoreDream300]">타로 결과 저장하기</p>
                                 </a>
                             </div>
                             <div className="w-full flex flex-col lg:flex-row lg:text-4xl justify-start lg:justify-center items-center lg:gap-3 text-white mt-[3px] lg:mt-[42px]">
-                                <div className="font-[ScoreDream500]">지금까지</div>
-                                <div className="font-[ScoreDream500]">
+                                <div className="font-[ScoreDream300]">지금까지</div>
+                                <div className="font-[ScoreDream300]">
                                     {typeof visitorCount === 'number'
                                         ? visitorCount.toLocaleString()
                                         : parseInt(visitorCount).toLocaleString()}
@@ -344,27 +344,27 @@ export default function ResultPage() {
                     </div>
                 </div>
                 <div className="flex flex-col justify-start items-center w-[298px] lg:w-[815px] y-[650px] lg:y-[185px] mt-[75px] lg:mt-[75px]">
-                    <div className="font-[ScoreDream400] w-[234px] h-[60px] lg:w-full text-center leading-[56px] text-white lg:text-4xl">
+                    <div className="font-[ScoreDream300] w-[234px] h-[60px] lg:w-full text-center leading-[56px] text-white lg:text-4xl">
                         사자랑가자 만나러 가기
                     </div>
 
                     <div className="flex flex-col lg:flex-row justify-center lg:justify-center items-center lg:items-center lg:mt-[50px] gap-6 text-[#269E45]">
                         <Link href={'https://www.instagram.com/saza.gaza/'}>
-                            <div className="font-[ScoreDream400] w-[234px] lg:w-[388px] h-[60px] lg:h-[85px] border-2 text-xs lg:text-2xl bg-white border-[#269E45] rounded-full text-center leading-[56px] flex flex-row justify-center gap-2 items-center">
+                            <div className="font-[ScoreDream300] w-[234px] lg:w-[388px] h-[60px] lg:h-[85px] border-2 text-xs lg:text-2xl bg-white border-[#269E45] rounded-full text-center leading-[56px] flex flex-row justify-center gap-2 items-center">
                                 <img src="/insta.svg" alt="" />
                                 사자랑가자 팔로잉하기
                             </div>
                         </Link>
 
                         <Link href={'https://www.sazagaza.co.kr'}>
-                            <div className="font-[ScoreDream400] w-[234px] lg:w-[388px] h-[60px] lg:h-[85px] border-2 text-xs lg:text-2xl bg-white border-[#269E45] rounded-full text-center leading-[56px] flex flex-row justify-center gap-2 items-center">
+                            <div className="font-[ScoreDream300] w-[234px] lg:w-[388px] h-[60px] lg:h-[85px] border-2 text-xs lg:text-2xl bg-white border-[#269E45] rounded-full text-center leading-[56px] flex flex-row justify-center gap-2 items-center">
                                 <img src="/saza.svg" alt="" />
                                 사자랑가자 SHOP 바로가기
                             </div>
                         </Link>
                     </div>
                 </div>
-                <div className="text-[0.55rem] lg:text-2xl mt-[81px] lg:mt-[70px] z-[10]">
+                <div className="text-[0.7rem] lg:text-2xl mt-[81px] lg:mt-[70px] z-[10]">
                     ⓒ 2024 Quadhash Corporation. All Rights Reserved.
                 </div>
 
@@ -373,7 +373,7 @@ export default function ResultPage() {
 
             <div className="w-full flex flex-row justify-center bg-[#FFFFFF]">
                 <div className="w-full lg:w-[1000px] font-[ScoreDream200] flex flex-col items-center bg-[#FFFFFF] text-black">
-                    <img className="w-full" src="/event_image_1.svg" alt="" />
+                    <img className="w-full" src="/event_image_1.png" alt="" />
 
                     <div className="flex flex-row justify-center w-[260px] py-[16px] px-[26px] rounded-full items-center bg-[#FF4D00] mt-[37px] lg:mt-[163px] text-[#FFFFFF] gap-[16px] text-[15px] leading-[15px]">
                         <img src="/check_icon.svg" alt="" /> @SAZA.GAZA EVENT
@@ -402,7 +402,7 @@ export default function ResultPage() {
                     </div>
 
                     <div className="mt-[22px] lg:mt-[20px] text-[13px] lg:text-[26px]">
-                        <span className="font-[ScoreDream400]">이벤트 기간 </span>2월 26일 ~ 2월
+                        <span className="font-[ScoreDream400]">이벤트 기간 </span>2월 29일 ~ 2월
                         23일
                     </div>
 
@@ -428,13 +428,13 @@ export default function ResultPage() {
                     </div>
 
                     <div className="w-full">
-                        <img className="w-full object-cover" src="/event_image2.svg" alt="" />
+                        <img className="w-full object-cover" src="/event_image2.png" alt="" />
                     </div>
                     <div className="w-full">
-                        <img className="w-full" src="/event_image3.svg" alt="" />
+                        <img className="w-full" src="/event_image3.png" alt="" />
                     </div>
                     <div className="w-full">
-                        <img className="w-full" src="/event_image4.svg" alt="" />
+                        <img className="w-full" src="/event_image4.png" alt="" />
                     </div>
 
                     <div className="w-[236px] lg:w-[300px] border-[4px] border-[#378D42] py-[16px] px-[24px] rounded-full items-center bg-[#FF4D00] text-[#FFFFFF] text-[15px] lg:text-[25px] mt-[85px] lg:mt-[156px] flex flex-row gap-[16px] leading-[15px] lg:leading-[25px]">
@@ -452,13 +452,13 @@ export default function ResultPage() {
                                 {isMobile ? (
                                     <img
                                         className="lg:w-[442px] translate-x-1"
-                                        src="/event_image5.svg"
+                                        src="/event_image5.png"
                                         alt=""
                                     />
                                 ) : (
                                     <img
                                         className="translate-x-1 lg:translate-x-4"
-                                        src="/event_image5_desktop.svg"
+                                        src="/event_image5.png"
                                         alt=""
                                     />
                                 )}
