@@ -26,8 +26,10 @@ export default function Home() {
 
         const html = await result.text()
         const svg = domParser.parseFromString(html, 'text/xml')
+        console.log(svg)
 
         const visitorCount = svg.childNodes[0].childNodes[7].childNodes[7].textContent
+        console.log(visitorCount)
 
         setVisitorCount(visitorCount?.split('/')[1] as unknown as number)
     }
