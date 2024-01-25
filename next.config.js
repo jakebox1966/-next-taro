@@ -3,18 +3,6 @@ const nextConfig = {
     reactStrictMode: true,
     swcMinify: true,
 
-    // async headers() {
-    //     return[
-    //         {
-    //             source: '/api/test',
-    //             headers: [
-    //                 {key: 'Cache-Control',
-    //                 value: 's-maxage=1, stale-'
-    //             }
-    //             ]
-    //         }
-    //     ]
-    // },
     async rewrites() {
         return [
             {
