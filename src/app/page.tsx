@@ -5,6 +5,8 @@ import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import mainImage from '../../public/main_image.gif'
 
+export const dynamic = 'force-dynamic'
+export const fetchCache = 'force-no-store'
 export const revalidate = 0
 
 export default function Home() {
