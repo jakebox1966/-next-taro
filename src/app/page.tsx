@@ -59,6 +59,9 @@ export default function Home() {
 
     return (
         <>
+            <a href="https://hits.seeyoufarm.com">
+                <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Ftarot.quadhash.kr&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" />
+            </a>
             <div className="flex flex-col justify-start items-center py-8 w-full text-[#01671C] font-black">
                 <div className="w-[358px] lg:w-[1000px] y-[789px] lg:y-[1990px] relative">
                     <img
