@@ -5,6 +5,8 @@ import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import mainImage from '../../public/main_image.gif'
 
+export const revalidate = 0
+
 export default function Home() {
     const pathname = usePathname()
     const [isMobile, setIsMobile] = useState(false)
