@@ -248,14 +248,14 @@ export default function ResultPage() {
     return (
         <>
             <div
-                className={`flex flex-col justify-stretch items-center h-full text-white font-black pt-11`}>
-                <div className="absolute top-0 w-full min-h-screen -z-10">
+                className={`flex flex-col justify-stretch items-center h-full text-white font-black pt-11 bg-black`}>
+                {/* <div className="absolute top-0 w-full min-h-screen -z-10">
                     {isMobile ? (
                         <img className="w-full" src="/main_background_galaxy.png" alt="" />
                     ) : (
                         <img className="w-full" src="/main_background_galaxy_desktop.jpg" alt="" />
                     )}
-                </div>
+                </div> */}
                 <div className="w-[358px] lg:w-[1000px] relative">
                     <img
                         src={`${
