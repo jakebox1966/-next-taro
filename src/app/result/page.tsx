@@ -310,13 +310,13 @@ export default function ResultPage() {
                         <div className="text-[#269E45] w-[234px] h-[56px] lg:w-[888px] lg:h-[340px] flex flex-col justify-start items-center gap-6 lg:gap-10 mt-[55px] lg:mt-10 absolute -bottom-[68px] lg:-bottom-[1180px]">
                             <div className="w-full flex flex-col lg:flex-row gap-5 mb-3">
                                 <div
-                                    className="w-full border-2 text-xs lg:text-[20px] bg-white border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[62px] flex flex-row justify-center gap-2 items-center cursor-pointer"
+                                    className="w-full border-2 text-xs lg:text-[17px] bg-white border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[62px] flex flex-row justify-center gap-2 items-center cursor-pointer"
                                     onClick={handleOpen}>
                                     <img src="/saza.png" alt="" />
                                     <p className="font-[ScoreDream300]">타로 카드 전체유형보기</p>
                                 </div>
                                 <div
-                                    className="w-full border-2 text-xs lg:text-[20px] bg-white border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[62px] flex flex-row justify-center gap-2 items-center cursor-pointer"
+                                    className="w-full border-2 text-xs lg:text-[17px] bg-white border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[62px] flex flex-row justify-center gap-2 items-center cursor-pointer"
                                     onClick={copyClipboard}>
                                     <img src="/saza.png" alt="" />
 
@@ -324,7 +324,7 @@ export default function ResultPage() {
                                 </div>
 
                                 <a
-                                    className="w-full border-2 text-xs lg:text-[20px] bg-white border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[62px] flex flex-row justify-center gap-2 items-center cursor-pointer"
+                                    className="w-full border-2 text-xs lg:text-[17px] bg-white border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[62px] flex flex-row justify-center gap-2 items-center cursor-pointer"
                                     href={`/save_image_${selectedCard?.key}.png`}
                                     download={true}>
                                     <img src="/saza.png" alt="" />
@@ -402,7 +402,7 @@ export default function ResultPage() {
                     </div>
 
                     <div className="mt-[22px] lg:mt-[20px] text-[13px] lg:text-[26px]">
-                        <span className="font-[ScoreDream400]">이벤트 기간 </span>2월 29일 ~ 2월
+                        <span className="font-[ScoreDream400]">이벤트 기간 </span>1월 29일 ~ 2월
                         23일
                     </div>
 
