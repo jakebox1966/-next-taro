@@ -116,7 +116,7 @@ export default function CardChoicePage(props: ICardChoicePageProps) {
                             ref={clickMenuRef}>
                             <div
                                 className={`${
-                                    selectedCard === 1 && 'transition-all border-4'
+                                    selectedCard === 1 && 'transition-all border-4 rounded-2xl'
                                 } card cursor-pointer w-[calc(50%-10px)] border-[#269E45] shadow-2xl`}
                                 onClick={() => {
                                     setSelectedCard(1)
@@ -125,7 +125,7 @@ export default function CardChoicePage(props: ICardChoicePageProps) {
                             </div>
                             <div
                                 className={`${
-                                    selectedCard === 2 && 'transition-all border-4'
+                                    selectedCard === 2 && 'transition-all border-4 rounded-2xl'
                                 } card cursor-pointer w-[calc(50%-10px)] border-[#269E45] shadow-2xl`}
                                 onClick={() => {
                                     setSelectedCard(2)
@@ -134,7 +134,7 @@ export default function CardChoicePage(props: ICardChoicePageProps) {
                             </div>
                             <div
                                 className={`${
-                                    selectedCard === 3 && 'transition-all border-4'
+                                    selectedCard === 3 && 'transition-all border-4 rounded-2xl'
                                 } card cursor-pointer w-[calc(50%-10px)] border-[#269E45] shadow-2xl`}
                                 onClick={() => {
                                     setSelectedCard(3)
@@ -143,7 +143,7 @@ export default function CardChoicePage(props: ICardChoicePageProps) {
                             </div>
                             <div
                                 className={`${
-                                    selectedCard === 4 && 'transition-all border-4'
+                                    selectedCard === 4 && 'transition-all border-4 rounded-2xl'
                                 } card cursor-pointer w-[calc(50%-10px)] border-[#269E45] shadow-2xl`}
                                 onClick={() => {
                                     setSelectedCard(4)
@@ -159,7 +159,7 @@ export default function CardChoicePage(props: ICardChoicePageProps) {
                                 <div>당신에게 찾아올 행운을</div>
                                 <div>
                                     떠올리며 카드를
-                                    <span className="font-[ScoreDream400]"> 한장 </span>
+                                    <span className="font-[ScoreDream400]"> 한 장 </span>
                                     골라주세요.
                                 </div>
                             </div>

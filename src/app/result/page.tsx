@@ -230,8 +230,23 @@ export default function ResultPage() {
     }
 
     const imageDownload = () => {
-        console.log(`/save_image_${selectedCard?.key}.png`)
-        saveAs(`/save_image_${selectedCard?.key}.png`, `save_image_${selectedCard?.key}.png`)
+        const userAgent = navigator.userAgent.toLowerCase()
+        if (userAgent.indexOf('android') > -1) {
+            //안드로이드
+            saveAs(`/save_image_${selectedCard?.key}.png`, `save_image_${selectedCard?.key}.png`)
+        } else if (
+            userAgent.indexOf('iphone') > -1 ||
+            userAgent.indexOf('ipad') > -1 ||
+            userAgent.indexOf('ipod') > -1
+        ) {
+            //IOS
+            alert('IOS 기기의 경우 새 창에서 이미지 저장을 해주세요.')
+            window.open(`/save_image_${selectedCard?.key}.png`), '_blank'
+        } else {
+            //아이폰, 안드로이드 외 모바일
+
+            saveAs(`/save_image_${selectedCard?.key}.png`, `save_image_${selectedCard?.key}.png`)
+        }
     }
 
     const handleOpen = () => setOpen(!open)
