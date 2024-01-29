@@ -343,19 +343,19 @@ export default function ResultPage() {
 
                                     <p className="font-[ScoreDream300]">타로점 공유하기</p>
                                 </div>
-
+                                {/* 
                                 <a
                                     className="w-full border-2 text-xs lg:text-[17px] bg-white border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[62px] flex flex-row justify-center gap-2 items-center cursor-pointer"
                                     href={`/save_image_${selectedCard?.key}.png`}
                                     download={true}>
                                     <img src="/saza.png" alt="" />
                                     <p className="font-[ScoreDream300]">타로 결과 저장하기</p>
-                                </a>
+                                </a> */}
                                 <div
                                     className="w-full border-2 text-xs lg:text-[17px] bg-white border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[62px] flex flex-row justify-center gap-2 items-center cursor-pointer"
                                     onClick={imageDownload}>
                                     <img src="/saza.png" alt="" />
-                                    <p className="font-[ScoreDream300]">타로 결과 저장하기1</p>
+                                    <p className="font-[ScoreDream300]">타로 결과 저장하기</p>
                                 </div>
                             </div>
                             <div className="w-full flex flex-col lg:flex-row lg:text-4xl justify-start lg:justify-center items-center lg:gap-3 text-white mt-[3px] lg:mt-[10px]">
@@ -491,7 +491,9 @@ export default function ResultPage() {
                                 )}
                             </div>
 
-                            <div className="w-full border-2 py-1 lg:py-4 text-xs bg-white border-[#289F48] text-[11px] lg:text-[25px] rounded-full text-center flex flex-row justify-center gap-2 items-center cursor-pointer text-[#01671C] mt-[21px] lg:mt-[50px] leading-[11px] lg:leading-[25px]">
+                            <div
+                                className="w-full border-2 py-1 lg:py-4 text-xs bg-white border-[#289F48] text-[11px] lg:text-[25px] rounded-full text-center flex flex-row justify-center gap-2 items-center cursor-pointer text-[#01671C] mt-[21px] lg:mt-[50px] leading-[11px] lg:leading-[25px]"
+                                onClick={imageDownload}>
                                 <img src="/saza.svg" alt="" />
                                 <p className="font-[ScoreDream400]">타로 결과 저장하기</p>
                             </div>

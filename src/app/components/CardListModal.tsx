@@ -63,7 +63,7 @@ export function CardListModal({ open, handleOpen }: ICardListModalProps) {
                                 leave="ease-in duration-200"
                                 leaveFrom="opacity-100 scale-100"
                                 leaveTo="opacity-0 scale-95">
-                                <Dialog.Panel className="w-full max-w-md lg:max-w-[1428px] transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                                <Dialog.Panel className="lg:max-w-[1428px] transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
                                     <Dialog.Title
                                         as="h3"
                                         className="text-lg font-medium leading-6 text-gray-900">
@@ -84,14 +84,15 @@ export function CardListModal({ open, handleOpen }: ICardListModalProps) {
                                         {imageList.map((item, index) => (
                                             <div
                                                 key={`${index}_${item.component}`}
-                                                className="w-[calc(30%-5px)] cursor-pointer flex flex-row justify-center items-center"
+                                                className="w-[calc(30%-5px)] cursor-pointer flex flex-row justify-center items-center rounded-lg"
                                                 onClick={() => {
                                                     handleOpen()
                                                     router.push(`/result?card_type=${item.link}`)
                                                 }}>
                                                 <Image
                                                     // src={`/${item}.gif`}
-                                                    className="shadow-lg"
+                                                    quality={100}
+                                                    className="shadow-lg w-full rounded-3xl"
                                                     src={item.component}
                                                     width={0}
                                                     height={0}
