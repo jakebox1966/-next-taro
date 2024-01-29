@@ -142,4 +142,26 @@
             transform: rotate(360deg);
         }
     }
+
+    @keyframes bounce {
+        0% {
+          top:0px;
+        }
+        95% {
+         
+        }
+        to {
+          top:50px;
+          
+        } 
+      }
+
+      .arrow {
+        position:relative;
+        padding: 50px;
+        top:0;
+        border-radius:50%;
+        background:#000;
+        animation:bounce 1s ease-in Infinite Alternate;
+      }
 }

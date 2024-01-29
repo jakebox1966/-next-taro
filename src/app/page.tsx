@@ -93,7 +93,7 @@ export default function Home() {
                                 className="font-[ScoreDream300] w-full border-2 text-xs lg:text-2xl border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[72px] flex flex-row justify-center gap-2 items-center cursor-pointer"
                                 onClick={copyClipboard}>
                                 <img src="/saza.png" alt="" />
-                                타로점 공유하기
+                                타로 링크 공유하기
                             </div>
 
                             <div className="w-full flex flex-col lg:text-4xl justify-start items-center mt-5 lg:mt-2 gap-1 lg:gap-4 text-black">

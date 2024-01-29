@@ -341,7 +341,7 @@ export default function ResultPage() {
                                     onClick={copyClipboard}>
                                     <img src="/saza.png" alt="" />
 
-                                    <p className="font-[ScoreDream300]">타로점 공유하기</p>
+                                    <p className="font-[ScoreDream300]">타로 링크 공유하기</p>
                                 </div>
                                 {/* 
                                 <a
@@ -394,6 +394,10 @@ export default function ResultPage() {
                 <div className="text-[0.7rem] lg:text-2xl mt-[81px] lg:mt-[70px] z-[10]">
                     ⓒ 2024 Quadhash Corporation. All Rights Reserved.
                 </div>
+                {/* <div className="flex flex-col justify-center items-center font-[ScoreDream400] text-[18px]">
+                    <div>인스타그램 공유 이벤트도</div>
+                    <div>확인해주세요.</div>
+                </div> */}
 
                 <MainBottomTextSlider />
             </div>
@@ -424,7 +428,7 @@ export default function ResultPage() {
                         <div className="font-[ScoreDream400]"> (총 20명)</div>
                     </div>
 
-                    <div className="w-[109px] lg:w-[208px] py-[16px] px-[20px] rounded-full text-center bg-[#FF4D00] mt-[52px] lg:mt-[140px] text-[#FFFFFF] text-[13px] lg:text-[16px] leading-[13px] lg:leading-[16px]">
+                    <div className="w-[159px] lg:w-[208px] py-[16px] px-[20px] rounded-full text-center bg-[#FF4D00] mt-[52px] lg:mt-[140px] text-[#FFFFFF] text-[13px] lg:text-[16px] leading-[13px] lg:leading-[16px]">
                         이벤트 기간
                     </div>
 
@@ -433,7 +437,7 @@ export default function ResultPage() {
                         23일
                     </div>
 
-                    <div className="w-[109px] lg:w-[208px] py-[16px] px-[20px] rounded-full text-center bg-[#FF4D00] mt-[22px] lg:mt-[25px] text-[#FFFFFF] text-[13px] lg:text-[16px] leading-[13px] lg:leading-[16px]">
+                    <div className="w-[159px] lg:w-[208px] py-[16px] px-[20px] rounded-full text-center bg-[#FF4D00] mt-[22px] lg:mt-[25px] text-[#FFFFFF] text-[13px] lg:text-[16px] leading-[13px] lg:leading-[16px]">
                         이벤트 대상
                     </div>
 
@@ -441,7 +445,18 @@ export default function ResultPage() {
                         @saza.gaza 팔로워 & 타로 공유 이벤트 참여자
                     </div>
 
-                    <div className="w-[109px] lg:w-[208px] py-[16px] px-[20px] rounded-full text-center bg-[#FF4D00] mt-[22px] lg:mt-[20px] text-[#FFFFFF] text-[13px] lg:text-[16px] leading-[13px] lg:leading-[16px]">
+                    <div className="w-[159px] lg:w-[208px] py-[16px] px-[20px] rounded-full text-center bg-[#FF4D00] mt-[22px] lg:mt-[25px] text-[#FFFFFF] text-[13px] lg:text-[16px] leading-[13px] lg:leading-[16px]">
+                        이벤트 참여 방법
+                    </div>
+
+                    <div className="mt-[22px] lg:mt-[20px] font-[ScoreDream400] text-[13px] lg:text-[26px]">
+                        인스타그램 @saza.gaza 팔로잉 + 타로 결과 공유 및 태그하기
+                    </div>
+                    <div className=" text-[13px] lg:text-[26px]">
+                        (아래 참여 방법 확인해주세요.)
+                    </div>
+
+                    <div className="w-[159px] lg:w-[208px] py-[16px] px-[20px] rounded-full text-center bg-[#FF4D00] mt-[22px] lg:mt-[20px] text-[#FFFFFF] text-[13px] lg:text-[16px] leading-[13px] lg:leading-[16px]">
                         당첨자 발표
                     </div>
 
@@ -521,27 +536,20 @@ export default function ResultPage() {
 
                             <div className="mt-[31px] lg:mt-[50px] flex flex-col justify-center items-stretch w-full text-[11px] lg:text-[20px] text-[#01671C]">
                                 <div className="flex flex-row justify-center items-center gap-2">
-                                    <div className="w-[79px] lg:w-[213px] px-[5px] py-[8px] lg:py-[14px] rounded-full bg-[#FFFFFF] text-center leading-[11px] lg:leading-[20px]">
+                                    <div className="w-[79px] lg:w-[213px] px-[7px] py-[8px] lg:py-[14px] rounded-full bg-[#FFFFFF] text-center leading-[11px] lg:leading-[20px]">
                                         #사자랑가자
                                     </div>
-                                    <div className="w-[79px] lg:w-[213px] px-[5px] py-[8px] lg:py-[14px] rounded-full bg-[#FFFFFF] text-center leading-[11px] lg:leading-[20px]">
-                                        #quadhash
+                                    <div className="w-[79px] lg:w-[213px] px-[7px] py-[8px] lg:py-[14px] rounded-full bg-[#FFFFFF] text-center leading-[11px] lg:leading-[20px]">
+                                        #타로
                                     </div>
-                                    <div className="w-[79px] lg:w-[213px] px-[5px] py-[8px] lg:py-[14px] rounded-full bg-[#FFFFFF] text-center leading-[11px] lg:leading-[20px]">
-                                        #타로테스트
-                                    </div>
-                                </div>
-                                <div className="flex flex-row justify-center items-center mt-[10px] gap-2">
-                                    <div className="w-[79px] lg:w-[213px] px-[5px] py-[8px] lg:py-[14px] rounded-full bg-[#FFFFFF] text-center leading-[11px] lg:leading-[20px]">
-                                        #신년운세
-                                    </div>
-                                    <div className="w-[79px] lg:w-[213px] px-[5px] py-[8px] lg:py-[14px] rounded-full bg-[#FFFFFF] text-center leading-[11px] lg:leading-[20px]">
+
+                                    <div className="w-[79px] lg:w-[213px] px-[7px] py-[8px] lg:py-[14px] rounded-full bg-[#FFFFFF] text-center leading-[11px] lg:leading-[20px]">
                                         @saza.gaza
                                     </div>
                                 </div>
                             </div>
 
-                            <div className="mt-[21px] lg:mt-[50px] text-[#FFFFFF] text-center">
+                            <div className="mt-[21px] lg:mt-[50px] text-center bg-[#FFFFFF] text-black rounded-3xl px-[10px] py-[15px] lg:py-[62px] lg:px-[72px] w-full">
                                 <div className="flex flex-col lg:flex-row justify-center lg:items-start items-center w-full font-[ScoreDream400] lg:gap-2">
                                     <p className="text-[13px] lg:text-[25px] leading-[20px] lg:leading-[35px]">
                                         1. 인스타그램 @saza.gaza를
@@ -559,13 +567,13 @@ export default function ResultPage() {
                                         에
                                     </p> */}
                                 </div>
-                                <div className="text-[13px] lg:text-[25px] leading-[20px] lg:leading-[35px] mt-6">
+                                <div className="text-[11px] lg:text-[25px] leading-[20px] lg:leading-[35px] mt-6">
                                     2. 아래의 해시태그를 달고 저장한 이미지를
                                 </div>
-                                <div className="text-[13px] lg:text-[25px] leading-[20px] lg:leading-[35px]">
+                                <div className="text-[11px] lg:text-[25px] leading-[20px] lg:leading-[35px]">
                                     스토리 또는 릴스로 업로드해주세요.
                                 </div>
-                                <div className="text-[13px] lg:text-[25px] leading-[20px] lg:leading-[35px]">
+                                <div className="text-[11px] lg:text-[25px] leading-[20px] lg:leading-[35px]">
                                     하단 해시태그 복사하기 클릭!
                                 </div>
                             </div>
