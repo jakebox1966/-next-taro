@@ -542,16 +542,25 @@ export default function ResultPage() {
                             </div>
 
                             <div className="mt-[21px] lg:mt-[50px] text-[#FFFFFF] text-center">
-                                <div className="flex flex-row justify-center items-end">
+                                <div className="flex flex-col lg:flex-row justify-center items-start w-full lg:font-[ScoreDream400] gap-2">
                                     <p className="text-[20px] lg:text-[25px] leading-[20px] lg:leading-[35px]">
+                                        1. 인스타그램
+                                    </p>
+                                    <p className="text-[13px] lg:text-[25px] leading-[13px] lg:leading-[35px]">
+                                        @saza.gaza를 팔로우해주세요.
+                                    </p>
+                                </div>
+
+                                <div className="flex flex-row justify-center items-end">
+                                    {/* <p className="text-[20px] lg:text-[25px] leading-[20px] lg:leading-[35px]">
                                         인스타그램
                                     </p>
                                     <p className="text-[13px] lg:text-[25px] leading-[13px] lg:leading-[35px]">
                                         에
-                                    </p>
+                                    </p> */}
                                 </div>
-                                <div className="text-[13px] lg:text-[25px] leading-[20px] lg:leading-[35px] mt-1">
-                                    아래의 해시태그를 달고 저장한 이미지를
+                                <div className="text-[13px] lg:text-[25px] leading-[20px] lg:leading-[35px] mt-6">
+                                    2. 아래의 해시태그를 달고 저장한 이미지를
                                 </div>
                                 <div className="text-[13px] lg:text-[25px] leading-[20px] lg:leading-[35px]">
                                     스토리 또는 릴스로 업로드해주세요.
