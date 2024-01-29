@@ -222,7 +222,7 @@ export default function ResultPage() {
 
     const copyHashTag = async () => {
         try {
-            await navigator.clipboard.writeText('#사자랑가자 #quadhash #타로테스트 #신년운세')
+            await navigator.clipboard.writeText('#사자랑가자 #타로')
             alert('해시태그가 복사되었어요.')
         } catch (err) {
             console.log(err)
