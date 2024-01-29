@@ -542,7 +542,7 @@ export default function ResultPage() {
                             </div>
 
                             <div className="mt-[21px] lg:mt-[50px] text-[#FFFFFF] text-center">
-                                <div className="flex flex-col lg:flex-row justify-center items-start w-full lg:font-[ScoreDream400] gap-2">
+                                <div className="flex flex-col lg:flex-row justify-center lg:items-start items-center w-full lg:font-[ScoreDream400] gap-1">
                                     <p className="text-[20px] lg:text-[25px] leading-[20px] lg:leading-[35px]">
                                         1. 인스타그램
                                     </p>
