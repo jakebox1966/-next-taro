@@ -18,6 +18,7 @@ import ace_of_wands from '../../../public/ace_of_wands.gif'
 import Image, { StaticImageData } from 'next/image'
 import { StaticImport } from 'next/dist/shared/lib/get-img-props'
 import MainBottomTextSlider from '../components/MainBottomTextSlider'
+import { saveAs } from 'file-saver'
 
 export interface ICard {
     key: string
@@ -228,6 +229,11 @@ export default function ResultPage() {
         }
     }
 
+    const imageDownload = () => {
+        console.log(`/save_image_${selectedCard?.key}.png`)
+        saveAs(`/save_image_${selectedCard?.key}.png`, `save_image_${selectedCard?.key}.png`)
+    }
+
     const handleOpen = () => setOpen(!open)
 
     React.useEffect(() => {
@@ -330,6 +336,12 @@ export default function ResultPage() {
                                     <img src="/saza.png" alt="" />
                                     <p className="font-[ScoreDream300]">타로 결과 저장하기</p>
                                 </a>
+                                <div
+                                    className="w-full border-2 text-xs lg:text-[17px] bg-white border-[#269E45] rounded-full text-center leading-[53px] lg:leading-[62px] flex flex-row justify-center gap-2 items-center cursor-pointer"
+                                    onClick={imageDownload}>
+                                    <img src="/saza.png" alt="" />
+                                    <p className="font-[ScoreDream300]">타로 결과 저장하기1</p>
+                                </div>
                             </div>
                             <div className="w-full flex flex-col lg:flex-row lg:text-4xl justify-start lg:justify-center items-center lg:gap-3 text-white mt-[3px] lg:mt-[10px]">
                                 <div className="font-[ScoreDream300]">지금까지</div>
