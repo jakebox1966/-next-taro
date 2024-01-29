@@ -433,7 +433,7 @@ export default function ResultPage() {
                     </div>
 
                     <div className="mt-[22px] lg:mt-[20px] text-[13px] lg:text-[26px]">
-                        <span className="font-[ScoreDream400]">이벤트 기간 </span>1월 29일 ~ 2월
+                        <span className="font-[ScoreDream400]">이벤트 기간 </span>1월 30일 ~ 2월
                         23일
                     </div>
 

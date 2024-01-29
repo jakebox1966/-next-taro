@@ -37,7 +37,7 @@ export default function MainBottomTextSlider(props: IMainBottomTextSliderProps) 
     return (
         <>
             {/* <div className="flex flex-col justify-center items-center"> */}
-            <div className="flex flex-col justify-center items-center font-[ScoreDream400] text-[18px] arrow gap-1">
+            <div className="flex flex-col justify-center items-center font-[ScoreDream400] text-[18px] lg:text-4xl arrow gap-1">
                 <div>인스타그램 공유 이벤트도</div>
                 <div>확인해주세요.</div>
                 <div>
@@ -47,7 +47,7 @@ export default function MainBottomTextSlider(props: IMainBottomTextSliderProps) 
                         viewBox="0 0 24 24"
                         strokeWidth={1.5}
                         stroke="currentColor"
-                        className="w-6 h-6">
+                        className="w-6 lg:w-14 h-6 lg:h-14">
                         <path
                             strokeLinecap="round"
                             strokeLinejoin="round"
