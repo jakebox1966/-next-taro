@@ -542,12 +542,12 @@ export default function ResultPage() {
                             </div>
 
                             <div className="mt-[21px] lg:mt-[50px] text-[#FFFFFF] text-center">
-                                <div className="flex flex-col lg:flex-row justify-center lg:items-start items-center w-full lg:font-[ScoreDream400] gap-1">
-                                    <p className="text-[20px] lg:text-[25px] leading-[20px] lg:leading-[35px]">
-                                        1. 인스타그램
+                                <div className="flex flex-col lg:flex-row justify-center lg:items-start items-center w-full font-[ScoreDream400] lg:gap-2">
+                                    <p className="text-[13px] lg:text-[25px] leading-[20px] lg:leading-[35px]">
+                                        1. 인스타그램 @saza.gaza를
                                     </p>
-                                    <p className="text-[13px] lg:text-[25px] leading-[13px] lg:leading-[35px]">
-                                        @saza.gaza를 팔로우해주세요.
+                                    <p className="text-[13px] lg:text-[25px] leading-[20px] lg:leading-[35px]">
+                                        팔로우해주세요.
                                     </p>
                                 </div>
 
