@@ -121,7 +121,7 @@ export default function CardChoicePage(props: ICardChoicePageProps) {
                                 onClick={() => {
                                     setSelectedCard(1)
                                 }}>
-                                <img src={'/card.png'} alt="card" />
+                                <img className="rounded-2xl" src={'/card.png'} alt="card" />
                             </div>
                             <div
                                 className={`${
@@ -130,7 +130,7 @@ export default function CardChoicePage(props: ICardChoicePageProps) {
                                 onClick={() => {
                                     setSelectedCard(2)
                                 }}>
-                                <img src={'/card.png'} alt="card" />
+                                <img className="rounded-2xl" src={'/card.png'} alt="card" />
                             </div>
                             <div
                                 className={`${
@@ -139,7 +139,7 @@ export default function CardChoicePage(props: ICardChoicePageProps) {
                                 onClick={() => {
                                     setSelectedCard(3)
                                 }}>
-                                <img src={'/card.png'} alt="card" />
+                                <img className="rounded-2xl" src={'/card.png'} alt="card" />
                             </div>
                             <div
                                 className={`${
@@ -148,7 +148,7 @@ export default function CardChoicePage(props: ICardChoicePageProps) {
                                 onClick={() => {
                                     setSelectedCard(4)
                                 }}>
-                                <img src={'/card.png'} alt="card" />
+                                <img className="rounded-2xl" src={'/card.png'} alt="card" />
                             </div>
                         </div>
                         <div
