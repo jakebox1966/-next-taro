@@ -117,7 +117,7 @@ export default function CardChoicePage(props: ICardChoicePageProps) {
                             <div
                                 className={`${
                                     selectedCard === 1 && 'transition-all border-4 rounded-2xl'
-                                } card cursor-pointer w-[calc(50%-10px)] border-[#269E45] shadow-2xl`}
+                                } card cursor-pointer w-[calc(50%-10px)] border-[#269E45] shadow-2xl overflow-hidden`}
                                 onClick={() => {
                                     setSelectedCard(1)
                                 }}>
@@ -126,7 +126,7 @@ export default function CardChoicePage(props: ICardChoicePageProps) {
                             <div
                                 className={`${
                                     selectedCard === 2 && 'transition-all border-4 rounded-2xl'
-                                } card cursor-pointer w-[calc(50%-10px)] border-[#269E45] shadow-2xl`}
+                                } card cursor-pointer w-[calc(50%-10px)] border-[#269E45] shadow-2xl overflow-hidden`}
                                 onClick={() => {
                                     setSelectedCard(2)
                                 }}>
@@ -135,7 +135,7 @@ export default function CardChoicePage(props: ICardChoicePageProps) {
                             <div
                                 className={`${
                                     selectedCard === 3 && 'transition-all border-4 rounded-2xl'
-                                } card cursor-pointer w-[calc(50%-10px)] border-[#269E45] shadow-2xl`}
+                                } card cursor-pointer w-[calc(50%-10px)] border-[#269E45] shadow-2xl overflow-hidden`}
                                 onClick={() => {
                                     setSelectedCard(3)
                                 }}>
@@ -144,7 +144,7 @@ export default function CardChoicePage(props: ICardChoicePageProps) {
                             <div
                                 className={`${
                                     selectedCard === 4 && 'transition-all border-4 rounded-2xl'
-                                } card cursor-pointer w-[calc(50%-10px)] border-[#269E45] shadow-2xl`}
+                                } card cursor-pointer w-[calc(50%-10px)] border-[#269E45] shadow-2xl overflow-hidden`}
                                 onClick={() => {
                                     setSelectedCard(4)
                                 }}>
