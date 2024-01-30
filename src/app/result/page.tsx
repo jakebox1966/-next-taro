@@ -262,10 +262,6 @@ export default function ResultPage() {
         }
     }, [])
 
-    React.useEffect(() => {
-        console.log(isMobile)
-    }, [isMobile])
-
     return (
         <>
             <div
