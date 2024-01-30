@@ -144,8 +144,8 @@ const cardList = [
             '이전에 경험했던 것보다 더 강력하고 큰 책임 또한 따르겠지만 모든 노력이 결실을 맺게 될거야.',
             '연애와 사랑운에 있어서도 좋은 징조가 기다리고 있어. 연인이 있다면 부를 늘리는 것에 연인이 도움이 될것이고,아직 연인이 없다면 편안한 관계를 추구하고 정착할 수 있는 사람을 만날 수 있을거야.',
         ],
-        luckyNumber: 6,
-        luckyColor: 'Pink(핑크)',
+        luckyNumber: 4,
+        luckyColor: 'Burgundy (짙은 빨강)',
     },
     {
         key: 'the_hermit',
