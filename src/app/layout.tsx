@@ -3,6 +3,8 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Image from 'next/image'
 import Link from 'next/link'
+import Head from 'next/head'
+import Analytics from './Analytics'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,12 +21,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
-        <html lang="en">
-            <body
-            // className={inter.className}
-            >
-                {children}
-            </body>
-        </html>
+        <>
+            <html lang="en">
+                <body
+                // className={inter.className}
+                >
+                    <Analytics />
+                    {children}
+                </body>
+            </html>
+        </>
     )
 }
