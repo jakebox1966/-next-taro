@@ -3,6 +3,11 @@ import * as React from 'react'
 
 export interface IMainBottomTextSliderProps {}
 
+/**
+ *
+ * 결과 페이지 하단의 텍스트 슬라이드 입니다.
+ *
+ */
 export default function MainBottomTextSlider(props: IMainBottomTextSliderProps) {
     const slides = [
         '사자랑가자 타로 공유 이벤트',

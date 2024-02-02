@@ -36,6 +36,11 @@ const imageList = [
     { component: ace_of_wands, link: 'ace_of_wands' },
 ]
 
+/**
+ *
+ * 결과 페이지에 타로카드유형 보기 클릭 시, display되는 모달입니다.
+ *
+ */
 export function CardListModal({ open, handleOpen }: ICardListModalProps) {
     const router = useRouter()
     return (
@@ -90,7 +95,6 @@ export function CardListModal({ open, handleOpen }: ICardListModalProps) {
                                                     router.push(`/result?card_type=${item.link}`)
                                                 }}>
                                                 <Image
-                                                    // src={`/${item}.gif`}
                                                     quality={100}
                                                     className="shadow-lg w-full rounded-3xl"
                                                     src={item.component}
@@ -108,96 +112,6 @@ export function CardListModal({ open, handleOpen }: ICardListModalProps) {
                     </div>
                 </Dialog>
             </Transition>
-            {/* <Dialog
-                className="w-[361px] y-screen"
-                open={open}
-                handler={handleOpen}
-                placeholder={undefined}>
-                <DialogHeader placeholder={undefined}>
-                    <div className="w-full flex flex-row justify-center items-center text-lg">
-                        <div className="bg-[#FFC947] px-10 py-2 rounded-lg border-2 border-black shadow">
-                            타로 카드 유형 전체 보기
-                        </div>
-                    </div>
-                </DialogHeader>
-                <DialogBody placeholder={undefined}>
-                    <div className="flex flex-row justify-center items-center flex-wrap w-full gap-5">
-                        <Image
-                            className="w-[calc(30%-5px)]"
-                            src="thelover.svg"
-                            width={99}
-                            height={152}
-                            alt={''}
-                        />
-                        <Image
-                            className="w-[calc(30%-5px)]"
-                            src="thelover.svg"
-                            width={99}
-                            height={152}
-                            alt={''}
-                        />
-                        <Image
-                            className="w-[calc(30%-5px)]"
-                            src="thelover.svg"
-                            width={99}
-                            height={152}
-                            alt={''}
-                        />
-                        <Image
-                            className="w-[calc(30%-5px)]"
-                            src="thelover.svg"
-                            width={99}
-                            height={152}
-                            alt={''}
-                        />
-                        <Image
-                            className="w-[calc(30%-5px)]"
-                            src="thelover.svg"
-                            width={99}
-                            height={152}
-                            alt={''}
-                        />
-                        <Image
-                            className="w-[calc(30%-5px)]"
-                            src="thelover.svg"
-                            width={99}
-                            height={152}
-                            alt={''}
-                        />
-                        <Image
-                            className="w-[calc(30%-5px)]"
-                            src="thelover.svg"
-                            width={99}
-                            height={152}
-                            alt={''}
-                        />
-                        <Image
-                            className="w-[calc(30%-5px)]"
-                            src="thelover.svg"
-                            width={99}
-                            height={152}
-                            alt={''}
-                        />
-                        <Image
-                            className="w-[calc(30%-5px)]"
-                            src="thelover.svg"
-                            width={99}
-                            height={152}
-                            alt={''}
-                        />
-                    </div>
-                </DialogBody>
-                <DialogFooter placeholder={undefined}>
-                    <Button
-                        variant="text"
-                        color="red"
-                        onClick={handleOpen}
-                        className="mr-1"
-                        placeholder={undefined}>
-                        <span>Cancel</span>
-                    </Button>
-                </DialogFooter>
-            </Dialog> */}
         </>
     )
 }

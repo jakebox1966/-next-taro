@@ -24,7 +24,6 @@ export default function Home() {
 
     const getVisitorCount = async () => {
         const result = await fetch(`${process.env.NEXT_PUBLIC_HOST_URL}/api/test`)
-        // const result = await fetch(`http://localhost:3000/api/test`)
 
         const domParser = new DOMParser()
 

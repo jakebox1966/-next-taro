@@ -3,6 +3,10 @@ import * as React from 'react'
 
 export interface IAnalyticsProps {}
 
+/**
+ * 마케팅 팀에서 요청 주신 google analytics 삽입 코드입니다. 추 후에도 Nextjs나 React프로젝트에서 재사용할 수 있게끔 컴포넌트 형식으로 만들었습니다.
+ *
+ */
 export default function Analytics(props: IAnalyticsProps) {
     return (
         <>

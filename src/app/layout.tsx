@@ -8,6 +8,11 @@ import Analytics from './Analytics'
 
 const inter = Inter({ subsets: ['latin'] })
 
+/**
+ *
+ * 링크 공유시(etc: 카카오톡), 제공되는 이벤트 사이트의 image, title, description 제공을 위한 opengraph 데이터 입니다.
+ *
+ */
 export const metadata: Metadata = {
     metadataBase: new URL('https://tarot.quadhash.kr'),
     title: 'SAZA & GAZA TARO EVENT PAGE',
@@ -23,9 +28,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return (
         <>
             <html lang="en">
-                <body
-                // className={inter.className}
-                >
+                <body>
                     <Analytics />
                     {children}
                 </body>

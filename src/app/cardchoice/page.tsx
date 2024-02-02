@@ -10,6 +10,9 @@ import Loading from '../components/Loading'
 
 export interface ICardChoicePageProps {}
 
+/**
+ * 선택 할 수 있는 card pool입니다.
+ */
 const cardPool = [
     'the_star',
     'the_lovers',
