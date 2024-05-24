@@ -22,18 +22,18 @@ export default function Home() {
         }
     }
 
-    const getVisitorCount = async () => {
-        const result = await fetch(`${process.env.NEXT_PUBLIC_HOST_URL}/api/test`)
+    // const getVisitorCount = async () => {
+    //     const result = await fetch(`${process.env.NEXT_PUBLIC_HOST_URL}/api/test`)
 
-        const domParser = new DOMParser()
+    //     const domParser = new DOMParser()
 
-        const html = await result.text()
-        const svg = domParser.parseFromString(html, 'text/xml')
+    //     const html = await result.text()
+    //     const svg = domParser.parseFromString(html, 'text/xml')
 
-        const visitorCount = svg.childNodes[0].childNodes[7].childNodes[7].textContent
+    //     const visitorCount = svg.childNodes[0].childNodes[7].childNodes[7].textContent
 
-        setVisitorCount(visitorCount?.split('/')[1] as unknown as number)
-    }
+    //     setVisitorCount(visitorCount?.split('/')[1] as unknown as number)
+    // }
 
     const copyClipboard = async () => {
         try {
@@ -45,7 +45,7 @@ export default function Home() {
     }
 
     useEffect(() => {
-        getVisitorCount()
+        // getVisitorCount()
         const initData = window.innerWidth
         setIsMobile(initData < 1024 ? true : false)
         window.addEventListener('resize', handleResize)
@@ -88,13 +88,13 @@ export default function Home() {
                                 타로 링크 공유하기
                             </div>
 
-                            <div className="w-full flex flex-col lg:text-4xl justify-start items-center mt-5 lg:mt-2 gap-1 lg:gap-4 text-black">
+                            <div className="w-full flex flex-col lg:text-4xl justify-start items-center mt-5 lg:mt-2 gap-1 lg:gap-4 text-black whitespace-nowrap">
                                 <div className="font-[ScoreDream300]">지금까지</div>
                                 <div className="font-[ScoreDream400]">
-                                    {typeof visitorCount === 'number'
+                                    {/* {typeof visitorCount === 'number'
                                         ? visitorCount.toLocaleString()
-                                        : parseInt(visitorCount).toLocaleString()}
-                                    명이 참여했어요.
+                                        : parseInt(visitorCount).toLocaleString()} */}
+                                    25,774 명이 참여했어요.
                                 </div>
                             </div>
                         </div>
